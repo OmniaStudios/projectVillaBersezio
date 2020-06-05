@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+header, .parallax{
+    height: 100vh;
+    background-image: url(https://unsplash.com/photos/g6ZqwQvCJpM);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    justify-content: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .title-homepage{
+    font-family: 'Abril Fatface', cursive !important;
+    color: #fff;
+    text-shadow: 6px 8px 8px #000;
+    position: absolute;
+    bottom: 0vh;
+    left: 5vh;
+    font-size: 6em;
+    opacity: 0.8;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+    transition-property: opacity;
+  }
+  .title-homepage:hover{
+    opacity: 1;
+  }
+  
+  .fa-home{
+    color: #fff;
+    text-align: left;
+    position: absolute;
+    top: 25vh;
+    right: 5vh;
+    text-shadow: 0px 8px 8px #000;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+  }
+  .fa-home:hover{
+    color: #817c79;
+  }
+  .fa-user{
+    color: #fff;
+    text-align: left;
+    position: absolute;
+    top: 35vh;
+    right: 5vh;
+    text-shadow: 0px 8px 8px #000;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+  }
+  .fa-user:hover{
+    color: #817c79;
+  }
+  .fa-newspaper{
+    color: #fff;
+    text-align: left;
+    position: absolute;
+    top: 45vh;
+    right: 5vh;
+    text-shadow: 0px 8px 8px #000;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+  }
+  .fa-newspaper:hover{
+    color: #817c79;
+  }
+  .fa-images{
+    color: #fff;
+    text-align: left;
+    position: absolute;
+    top: 55vh;
+    right: 5vh;
+    text-shadow: 0px 8px 8px #000;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+  }
+  .fa-images:hover{
+    color: #817c79;
+  }
+  
+  .fa-map{
+    color: #fff;
+    text-align: left;
+    position: absolute;
+    top: 65vh;
+    right: 5vh;
+    text-shadow: 0px 8px 8px #000;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+  }
+  .fa-map:hover{
+    color: #817c79;
+  }
+  
+  .fa-mobile-alt{
+    color: #fff;
+    text-align: left;
+    position: absolute;
+    top: 75vh;
+    right: 5vh;
+    text-shadow: 0px 8px 8px #000;
+    cursor: pointer;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-duration: .3s;
+  }
+  .fa-mobile-alt:hover{
+    color: #817c79;
+  }
+  .fa-long-arrow-alt-down{
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    cursor: pointer;
+    font-size: 200%;
+    text-shadow: 0px 8px 8px #000;
+    color: #fff;
+    background-color: transparent;
+    opacity: 0.7;
+    transition-timing-function: linear;
+    transition-property: opacity;
+    transition-duration: .3s;
+  }
+    
+  .fa-long-arrow-alt-down:hover{
+    opacity: 1;
+  }
+  .tim-container{
+    background: black !important;
+  }
+  .main{
+    background: black !important;
+  }
+  #vertical-line{
+    width: 1px;
+    height: 55vh;
+    background-color: #fff;
+    position: fixed;
+    top: 24vh;
+    right: 10vh;
+  }
+  .title-about{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    justify-content: left;
+    background-size: cover;
+    color: #dbd9c8;
+    font-family: 'Abril Fatface', cursive !important;
+    text-shadow: -3px 3px 0px #1a9c06; 
+  }
+  .title-position{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    justify-content: center;
+    background-size: cover;
+  }
+  .title-contact{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    justify-content: center;
+    background-size: cover;
+  }
+  
