@@ -3,10 +3,10 @@ const mongoose = require ('mongoose');
 var schema = new mongoose.Schema({
     Author: String,
     Title: String,
-    Img: Array,
-    Comment: Array,
-    Like: String,
-    Dislike: String
+    Imgs: Array,
+    Comments: Array,
+    Likes: String,
+    Dislikes: String
 });
 
 var Post =  mongoose.model('Post', schema);
