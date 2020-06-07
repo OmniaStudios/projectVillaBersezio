@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
+::-webkit-scrollbar {
+  display: none;
+  }
+
 header, .parallax{
     height: 100vh;
-    background-image: url(https://unsplash.com/photos/g6ZqwQvCJpM);
+    background-image: url(../img/bg-1.jpg);
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -18,9 +22,9 @@ header, .parallax{
     font-family: 'Abril Fatface', cursive !important;
     color: #fff;
     text-shadow: 6px 8px 8px #000;
-    position: absolute;
-    bottom: 0vh;
-    left: 5vh;
+    position: relative;
+    top: 35vh;
+    padding-left: 10px;
     font-size: 6em;
     opacity: 0.8;
     transition-timing-function: linear;
@@ -188,4 +192,15 @@ header, .parallax{
     justify-content: center;
     background-size: cover;
   }
-  
+
+  /*Villa Bersezio Logo -> Mobile*/
+/*
+  .mobile-h1, .title-homepage-mobile{
+    color: #fff;
+    font-family: 'Abril Fatface', cursive !important;
+    font-size: 2em;
+    opacity: 0.9;
+    position: relative;
+    top: 10vh;
+  }
+  */
