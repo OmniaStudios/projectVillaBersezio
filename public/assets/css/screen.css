@@ -1,11 +1,35 @@
-@media screen and (min-width: 1024px){
-   
+/*Desktop & Tablets*/
+@media only screen and (min-width: 768px) {
+    .title-about{
+        padding-top: 5vh;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+        top: -90vh;
+    }
 }
-
-@media screen and (min-width: 768px) and (max-width: 1023px){
-    
+  
+/*SmartPhone*/
+  @media only screen and (max-width: 767px) {
+   .title-about{
+       align-items: left;
+   }
+    .paragraph{
+       width: 75%;
+       position: relative;
+       top: -80vh;
+   }
 }
-
-@media screen and (min-width: 767px){
-    
+  
+  /*Portrait phones*/
+  @media only screen and (max-width: 767px) and (orientation: portrait) {
+    .title-about{
+        align-items: left;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+        top: -80vh;
+    }
 }
