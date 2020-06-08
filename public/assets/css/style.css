@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap');
 
 ::-webkit-scrollbar {
   display: none;
@@ -165,12 +166,11 @@ header, .parallax{
     display: flex;
     flex-direction: column;
     text-align: left;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: top;
     background-size: cover;
     color: #dbd9c8;
-    font-family: 'Abril Fatface', cursive !important;
-    text-shadow: -3px 3px 0px #1a9c06; 
+    font-family: 'Lexend Tera', sans-serif !important;
   }
   .title-post{
     height: 100vh;
@@ -202,6 +202,12 @@ header, .parallax{
     justify-content: center;
     background-size: cover;
   }
+.paragraph{
+    text-align: justify;
+    position: relative;
+    top: -80vh;
+    width: 85%;
+}
 
   /*Villa Bersezio Logo -> Mobile*/
 /*
