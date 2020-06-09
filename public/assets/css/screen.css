@@ -1,4 +1,4 @@
-/*Desktop & Tablets*/
+/*Desktop & Tablets
 @media only screen and (min-width: 768px) {
     .title-about{
         padding-top: 5vh;
@@ -10,7 +10,7 @@
     }
 }
   
-/*SmartPhone*/
+/*SmartPhone
   @media only screen and (max-width: 767px) {
    .title-about{
        align-items: left;
@@ -22,7 +22,7 @@
    }
 }
   
-  /*Portrait phones*/
+  /*Portrait phones
   @media only screen and (max-width: 767px) and (orientation: portrait) {
     .title-about{
         align-items: left;
@@ -31,5 +31,49 @@
         width: 85%;
         position: relative;
         top: -80vh;
+    }
+}*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media only screen and (min-width: 576px) {
+    .paragraph{
+        width: 65%;
+        position: relative;
+        top: -500vh;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media only screen and (min-width: 768px) {
+    .title-about{
+        padding-top: 5vh;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media only screen and (min-width: 992px) {
+    .title-about{
+        padding-top: 5vh;
+    }
+    .paragraph{
+        width: 90%;
+        position: relative;
+        top: -90vh;
+    }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media only screen and (min-width: 1200px) {
+    .title-about{
+        padding-top: 5vh;
+    }
+    .paragraph{
+        width: 100%;
+        position: relative;
+        top: -90vh;
     }
 }
