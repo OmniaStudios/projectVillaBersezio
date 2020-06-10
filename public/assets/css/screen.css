@@ -1,79 +1,76 @@
-/*Desktop & Tablets
-@media only screen and (min-width: 768px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
     .title-about{
-        padding-top: 5vh;
+        padding-top: 3vh;
+    }
+    .paragraph{
+        width: 80%;
+        position: relative;
+        top: -75vh;
+    }
+    #down{
+        visibility: hidden;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .title-about{
+        padding-top: 4vh;
     }
     .paragraph{
         width: 85%;
         position: relative;
-        top: -90vh;
+        top: -85vh;
+    }
+    #down{
+        visibility: hidden;
     }
 }
-  
-/*SmartPhone
-  @media only screen and (max-width: 767px) {
-   .title-about{
-       align-items: left;
-   }
-    .paragraph{
-       width: 75%;
-       position: relative;
-       top: -80vh;
-   }
-}
-  
-  /*Portrait phones
-  @media only screen and (max-width: 767px) and (orientation: portrait) {
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
     .title-about{
-        align-items: left;
+        padding-top: 5vh;
+        text-align: left;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+        top: -85vh;
+    }
+    #down{
+        visibility: visible;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .title-about{
+        padding-top: 5vh;
     }
     .paragraph{
         width: 85%;
         position: relative;
         top: -80vh;
     }
-}*/
-
-/*Small devices (landscape phones, 576px and up)*/
-@media only screen and (min-width: 576px) {
-    .paragraph{
-        width: 65%;
-        position: relative;
-        top: -500vh;
+    #down{
+        visibility: visible;
     }
 }
 
-/*Medium devices (tablets, 768px and up)*/
-@media only screen and (min-width: 768px) {
-    .title-about{
-        padding-top: 5vh;
-    }
-    .paragraph{
-        width: 85%;
-        position: relative;
-    }
-}
-
-/*Large devices (desktops, 992px and up)*/
-@media only screen and (min-width: 992px) {
-    .title-about{
-        padding-top: 5vh;
-    }
-    .paragraph{
-        width: 90%;
-        position: relative;
-        top: -90vh;
-    }
-}
-
-/*Extra large devices (large desktops, 1200px and up)*/
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .title-about{
         padding-top: 5vh;
+        
     }
     .paragraph{
         width: 100%;
         position: relative;
-        top: -90vh;
+        top: -85vh;
+    }
+    #down{
+        visibility: visible;
     }
 }
