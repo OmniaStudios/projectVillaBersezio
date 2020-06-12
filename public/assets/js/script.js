@@ -37,7 +37,29 @@ window.onbeforeunload = function () {
       }, 1000);
       });
   });
+
+  // Scroll New Post
+  $(document).ready( function () {
+    $('.fa-newspaper').on('click',function () {
+        $("html").scrollTop(0);
+        console.log("Clicked!");
+         $('html, body').animate({
+        scrollTop: $(".new-post").offset().top
+    }, 1000);
+    });
+});
   
+// Scroll Gallery
+$(document).ready( function () {
+    $('.fa-images').on('click',function () {
+        $("html").scrollTop(0);
+        console.log("Clicked!");
+         $('html, body').animate({
+        scrollTop: $(".gallery").offset().top
+    }, 1000);
+    });
+});
+
   // Scroll Position
   $(document).ready( function () {
       $('.fa-map').on('click',function () {
@@ -49,16 +71,7 @@ window.onbeforeunload = function () {
       });
   });
   
-  // Scroll Gallery
-  $(document).ready( function () {
-      $('.fa-images').on('click',function () {
-          $("html").scrollTop(0);
-          console.log("Clicked!");
-           $('html, body').animate({
-          scrollTop: $(".gallery").offset().top
-      }, 1000);
-      });
-  });
+  
   
   // Scroll Contact
   $(document).ready( function () {

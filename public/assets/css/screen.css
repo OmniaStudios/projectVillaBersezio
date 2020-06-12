@@ -1,0 +1,76 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .title-about{
+        padding-top: 3vh;
+    }
+    .paragraph{
+        width: 80%;
+        position: relative;
+        top: -75vh;
+    }
+    #down{
+        visibility: hidden;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .title-about{
+        padding-top: 4vh;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+        top: -85vh;
+    }
+    #down{
+        visibility: hidden;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .title-about{
+        padding-top: 5vh;
+        text-align: left;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+        top: -85vh;
+    }
+    #down{
+        visibility: visible;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .title-about{
+        padding-top: 5vh;
+    }
+    .paragraph{
+        width: 85%;
+        position: relative;
+        top: -80vh;
+    }
+    #down{
+        visibility: visible;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .title-about{
+        padding-top: 5vh;
+        
+    }
+    .paragraph{
+        width: 100%;
+        position: relative;
+        top: -85vh;
+    }
+    #down{
+        visibility: visible;
+    }
+}

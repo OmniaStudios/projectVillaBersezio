@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/').get(controllerBasic.get_home);
 
-
+/*
 router.route('/get').get(controllerPosts.get);
 
 router
@@ -22,5 +22,5 @@ router
 router
     .route('/:id')
     .delete(controllerPosts.remove)
-
+*/  
 module.exports = router;
