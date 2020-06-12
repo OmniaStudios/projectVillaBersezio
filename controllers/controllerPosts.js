@@ -6,79 +6,110 @@ const app = express();
 
 /* get page posts */
 exports.get = (req, res) => {
-    /* */
-    Post.find((err, dataPost) => {
-      if (err) {
-        /* */
-        res.status(404).render('404');
-      } else {
-        /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-        console.log(dataPost);  
-        res.render("index");
-      }
-    });
-  };
-
-  exports.new = (req, res) =>{
-
-    const newPost = {
-      Author: req.body.author,
-      Title: req.body.title,
-      Imgs: req.body.imgs,
-      Comments: req.body.comments,
-      Likes: req.body.likes,
-      Dislikes: req.body.dislikes
-    };
-
-    Post.create(newPost, (err, data) =>{
-      if(err){
-        res.status(400).json({
-          status: 'fail',
-          message: 'Post could not be created'
-        });
-      } else{
-        /*Post created*/
-        /*res.send('Post has been created successfully');*/
-        /*TO CHANGE, redirect to post page*/
-        res.redirect('/home');
-      }
-    })
-  };
-
-  
-
-
-  exports.edit = (req, res) => {
-    let id = req.params.id;
-    const updated = {
-      Author: req.body.author,
-      Title: req.body.title,
-      Imgs: req.body.imgs,
-      Comments: req.body.comments,
-      Likes: req.body.likes,
-      Dislikes: req.body.dislikes      
+  /* */
+  Post.find((err, dataPost) => {
+    if (err) {
+      /* */
+      res.status(404).render('404');
+    } else {
+      /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
+      console.log(dataPost);  
+      res.render("index");
     }
+  });
+};
 
-    Post.findById(id, (err, data) => {
+
+exports.new = (req, res) =>{
+
+  const newPost = {
+    Author: req.body.author,
+    Title: req.body.title,
+    Imgs: req.body.imgs,
+    Comments: req.body.comments,
+    Likes: req.body.likes,
+    Dislikes: req.body.dislikes
+  };
+
+  Post.create(newPost, (err, data) =>{
+    if(err){
+      res.status(400).json({
+        status: 'fail',
+        message: 'Post could not be created'
+     });
+    } else{
+      /*Post created*/
+      /*res.send('Post has been created successfully');*/
+      /*TO CHANGE, redirect to post page*/
+      res.redirect('/');
+    }
+  })
+};
+
+
+exports.get_new = (req, res) => {
+  res.status(200).render('index')
+}
+
+
+exports.edit = (req, res) => {
+  let id = req.params.id;
+  const updated = {
+    Author: req.body.author,
+    Title: req.body.title,
+    Imgs: req.body.imgs,
+    Comments: req.body.comments,
+    Likes: req.body.likes,
+    Dislikes: req.body.dislikes      
+  }
+
+  Post.findById(id, (err, data) => {
+    if (err) {
+      res.status(404).json({
+        status: 'failed',
+        message: 'Post does not exist | Invalid'
+     })
+    } 
+    data.replaceOne(updated, err => {
       if (err) {
-        res.status(404).json({
+        res.status(500).json({
           status: 'failed',
-          message: 'Post does not exist | Invalid'
+          message: 'Post could not deleted'
         })
       } else {
-        res.redirect('/home')
+        res.redirect('/')
       }
     })
-  }
+  })
+}
 
-  exports.get_edit = (req, res) => {
-    Post.findById(req.params.id, (err, data) => {
-      if (err) {
-        res.status(404).render('404')
-      } else {
-        res.render('editPost', {
-          post: data
-        })
-      }
-    })
+exports.get_edit = (req, res) => {
+  Post.findById(req.params.id, (err, data) => {
+    if (err) {
+      res.status(404).render('404')
+    } else {
+      res.render('index', {
+        post: data
+      })
+    }
+  })
+}
+
+
+exports.remove = (req, res) => {
+  let id = req.params.id;
+  Post.deleteOne({
+    _id: id
+  },
+  (err, data) => {
+    if (err) {
+      res.status(500).json({
+        status: 'fail',
+        message: 'Post could not deleted'
+      })
+    } else {
+      res.redirect('/')
+    }
   }
+  )
+}
