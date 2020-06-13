@@ -24,13 +24,17 @@ header, .parallax{
     color: #fff;
     text-shadow: 6px 8px 8px #000;
     position: relative;
-    top: 35vh;
-    padding-left: 10px;
+    /* top: 35vh; */
+    /* padding-left: 10px; */
     font-size: normal;
     opacity: 0.8;
     transition-timing-function: linear;
     transition-duration: .3s;
     transition-property: opacity;
+    background-color: #000;
+    text-align: center;
+    padding: 40px;
+
   }
   .title-homepage:hover{
     opacity: 1;
