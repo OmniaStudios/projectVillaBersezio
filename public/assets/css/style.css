@@ -1,218 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap');
 
-::-webkit-scrollbar {
-  display: none;
-  }
 
-header, .parallax{
-    height: 100vh;
-    background: url(../img/bg-1.jpg);
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: left;
-    justify-content: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .title-homepage{
-    font-family: 'Abril Fatface', cursive !important;
-    color: #fff;
-    text-shadow: 6px 8px 8px #000;
-    position: relative;
-    top: 35vh;
-    padding-left: 10px;
-    font-size: normal;
-    opacity: 0.8;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-    transition-property: opacity;
-    
-  }
-  .title-homepage:hover{
-    opacity: 1;
-  }
-  
-  .fa-home{
-    color: #fff;
-    text-align: left;
-    position: absolute;
-    top: 25vh;
-    right: 5vh;
-    text-shadow: 0px 8px 8px #000;
-    cursor: pointer;
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-  }
-  .fa-home:hover{
-    color: #817c79;
-  }
-  .fa-user{
-    color: #fff;
-    text-align: left;
-    position: absolute;
-    top: 35vh;
-    right: 5vh;
-    text-shadow: 0px 8px 8px #000;
-    cursor: pointer;
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-  }
-  .fa-user:hover{
-    color: #817c79;
-  }
-  .fa-newspaper{
-    color: #fff;
-    text-align: left;
-    position: absolute;
-    top: 45vh;
-    right: 5vh;
-    text-shadow: 0px 8px 8px #000;
-    cursor: pointer;
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-  }
-  .fa-newspaper:hover{
-    color: #817c79;
-  }
-  .fa-images{
-    color: #fff;
-    text-align: left;
-    position: absolute;
-    top: 55vh;
-    right: 5vh;
-    text-shadow: 0px 8px 8px #000;
-    cursor: pointer;
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-  }
-  .fa-images:hover{
-    color: #817c79;
-  }
-  
-  .fa-map{
-    color: #fff;
-    text-align: left;
-    position: absolute;
-    top: 65vh;
-    right: 5vh;
-    text-shadow: 0px 8px 8px #000;
-    cursor: pointer;
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-  }
-  .fa-map:hover{
-    color: #817c79;
-  }
-  
-  .fa-mobile-alt{
-    color: #fff;
-    text-align: left;
-    position: absolute;
-    top: 75vh;
-    right: 5vh;
-    text-shadow: 0px 8px 8px #000;
-    cursor: pointer;
-    transition-property: color;
-    transition-timing-function: linear;
-    transition-duration: .3s;
-  }
-  .fa-mobile-alt:hover{
-    color: #817c79;
-  }
-  .fa-long-arrow-alt-down{
-    position: absolute;
-    top: 90vh;
-    left: 50%;
-    cursor: pointer;
-    font-size: 200%;
-    text-shadow: 0px 8px 8px #000;
-    color: #fff;
-    background-color: transparent;
-    opacity: 0.7;
-    transition-timing-function: linear;
-    transition-property: opacity;
-    transition-duration: .3s;
-  }
-    
-  .fa-long-arrow-alt-down:hover{
-    opacity: 1;
-  }
-  .tim-container{
-    background: black !important;
-  }
-  .main{
-    background: black !important;
-  }
-  #vertical-line{
-    width: 1px;
-    height: 55vh;
-    background-color: #fff;
-    position: fixed;
-    top: 24vh;
-    right: 10vh;
-  }
-  .title-about{
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: center;
-    justify-content: top;
-    background-size: cover;
-    color: #dbd9c8;
-    font-family: 'Lexend Tera', sans-serif !important;
-  }
-  .title-post{
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: left;
-    justify-content: center;
-    background-size: cover;
-  }
-  .title-position{
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: left;
-    justify-content: center;
-    background-size: cover;
-  }
-  .title-contact{
-    height: 100vh;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: left;
-    justify-content: center;
-    background-size: cover;
-  }
-.paragraph{
-    text-align: justify;  
+body
+{
+  font-family: 'Poppins', sans-serif;
 }
 
-.pp-tableCell {
-  display: block !important;
-  width: 100%;
-  height: 100%;
+.fa-long-arrow-alt-down{
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  cursor: pointer;
+  font-size: 200%;
+  text-shadow: 0px 8px 8px #000;
+  color: #fff;
+  background-color: transparent;
+  opacity: 0.7;
+  transition-timing-function: linear;
+  transition-property: opacity;
+  transition-duration: .3s;
 }
-
+  
+.fa-long-arrow-alt-down:hover{
+  opacity: 1;
+}
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);
@@ -257,7 +68,6 @@ header, .parallax{
     transform: translateY(-15px);
   }
 }
-
 .bounce {
   animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
@@ -265,21 +75,120 @@ header, .parallax{
   -o-animation: bounce 2s infinite;
 }
 
+*, *:before, *:after{
+  transition: 0.35s ease;
+}
 
+.navbar-fixed{
+  position: fixed;
+}
 
+nav a{
+  text-decoration: none !important;
+  color: #aaa;
+}
+  
+#home
+{
+  background-image: url('../img/bg-1.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+#section1-title
+{
+  font-family: 'Abril Fatface', cursive;
+  transition-property: opacity;
+  transition-duration: .3s;
+  transition-timing-function: linear;
+  position: absolute;
+  margin-top: 30vh;
+  padding-left: 10px;
+  opacity: 0.8;
+  transition-timing-function: linear;
+  transition-duration: .3s;
+  transition-property: opacity;
+  color: white;
+  text-shadow: 6px 8px 8px #000;
+}
+#section1-title:hover{
+  opacity: 1;
+}
 
+#about
+{
+  color:white !important;
+  background-color: black !important;
+}
 
+#section2-title
+{
+    top:0 !important;
+}
 
+nav ul li a{
+  color: #777;
+  transition: 0.3s ease;
 
-
-
-
-
-
-
-
-
-
-
+}
  
+nav ul li a:hover{
+  color: #444;
+}
+
+.left li.active{
+  background: none;
+  box-shadow: inset 0 -2px 0 rgb(57, 203, 88);
+}
+  
+  
+nav ul a:hover{
+  background: none;
+}  
+
+.side-nav li{
+  padding: 0;
+}  
+a.brand-logo{
+  background-image: url('//multiplier.in/public/logo/multiplier-logo.png');
+  height: 100%;
+  width: 150px;
+  background-size: 100% 100%;
+}
+  
+
+.navbar-fixed nav{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #ccc;
+}
+
+
+.navbar-nav li a{
+  font-family: 'Lato';
+  font-size: 14px;
+  padding: 20px;
+}
+
+
+  /* padding: 25px !important; */
+
+ul.left.hide-on-med-and-down{
+  margin-left: 160px;
+}
+
+.mainLinks:first-child{
+  padding-right: 0;
+}
+  
+
+.side-nav a.mainLinks{
+  padding: 5px;
+  height: auto;
+}
+  
+button.center-block{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}

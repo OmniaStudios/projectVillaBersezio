@@ -8,10 +8,10 @@
         position: relative;
         top: -75vh;
     }
-    #down{
+    .fa-long-arrow-alt-down{
         visibility: hidden;
     }
-    .title-homepage{
+    #section1-title{
         font-size: 35px;
     }
 }
@@ -29,7 +29,7 @@
     #down{
         visibility: hidden;
     }
-    .title-homepage{
+    #section1-title{
         font-size: 50px;
     }
 }
@@ -49,7 +49,7 @@
         visibility: visible;
     }
 
-    .title-homepage{
+    #section1-title{
         font-size: 50px;
     }
 }
@@ -68,7 +68,7 @@
         visibility: visible;
     }
 
-    .title-homepage
+    #section1-title
     {
         font-size: 60px !important;
     }
@@ -88,7 +88,7 @@
         visibility: visible;
     }
 
-    .title-homepage
+    #section1-title
     {
         font-size: 60px !important;
     }
