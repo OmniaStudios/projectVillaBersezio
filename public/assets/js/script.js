@@ -86,26 +86,25 @@ $(document).ready(function () {
 
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
-      menu: '#menu',
+      menu: '#myMenu',
         scrollingSpeed: 300,
-      anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+      anchors: ['home', 'about', 'post', 'gallery', 'position', 'contact'],
       sectionsColor: ['green', 'blue', '#2C3E50', '#39C', 'black', 'green'],
       navigation: {
         'position': 'right',
-        'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Pgae 4', 'Page 5', 'Page 6']
+        'tooltips': ['Home', 'Chi Siamo', 'Nuovi Post', 'Galleria', 'Dove Siamo', 'Contatti']
       },
       afterRender: function() {
-        $('#pp-nav').addClass('custom');
+        $('#myMenu').addClass('custom');
       },
       afterLoad: function(anchorLink, index) {
         if (index > 1) {
-          $('#pp-nav').removeClass('custom');
+          $('#myMenu').removeClass('custom');
         } else {
-          $('#pp-nav').addClass('custom');
+          $('#myMenu').addClass('custom');
         }
       }
     });
   
   });
-
 

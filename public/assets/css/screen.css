@@ -1,95 +1,42 @@
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .title-about{
-        padding-top: 3vh;
-    }
-    .paragraph{
-        width: 80%;
-        position: relative;
-        top: -75vh;
-    }
+#pp-nav{
+    display: none;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
     .fa-long-arrow-alt-down{
         visibility: hidden;
     }
     #section1-title{
         font-size: 35px;
     }
+
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .title-about{
-        padding-top: 4vh;
-    }
-    .paragraph{
-        width: 85%;
-        position: relative;
-        top: -85vh;
-    }
-    #down{
-        visibility: hidden;
-    }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
     #section1-title{
         font-size: 50px;
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .title-about{
-        padding-top: 5vh;
-        text-align: left;
-    }
-    .paragraph{
-        width: 85%;
-        position: relative;
-
-    }
-    #down{
-        visibility: visible;
-    }
-
-    #section1-title{
-        font-size: 50px;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .title-about{
-        padding-top: 5vh;
-    }
-    .paragraph{
-        width: 85%;
-        position: relative;
-        top: -80vh;
-    }
-    #down{
-        visibility: visible;
-    }
-
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
     #section1-title
     {
         font-size: 60px !important;
     }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .title-about{
-        padding-top: 5vh;
-    }
-    .paragraph{
-        width: 100%;
-        position: relative;
-        top: -85vh;
-    }
-    #down{
-        visibility: visible;
-    }
-
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
     #section1-title
     {
         font-size: 60px !important;
     }
+    .navbar-right{
+        position: absolute;
+        left: 95%;
+      }
+    
 }

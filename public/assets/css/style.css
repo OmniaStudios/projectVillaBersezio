@@ -19,6 +19,7 @@ body
   transition-timing-function: linear;
   transition-property: opacity;
   transition-duration: .3s;
+  text-shadow: 6px 8px 8px #000;
 }
   
 .fa-long-arrow-alt-down:hover{
@@ -196,8 +197,47 @@ ul.left.hide-on-med-and-down{
 button.center-block{
   display: block;
   width: 90%;
-  margin: 0 auto;
+  margin: 0   auto;
 }
-#myMenu{
-  z-index: 100;
+nav{
+  z-index: 1000;
+  position: absolute;
+  cursor: pointer;
 }
+li{
+  list-style: none;
+}
+a{
+  color: #fff !important;
+}
+.fa-home{
+  position: absolute;
+  top: 25vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-user{
+  position: absolute;
+  top: 35vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-newspaper{
+  position: absolute;
+  top: 45vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-images{
+  position: absolute;
+  top: 55vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-map{
+  position: absolute;
+  top: 65vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-mobile-alt{
+  position: absolute;
+  top: 75vh;
+  text-shadow: 6px 8px 8px #000;
+}
+
