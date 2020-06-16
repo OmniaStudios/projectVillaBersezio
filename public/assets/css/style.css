@@ -122,6 +122,12 @@ nav a{
   background-color: black !important;
 }
 
+#post
+{
+  background-color: black !important;
+  color:white;
+}
+
 #section2-title
 {
     top:0 !important;
@@ -191,4 +197,7 @@ button.center-block{
   display: block;
   width: 90%;
   margin: 0 auto;
+}
+#myMenu{
+  z-index: 100;
 }
