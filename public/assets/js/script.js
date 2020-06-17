@@ -1,5 +1,7 @@
+//=============
 // Scroll Arrow
-// ====================================
+// ============
+
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
@@ -14,9 +16,12 @@ $(document).ready(function () {
     });
 });
 
+//==============
 // Navbar-Right
 //==============
+
 // Scroll Home
+
 $(document).ready(function () {
     $('.fa-home').on('click', function () {
         $("html").scrollTop(0);
@@ -28,6 +33,7 @@ $(document).ready(function () {
 });
 
 // Scroll About
+
 $(document).ready(function () {
     $('.fa-user').on('click', function () {
         $("html").scrollTop(0);
@@ -39,6 +45,7 @@ $(document).ready(function () {
 });
 
 // Scroll New Post
+
 $(document).ready(function () {
     $('.fa-newspaper').on('click', function () {
         $("html").scrollTop(0);
@@ -50,6 +57,7 @@ $(document).ready(function () {
 });
 
 // Scroll Gallery
+
 $(document).ready(function () {
     $('.fa-images').on('click', function () {
         $("html").scrollTop(0);
@@ -61,6 +69,7 @@ $(document).ready(function () {
 });
 
 // Scroll Position
+
 $(document).ready(function () {
     $('.fa-map').on('click', function () {
         $("html").scrollTop(0);
@@ -74,6 +83,7 @@ $(document).ready(function () {
 
 
 // Scroll Contact
+
 $(document).ready(function () {
     $('.fa-mobile-alt').on('click', function () {
         $("html").scrollTop(0);
@@ -83,6 +93,10 @@ $(document).ready(function () {
         }, 1000);
     });
 });
+
+//======================
+//Navbar + Pagepiling.js
+//======================
 
 $(document).ready(function() {
     $('#pagepiling').pagepiling({
@@ -108,3 +122,13 @@ $(document).ready(function() {
   
   });
 
+  //====================
+  //Carousel Full Screen
+  //====================
+
+  $('.carousel').carousel({
+    interval: 1000
+  })
+
+
+  
