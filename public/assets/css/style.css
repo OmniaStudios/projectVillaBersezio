@@ -310,6 +310,21 @@ iframe{
   color: #fff;
 }
 .fa-map-marker-alt, .fa-phone, .fa-envelope-open{
-  padding-top: 15px;
-  color: #777;
+  padding-top: 15px !important;
+  color: #777 !important;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-map-marker-alt:hover{
+  color: rgb(184, 32, 32) !important;
+} 
+.fa-phone:hover{
+  color: #285AEB !important;
+}
+.fa-envelope-open:hover{
+  color: #fff !important;
+}
+p{
+  padding-top: 10px;
 }
