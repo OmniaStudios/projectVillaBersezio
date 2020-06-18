@@ -305,3 +305,11 @@ iframe{
   padding: 8vh 8vh 8vh 8vh;
   border-radius: 15px;
 }
+.title-contact{
+  font-family: 'Abril Fatface', cursive;
+  color: #fff;
+}
+.fa-map-marker-alt, .fa-phone, .fa-envelope-open{
+  padding-top: 15px;
+  color: #777;
+}
