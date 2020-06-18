@@ -103,7 +103,7 @@ $(document).ready(function() {
       menu: '#myMenu',
         scrollingSpeed: 300,
       anchors: ['home', 'about', 'post', 'gallery', 'position', 'contact'],
-      sectionsColor: ['green', 'blue', '#2C3E50', '#39C', 'black', 'green'],
+      sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000'],
       navigation: {
         'position': 'right',
         'tooltips': ['Home', 'Chi Siamo', 'Nuovi Post', 'Galleria', 'Dove Siamo', 'Contatti']

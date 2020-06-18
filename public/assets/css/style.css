@@ -127,6 +127,14 @@ nav a{
 {
   background-color: black !important;
   color:white;
+  text-align: center;
+}
+
+.card-post
+{
+  background-color: black !important; 
+  color: white !important;
+  border: 1px solid white !important;
 }
 
 #section2-title
