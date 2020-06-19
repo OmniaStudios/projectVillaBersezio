@@ -26,33 +26,46 @@
       <br><br>
       <div class="container">
         <div class="row" align='center'>
-          <div class="col">
-            <div class="card card-post" style="width: 18rem; background-color: black;">
-              <div class="card-body">
-                <h5 class="card-title">Titolo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card card-post" style="width: 18rem; background-color: black;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
+          <div class="col" style=" padding-bottom: 20px;">
             <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-              <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,waters" alt="Card image cap">
-              <h6 class="card-subtitle mb-2 text-blue" style="padding-top: 15px; color: rgb(0, 140, 255);">#nature #water</h6>
+              <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+              <i class="fas fa-clock"></i>
+              <h6 id="text-clock">12:12/13:13</h6>
+              <i class="fas fa-calendar"></i>
+              <h6 id="text-calendar">21/12/2012</h6>
               <div class="card-body">
-                <p class="card-text" style="padding-top: -20px;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde
+                  dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
               </div>
+              <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
+            </div>
+          </div>
+          <div class="col" style=" padding-bottom: 20px;">
+            <div class="card" style="width: 18rem; background-color: #000; border: 1px solid #444;">
+              <img class="card-img-top" src="https://source.unsplash.com/1600x900/?cars" alt="Card image cap">
+              <i class="fas fa-clock"></i>
+              <h6 id="text-clock">12:12/13:13</h6>
+              <i class="fas fa-calendar"></i>
+              <h6 id="text-calendar">21/12/2012</h6>
+              <div class="card-body">
+                <p class="card-text" style="padding-top: -20px;">Lorem ipsum dolor sit, amet consectetur adipisicing
+                  elit. Dicta aliquam unde dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+              </div>
+              <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
+            </div>
+          </div>
+          <div class="col" style=" padding-bottom: 20px;">
+            <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
+              <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
+              <i class="fas fa-clock"></i>
+              <h6 id="text-clock">12:12/13:13</h6>
+              <i class="fas fa-calendar"></i>
+              <h6 id="text-calendar">21/12/2012</h6>
+              <div class="card-body">
+                <p class="card-text" style="padding-top: -20px;">Lorem ipsum dolor sit, amet consectetur adipisicing
+                  elit. Dicta aliquam unde dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+              </div>
+              <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
             </div>
           </div>
         </div>
@@ -87,13 +100,15 @@
       </div>
     </div>
     <div class="section" id="position">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4031021518476!2d7.503200351332539!3d44.43384130951536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd6b54788667a9%3A0x7947cc5e5514b019!2sVilla%20Bersezio!5e1!3m2!1sit!2sit!4v1592496383359!5m2!1sit!2sit"  frameborder="0" style="border:0;" allowfullscreen="ture" aria-hidden="false" tabindex="0"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4031021518476!2d7.503200351332539!3d44.43384130951536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd6b54788667a9%3A0x7947cc5e5514b019!2sVilla%20Bersezio!5e1!3m2!1sit!2sit!4v1592496383359!5m2!1sit!2sit"
+        frameborder="0" style="border:0;" allowfullscreen="ture" aria-hidden="false" tabindex="0"></iframe>
     </div>
     <div class="section" id="contact">
       <h2 class="title-contact" align="center">CONTATTI</h2>
       <div class="container-fluid">
         <div class="container-fluid" align="center">
-          <i class="fas fa-map-marker-alt"></i>
+          <a href="#position" class="fas fa-map-marker-alt"></a>
           <p>Via Rocca 3, Passatore (CN), Italia</p>
           <a href="tel:+390171697961" class="fa fa-phone"></a>
           <p>(+39) 349 279 24 93</p>
@@ -126,12 +141,18 @@
   <div class="navbar-right">
     <nav>
       <ul id="myMenu">
-        <li data-menuanchor="home" class="active"><a data-toggle="tooltip" data-placement="left" data-html="true" title="<b>Home</b>"  class="fas fa-home" href="#home"></a></li><br>
-        <li data-menuanchor="about"><a data-toggle="tooltip" data-placement="left" title="Chi Siamo" class="far fa-user" href="#about"></a></li><br>
-        <li data-menuanchor="post"><a data-toggle="tooltip" data-placement="left" title="Nuovi Post" class="fas fa-newspaper" href="#post"></a></li><br>
-        <li data-menuanchor="gallery"><a data-toggle="tooltip" data-placement="left" title="Galleria" class="fas fa-images" href="#gallery"></a></li><br>
-        <li data-menuanchor="position"><a data-toggle="tooltip" data-placement="left" title="Dove Siamo" class="far fa-map" href="#position"></a></li><br>
-        <li data-menuanchor="contact"><a data-toggle="tooltip" data-placement="left" title="Contatti" class="fas fa-mobile-alt" href="#contact"></a></li><br>
+        <li data-menuanchor="home" class="active"><a data-toggle="tooltip" data-placement="left" data-html="true"
+            title="<b>Home</b>" class="fas fa-home" href="#home"></a></li><br>
+        <li data-menuanchor="about"><a data-toggle="tooltip" data-placement="left" title="Chi Siamo" class="far fa-user"
+            href="#about"></a></li><br>
+        <li data-menuanchor="post"><a data-toggle="tooltip" data-placement="left" title="Nuovi Post"
+            class="fas fa-newspaper" href="#post"></a></li><br>
+        <li data-menuanchor="gallery"><a data-toggle="tooltip" data-placement="left" title="Galleria"
+            class="fas fa-images" href="#gallery"></a></li><br>
+        <li data-menuanchor="position"><a data-toggle="tooltip" data-placement="left" title="Dove Siamo"
+            class="far fa-map" href="#position"></a></li><br>
+        <li data-menuanchor="contact"><a data-toggle="tooltip" data-placement="left" title="Contatti"
+            class="fas fa-mobile-alt" href="#contact"></a></li><br>
       </ul>
     </nav>
   </div>

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 body
 {
@@ -325,6 +325,47 @@ iframe{
 .fa-envelope-open:hover{
   color: #fff !important;
 }
-p{
-  padding-top: 10px;
+
+#text-clock{
+  position: relative;
+  left: -60px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 80%;
+  color: #777;
+}
+#text-calendar{
+  position: relative;
+  top: -39px;
+  left: 60px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 80%;
+  color: #777;
+}
+.fa-clock{
+  position: relative;
+  left: -112px;
+  top: 15px;
+  color: rgb(107, 107, 107);
+}
+.fa-calendar{
+  position: relative;
+  top: -23px;
+  left: 10px;
+  color: rgb(107, 107, 107);
+}
+.card-text{
+  position: relative;
+  top: -40px;
+}
+.card{
+  -webkit-box-shadow: 10px 10px 14px 0px rgba(255,255,255,1);
+  -moz-box-shadow: 10px 10px 14px 0px rgba(255,255,255,1);
+  box-shadow: 10px 10px 14px 0px rgba(255,255,255,1);
+}
+.text-subtitle{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60%;
+  position: relative;
+  left: -60px;
+  top: -20px;
 }
