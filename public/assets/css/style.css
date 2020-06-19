@@ -351,3 +351,12 @@ iframe{
   height: 80vh !important;
   object-fit: cover;
 }
+#text-on-photos{
+  font-family: 'Abril Fatface', cursive;
+  opacity: 0.8;
+  text-shadow: 6px 8px 8px #000;
+}
+p{
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 6px 8px 8px #000;
+}
