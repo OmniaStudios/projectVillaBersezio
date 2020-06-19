@@ -14,11 +14,7 @@
     {
     height:10rem !important;
     }
-    .p-about
-    {
-        width: 85% !important;
-    }
-}
+}   
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {

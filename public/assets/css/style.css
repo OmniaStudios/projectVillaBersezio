@@ -4,7 +4,7 @@
 
 body
 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .fa-long-arrow-alt-down{
@@ -144,7 +144,9 @@ body
     overflow: hidden !important;
     height: 8rem;
 }
-
+.card-body{
+  overflow: visible;
+}
 .zoom
 {
   transition: 0.5s;
@@ -154,57 +156,17 @@ body
 .zoom:hover
 {
   transform: scale(1.1);
-  
 }
-
-a.brand-logo{
-  background-image: url('//multiplier.in/public/logo/multiplier-logo.png');
-  height: 100%;
-  width: 150px;
-  background-size: 100% 100%;
-}
-
-.navbar-fixed nav{
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid #ccc;
-}
-
-
-.navbar-nav li a{
-  font-family: 'Lato';
-  font-size: 14px;
-  padding: 20px;
-}
-
-  /* padding: 25px !important; */
-
-ul.left.hide-on-med-and-down{
-  margin-left: 160px;
-}
-
-.mainLinks:first-child{
-  padding-right: 0;
-}
-
-.side-nav a.mainLinks{
-  padding: 5px;
-  height: auto;
-}
-
-button.center-block{
-  display: block;
-  width: 90%;
-  margin: 0   auto;
-}
-nav{
-  z-index: 1000;
-  position: absolute;
+ul{
+  padding-right: 40px;
+  float: right;
   cursor: pointer;
 }
 li{
   list-style: none;
 }
 a{
+  z-index: 1000;
   color: #fff !important;
 }
 .fa-home{
@@ -243,6 +205,7 @@ a{
 }
 .p-about{
   color: #777;
+  width: 80% !important;
 }
 
 .fa-instagram{
