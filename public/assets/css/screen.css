@@ -3,10 +3,7 @@
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .fa-long-arrow-alt-down{
-        visibility: hidden;
-    }
+@media (min-width: 576px) { 
     #section1-title{
         font-size: 35px;
     }
@@ -34,9 +31,5 @@
     {
         font-size: 60px !important;
     }
-    .navbar-right{
-        position: absolute;
-        left: 95%;
-      }
     
 }
