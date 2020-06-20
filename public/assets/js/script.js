@@ -1,3 +1,4 @@
+
 //=============
 // Scroll Arrow
 // ============
@@ -5,6 +6,8 @@
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 }
+
+
 
 $(document).ready(function () {
     $('.fa-long-arrow-alt-down').on('click', function () {

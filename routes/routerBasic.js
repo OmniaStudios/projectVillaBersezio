@@ -4,7 +4,8 @@ const controllerPosts = require('../controllers/controllerPosts');
 
 const router = express.Router();
 
-router.route('/').get(controllerBasic.get_home);
+router.route('/')
+    .get(controllerPosts.get);
 
 /*
 router.route('/get').get(controllerPosts.get);

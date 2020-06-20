@@ -3,6 +3,8 @@ const mongoose = require ('mongoose');
 var schema = new mongoose.Schema({
     Author: String,
     Title: String,
+    Content: String,
+    Uploaded: String,
     Imgs: Array,
     Comments: Array,
     Likes: String,

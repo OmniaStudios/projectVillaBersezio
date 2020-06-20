@@ -23,6 +23,7 @@ body
   text-shadow: 6px 8px 8px #000;
 }
 
+
 .fa-long-arrow-alt-down:hover{
   opacity: 1;
 }
@@ -307,7 +308,7 @@ iframe{
 }
 .card-text{
   position: relative;
-  top: -40px;
+  top: -20px;
 }
 
 .text-subtitle{

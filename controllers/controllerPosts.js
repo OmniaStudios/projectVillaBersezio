@@ -14,7 +14,10 @@ exports.get = (req, res) => {
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
       console.log(dataPost);  
-      res.render("index");
+      res.render('index',
+      {
+        Post: dataPost
+      } );
     }
   });
 };
@@ -25,6 +28,8 @@ exports.new = (req, res) =>{
   const newPost = {
     Author: req.body.author,
     Title: req.body.title,
+    Content: req.body.content,
+    Uploaded: req.body.uploaded,
     Imgs: req.body.imgs,
     Comments: req.body.comments,
     Likes: req.body.likes,
@@ -57,10 +62,12 @@ exports.edit = (req, res) => {
   const updated = {
     Author: req.body.author,
     Title: req.body.title,
+    Content: req.body.content,
+    Uploaded: req.body.uploaded,
     Imgs: req.body.imgs,
     Comments: req.body.comments,
     Likes: req.body.likes,
-    Dislikes: req.body.dislikes      
+    Dislikes: req.body.dislikes    
   }
 
   Post.findById(id, (err, data) => {
