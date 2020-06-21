@@ -98,9 +98,6 @@ body
 #section1-title
 {
   font-family: 'Abril Fatface', cursive;
-  transition-property: opacity;
-  transition-duration: .3s;
-  transition-timing-function: linear;
   position: absolute;
   margin-top: 30vh;
   padding-left: 10px;
@@ -221,12 +218,7 @@ a{
   transition-duration: .1s;
 }
 .fa-instagram:hover{
-  /* color: #e95950; */
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  -webkit-background-clip: text;
-  /* Also define standard property for compatibility */
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e95950;
 }
 
  .fa-twitter{
