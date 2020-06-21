@@ -1,2 +1,2 @@
 # VillaBersezio
-Small villa in passatore, Cuneo.
+Small villa in Passatore, Cuneo.
