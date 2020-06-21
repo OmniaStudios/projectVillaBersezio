@@ -51,7 +51,7 @@
               <% Post.forEach((Post, index) => { %>
               <% contaPost++; %> 
                 <%if(contaPost  == 4){%>
-                  <%contaPost = 0%>
+                  <%contaPost = 1%>
 
                 </div>
               </div>
@@ -64,15 +64,17 @@
                         alt="Card image cap">
                       <i class="fas fa-clock"></i>
                       <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                     <!----> <i class="fas fa-calendar"></i>
-                     <!-- <h6 id="text-calendar">21/12/2012</h6>-->
+                      <%if(Post.Date != null){%>
+                    <i class="fas fa-calendar"></i>
+                     <h6 id="text-calendar"><%=Post.Date%></h6>
+                     <%}%>
                       <div class="card-body">
                         <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
                       </div>
                       <h6 class="text-subtitle"><%=Post.Author%></h6>
                     </div>
                    </div> 
-              <%console.log("=4")%>
+                   <%console.log("NUOVO CAZZILLO")%>
 
 
 
@@ -84,105 +86,22 @@
                       alt="Card image cap">
                     <i class="fas fa-clock"></i>
                     <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                    <i class="fas fa-calendar"></i>
-                   <!-- <h6 id="text-calendar">21/12/2012</h6>-->
+                    <%if(Post.Date != null){%>
+                      <i class="fas fa-calendar"></i>
+                       <h6 id="text-calendar"><%=Post.Date%></h6>
+                       <%}%>
                     <div class="card-body">
                       <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
                     </div>
                     <h6 class="text-subtitle"><%=Post.Author%></h6>
                   </div>
                 </div>
-                <%console.log("!=4")%>
+                <%console.log("VECCHIO CAZZILLO")%>
                 <%}%>
                 <%})%>
-              
-
-
-<!---->                
-             <!--    <div class="col">
-                  <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                    <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city"
-                      alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                      <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde
-                        dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                    <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?cars"
-                      alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                      <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde
-                        dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
-                  </div>
-                </div>
-              </div> -->
 
             </div>
             </div>
-            <!-- <div class="carousel-item">
-              <div class="row" align='center'>
-                <div class="col">
-                  <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                    <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?nature"
-                      alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                      <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde
-                        dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                    <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?virus"
-                      alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                      <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde
-                        dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                    <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?mountain"
-                      alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                      <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam unde
-                        dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <h6 class="text-subtitle">Caricato 15:30, Oggi</h6>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
           </div>
           
 
@@ -264,14 +183,20 @@
       </div>
       <footer class="page-footer black fixed-bottom">
         <div class="container my-contaier py-0">
+
+          <div class="text-left">
+            <a href="/#home"><i class="ParcoVillaLogo"></i></a>
+
           <div class="text-center">
-            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://instagram.com" target="_blank"npm i docsify-cli -g><i class="fab fa-instagram"></i></a>
           </div>
           <div class="text-center">
-            <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
           </div>
           <div class="text-center">
-            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+
+
           </div>
         </div>
       </footer>
