@@ -5,6 +5,7 @@ var schema = new mongoose.Schema({
     Title: String,
     Content: String,
     Uploaded: String,
+    Date: String,
     Imgs: Array,
     Comments: Array,
     Likes: String,
