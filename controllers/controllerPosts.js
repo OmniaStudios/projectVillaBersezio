@@ -14,10 +14,33 @@ exports.get = (req, res) => {
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
       console.log(dataPost);  
+        /*Funzione generica*/
+    }
+  });
+};
+
+/* get page posts */
+exports.getPostCarousel = (req, res) => {
+  /* */
+  Post.find((err, dataPost) => {
+    if (err) {
+      /* */
+      res.status(404).render('404');
+    } else {
+      /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
+      console.log(dataPost);  
+
+     if(req.originalUrl == '/eng'){
+      res.render('indexEnglish',
+      {
+        Post: dataPost
+      } );
+    }else{
       res.render('index',
       {
         Post: dataPost
       } );
+    }
     }
   });
 };

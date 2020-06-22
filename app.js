@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const routerBasic = require('./routes/routerBasic');
+const routerEnglish = require('./routes/RouterEnglish');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -36,7 +37,10 @@ app.use(
 /* Impostazione del motore di rendering - Non è quindi necessario specificare l'estensione dei file nel 'res.render('nomeFile)' */
 app.set('view engine', 'ejs');
 
+
 app.use('/', routerBasic);
+app.use('/eng', routerEnglish);
+
 
 
 /* Esportazione modulo app per l'utilizzo in server.js */

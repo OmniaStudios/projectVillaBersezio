@@ -5,7 +5,7 @@ const controllerPosts = require('../controllers/controllerPosts');
 const router = express.Router();
 
 router.route('/')
-    .get(controllerPosts.get);
+    .get(controllerPosts.getPostCarousel);
 
 /*
 router.route('/get').get(controllerPosts.get);
