@@ -130,9 +130,18 @@ $(document).ready(function() {
   //====================
 
   $('.carousel').carousel({
-    interval: 4000
+    interval: null
   })
+
+  //=========
+  //Tooltips
+  //=========
 
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
   });
+
+
+  $('#exampleModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
