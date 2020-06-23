@@ -206,44 +206,6 @@ a{
   width: 80% !important;
 }
 
-.fa-instagram{
-  position: relative;
-  top:  29px;
-  left: -35px;
-  font-size: 25px;
-  color: #444;
-  cursor: pointer;
-  transition-timing-function: linear;
-  transition-property: background-color;
-  transition-duration: .1s;
-}
-.fa-instagram:hover{
-  color: #e95950;
-}
-
- .fa-twitter{
-  position: relative;
-  top:  -29px;
-  left: 35px;
-  font-size: 25px;
-  color: #444;
-  transition-timing-function: linear;
-  transition-property: color;
-  transition-duration: .1s;
-}
-.fa-twitter:hover{
-  color: #1DA1F2;
-}
-.fa-facebook{
-  color: #444;
-  font-size: 25px;
-  transition-timing-function: linear;
-  transition-property: color;
-  transition-duration: .1s;
-}
-.fa-facebook:hover{
-  color: #4267B2;
-}
 iframe{
   width: 100%;
   height: 100%;
@@ -438,4 +400,47 @@ p{
 
 .icon-OS_Logo:before {
   content: "\e900";
+}
+.fa-facebook{
+  padding-right: 10px;
+  color: #444;
+  font-size: 25px;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-facebook:hover{
+  color: #4267B2;
+}
+.fa-twitter{
+  padding-right: 10px;
+  font-size: 25px;
+  color: #444;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-twitter:hover{
+  color: #1DA1F2;
+}
+
+.fa-instagram{
+  font-size: 25px;  
+  color: #444;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-property: background-color;
+  transition-duration: .1s;
+}
+.fa-instagram:hover{
+  color: #e95950;
+}
+.icon-OS_Logo{
+  padding-left: 10px;
+  font-size: 22px;
+  color: #444;
+  
+}
+#text-footer{
+  font-size: 75%;
 }
