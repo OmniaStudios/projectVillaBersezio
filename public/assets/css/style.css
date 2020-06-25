@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body
+{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fa-long-arrow-alt-down{
+  position: absolute;
+  top: 90vh;
+  left: 50%;
+  cursor: pointer;
+  font-size: 200%;
+  text-shadow: 0px 8px 8px #000;
+  color: #fff;
+  background-color: transparent;
+  opacity: 0.7;
+  transition-timing-function: linear;
+  transition-property: opacity;
+  transition-duration: .3s;
+  text-shadow: 6px 8px 8px #000;
+}
+
+
+.fa-long-arrow-alt-down:hover{
+  opacity: 1;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+  }
+}
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+  }
+}
+
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0);
+  }
+  40% {
+    -o-transform: translateY(-30px);
+  }
+  60% {
+    -o-transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  -moz-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
+}
+
+*, *:before, *:after{
+  transition: 0.35s ease;
+}
+
+#home
+{
+  background-image: url('../img/bg-1.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#section1-title
+{
+  font-family: 'Abril Fatface', cursive;
+  position: absolute;
+  margin-top: 30vh;
+  padding-left: 10px;
+  opacity: 0.8;
+  transition-timing-function: linear;
+  transition-duration: .3s;
+  transition-property: opacity;
+  color: white;
+  text-shadow: 6px 8px 8px #000;
+}
+#section1-title:hover{
+  opacity: 1;
+}
+
+#about
+{
+  color:white !important;
+  background-color: black !important;
+}
+
+#post
+{
+  background-color: black !important;
+  color:white;
+  text-align: center;
+}
+
+.card-post
+{
+  background-color: black !important; 
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+#section2-title
+{
+    top:0 !important;
+}
+
+.card
+{
+    overflow: hidden !important;
+    height: 8rem;
+}
+.card-body{
+  overflow: visible;
+}
+.zoom
+{
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.zoom:hover
+{
+  transform: scale(1.1);
+}
+ul{
+  padding-right: 40px;
+  float: right;
+  cursor: pointer;
+}
+li{
+  list-style: none;
+}
+a{
+  z-index: 1000;
+  color: #fff !important;
+}
+.fa-home{
+  position: absolute;
+  top: 25vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-user{
+  position: absolute;
+  top: 35vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-newspaper{
+  position: absolute;
+  top: 45vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-images{
+  position: absolute;
+  top: 55vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-map{
+  position: absolute;
+  top: 65vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.fa-mobile-alt{
+  position: absolute;
+  top: 75vh;
+  text-shadow: 6px 8px 8px #000;
+}
+.title-about{
+  font-family: 'Abril Fatface', cursive;
+  color: rgb(214, 214, 214);
+}
+.p-about{
+  color: #777;
+  width: 80% !important;
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  padding: 8vh 8vh 8vh 8vh;
+  border-radius: 15px;
+}
+.title-contact{
+  font-family: 'Abril Fatface', cursive;
+  color: #fff;
+}
+.fa-map-marker-alt, .fa-phone, .fa-envelope-open{
+  padding-top: 15px !important;
+  color: #777 !important;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-map-marker-alt:hover{
+  color: rgb(184, 32, 32) !important;
+} 
+.fa-phone:hover{
+  color: #285AEB !important;
+}
+.fa-envelope-open:hover{
+  color: #fff !important;
+}
+
+#text-clock{
+  position: relative;
+  left: -60px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 80%;
+  color: #777;
+}
+#text-calendar{
+  position: relative;
+  top: -39px;
+  left: 60px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 80%;
+  color: #777;
+}
+.fa-clock{
+  position: relative;
+  left: -112px;
+  top: 15px;
+  color: rgb(107, 107, 107);
+}
+.fa-calendar{
+  position: relative;
+  top: -23px;
+  left: 10px;
+  color: rgb(107, 107, 107);
+}
+.card-text{
+  position: relative;
+  top: -20px;
+}
+
+.text-subtitle{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60%;
+  position: relative;
+  left: -60px;
+  top: -20px;
+}
+.fa-arrow-circle-right{
+  font-size: 20px;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-arrow-circle-right:hover{
+  color: rgb(196, 196, 196);
+}
+.fa-arrow-circle-left{
+  font-size: 20px;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-arrow-circle-left:hover{
+  color: rgb(196, 196, 196);
+}
+.title-gallery{
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  color: rgb(214, 214, 214);
+}
+.title-post{
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  color: rgb(214, 214, 214);
+}
+
+.w-100{
+  width: 100vw !important;
+  height: 80vh !important;
+  object-fit: cover;
+}
+#text-on-photos{
+  font-family: 'Abril Fatface', cursive;
+  opacity: 0.8;
+  text-shadow: 6px 8px 8px #000;
+}
+p{
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 6px 8px 8px #000;
+}
+#btn-seeMore{
+  background-color: transparent;
+  color: rgb(60, 73, 192);
+  font-size: 75%;
+}
+.text-modal{
+  color: rgb(214, 214, 214);
+}
+#btn-close-modal{
+  color: #777 !important;
+  text-shadow: 0px 8px 8px #000;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .3s;
+}
+#btn-close-modal:hover{
+  color: #e61708 !important;
+}
+.modal-title{
+  font-family: 'Abril Fatface', cursive;
+  text-shadow: 0px 4px 8px #000;
+}
+.text-modal{
+  font-family: 'Montserrat', sans-serif ;
+}
+#modal-clock{
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  color: rgb(107, 107, 107);
+}
+#modal-calendar{
+  position: absolute;
+  top: -10px;
+  left: 120px;
+  color: rgb(107, 107, 107);
+}
+#text-clock-modal{
+  position: absolute;
+  top: -11px;
+  left: 40px;
+  color: rgb(107, 107, 107);
+}
+#text-calendar-modal{
+  position: absolute;
+  top: -11px;
+  left: 140px;
+  color: rgb(107, 107, 107);
+}
+#btn-mobile-seeMore{
+  position: absolute;
+  top: 80px;
+  color: rgb(60, 73, 192);
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../font/icomoon.eot?2m9nko');
+  src:  url('../font/icomoon.eot?2m9nko#iefix') format('embedded-opentype'),
+    url('../font/icomoon.ttf?2m9nko') format('truetype'),
+    url('../font/icomoon.woff?2m9nko') format('woff'),
+    url('../font/icomoon.svg?2m9nko#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-OS_Logo:before {
+  content: "\e900";
+}
+.fa-facebook{
+  padding-right: 10px;
+  color: #444;
+  font-size: 25px;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-facebook:hover{
+  color: #4267B2;
+}
+.fa-twitter{
+  padding-right: 10px;
+  font-size: 25px;
+  color: #444;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .1s;
+}
+.fa-twitter:hover{
+  color: #1DA1F2;
+}
+
+.fa-instagram{
+  font-size: 25px;  
+  color: #444;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-property: background-color;
+  transition-duration: .1s;
+}
+.fa-instagram:hover{
+  color: #e95950;
+}
+.icon-OS_Logo{
+  padding-left: 10px;
+  font-size: 22px;
+  color: #444;
+  
+}
+#text-footer{
+  font-size: 75%;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 0rem !important;
+  padding: .5rem 0;
+  padding-right: 5px !important;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: black !important;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+}
+.dropdown-toggle{
+  position: relative;
+  right: -75px;
+  top: 5px;
+  border-radius: 1000px !important;
+}
+.btn-secondary{
+  background-color: transparent !important;
+  transition-timing-function: ease-in-out;
+  transition-duration: .3s;
+  transition-property: background-color;
+}
+.dropdown-item{
+  padding-left: 17px !important;
+}
+.dropdown-item:hover{
+  background-color: transparent !important;
+}
+.btn-secondary:hover{
+  background-color: #777 !important;
+}
+.dropdown-toggle::after{
+  display: none !important;
+}
+.zoom{
+  transition: transform .2s; /* Animation */
+}
+.zoom:hover{
+  transform: scale(1.2);
+}
