@@ -13,7 +13,7 @@ exports.get = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);  
+      console.log(dataPost);
         /*Funzione generica*/
     }
   });
@@ -28,7 +28,7 @@ exports.getPostCarousel = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);  
+      console.log(dataPost);
 
      if(req.originalUrl == '/eng'){
       res.render('indexEnglish',
@@ -55,9 +55,6 @@ exports.new = (req, res) =>{
     Uploaded: req.body.uploaded,
     Date: req.body.date,
     Imgs: req.body.imgs,
-    Comments: req.body.comments,
-    Likes: req.body.likes,
-    Dislikes: req.body.dislikes
   };
 
   Post.create(newPost, (err, data) =>{
@@ -90,9 +87,6 @@ exports.edit = (req, res) => {
     Uploaded: req.body.uploaded,
     Date: req.body.date,
     Imgs: req.body.imgs,
-    Comments: req.body.comments,
-    Likes: req.body.likes,
-    Dislikes: req.body.dislikes   
   }
 
   Post.findById(id, (err, data) => {
@@ -101,7 +95,7 @@ exports.edit = (req, res) => {
         status: 'failed',
         message: 'Post does not exist | Invalid'
      })
-    } 
+    }
     data.replaceOne(updated, err => {
       if (err) {
         res.status(500).json({

@@ -6,10 +6,7 @@ var schema = new mongoose.Schema({
     Content: String,
     Uploaded: String,
     Date: String,
-    Imgs: Array,
-    Comments: Array,
-    Likes: String,
-    Dislikes: String
+    Imgs: Array
 });
 
 var Post =  mongoose.model('Post', schema);

@@ -7,6 +7,12 @@ const router = express.Router();
 router.route('/')
     .get(controllerPosts.getPostCarousel);
 
+router.route('/admin')
+    .get(controllerBasic.get_AdminLogin)
+    .post(controllerBasic.post_AdminLogin);
+
+
+
 /*
 router.route('/get').get(controllerPosts.get);
 
@@ -23,5 +29,5 @@ router
 router
     .route('/:id')
     .delete(controllerPosts.remove)
-*/  
+*/
 module.exports = router;

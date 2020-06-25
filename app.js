@@ -4,6 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 /* Definizione app */
 const app = express();
@@ -13,11 +14,16 @@ const routerEnglish = require('./routes/RouterEnglish');
 
 app.use(express.static(__dirname + '/public'));
 
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+
 app.use(express.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('_method'));
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
 
 /* Impostazione del motore di rendering - Non è quindi necessario specificare l'estensione dei file nel 'res.render('nomeFile)' */
 app.set('view engine', 'ejs');
