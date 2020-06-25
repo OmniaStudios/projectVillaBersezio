@@ -69,6 +69,7 @@
                     <%}%>
                       <div class="card-body">
                         <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
+
                     <!-- Button trigger modal -->
                     <button id="btn-seeMore" type="button" class="btn pull-left" data-toggle="modal"
                       data-target="#exampleModalLong">
@@ -225,7 +226,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="background-color: #262626;">
         <div class="modal-header" style="border-bottom: 1px solid #262626;">
-          <h5 class="modal-title text-white" id="exampleModalLongTitle">How to pronounce X Æ A-Xii</h5>
+          <h5 class="modal-title text-white" id="exampleModalLongTitle"><%=Post.Title%></h5>
           <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -233,16 +234,14 @@
         <div class="modal-body">
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
           <i class="fas fa-clock" id="modal-clock"></i>
-          <h6 id="text-clock-modal">21:02</h6>
+          <h6 id="text-clock-modal"><%=Post.Date%></h6>
           <i class="fas fa-calendar" id="modal-calendar"></i>
-          <h6 id="text-calendar-modal">21/06/2020</h6>
+          <h6 id="text-calendar-modal"><%=Post.Uploaded%></h6>
           <br><br>
-          <h8 class="text-modal" align="justify">I'm actually a normal fucking baby so pls fuck off thanks. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Autem, eligendi deserunt at laboriosam expedita provident
-            excepturi dolore rem odio maiores?</h8>
+          <h8 class="text-modal" align="justify"><%=Post.Content%>?</h8>
         </div>
         <div class="modal-footer" style="border-top: 1px solid #262626;">
-          <h6 class="text-subtitle" style="color: white;">X Æ A-Xii</h6>
+          <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
         </div>
       </div>
     </div>
