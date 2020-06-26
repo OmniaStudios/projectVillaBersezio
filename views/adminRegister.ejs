@@ -1,0 +1,26 @@
+<%- include('./partials/header')%>
+<body>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+      <a href="https://gov.ro/ro"><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
+
+
+    <!-- Login Form -->
+    <form class ="form" method ="POST" action ="/admin/register">
+      <input type="mail" id="username" class="fadeIn second" name="login" placeholder="user">
+      <input type="mail" id="fName" class="fadeIn second" name="login" placeholder="nome">
+      <input type="mail" id="lName" class="fadeIn second" name="login" placeholder="cognome">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="password" id="password2" class="fadeIn third" name="login" placeholder="confpassword">
+      <input type="submit" class="fadeIn fourth" value="Register">
+    </form>
+
+  </div>
+</div>
+</body>
+<%- include('./partials/footer')%>
