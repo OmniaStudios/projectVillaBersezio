@@ -11,6 +11,7 @@ const app = express();
 
 const routerBasic = require('./routes/routerBasic');
 const routerEnglish = require('./routes/routerEnglish');
+const routerAdmin = require('./routes/routerAdmin');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -23,7 +24,7 @@ app.use(express.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('_method'));
 app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+//app.use(express.urlencoded()); // to support URL-encoded bodies
 
 /* Impostazione del motore di rendering - Non è quindi necessario specificare l'estensione dei file nel 'res.render('nomeFile)' */
 app.set('view engine', 'ejs');
@@ -46,6 +47,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', routerBasic);
 app.use('/eng', routerEnglish);
+app.use('/admin', routerAdmin);
 
 
 

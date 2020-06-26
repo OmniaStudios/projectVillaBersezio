@@ -21,14 +21,18 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
     "express.js": "^1.0.0",
     "fullpage": "^1.5.1",
     "mdbootstrap": "^4.19.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.15",
     "nodemon": "^2.0.4",
+    "passport-local": "^1.0.0",
     "save": "^2.4.0"
   }
 }
