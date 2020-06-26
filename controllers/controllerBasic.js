@@ -14,7 +14,7 @@ exports.post_AdminLogin = (req, res) =>{
   //console.log(req.body.password);
   //  bcrypt.compare(req.body.login)
   if(req.body.login[0] == 'admin' && req.body.login[1] == 'admin'){
-    console.log('loggato');
+    res.render('dashboard');
   }else{
     console.log('errato');
   }
