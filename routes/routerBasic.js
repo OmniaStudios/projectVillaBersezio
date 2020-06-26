@@ -7,9 +7,7 @@ const router = express.Router();
 router.route('/')
     .get(controllerPosts.getPostCarousel);
 
-router.route('/admin')
-    .get(controllerBasic.get_AdminLogin)
-    .post(controllerBasic.post_AdminLogin);
+
 
 
 
