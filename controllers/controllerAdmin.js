@@ -9,11 +9,15 @@ exports.get_AdminLogin = (req, res) => {
 };
 
 exports.post_AdminLogin = (req, res, next) => {
- passport.authenticate('local', {
-    successRedirect: '/admin/dashboard',
-    failureRedirect: '/admin/login'
- })
- (req, res, next);
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    console.log(info);
+    if (!user) { return res.redirect('/admin/login'); }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      return res.redirect('/admin/dashboard');
+    });
+  })(req, res, next);
 };
 
 exports.get_AdminRegister = (req, res) => {
@@ -113,4 +117,9 @@ exports.post_AdminRegister = (req, res) => {
 
 exports.get_Dashboard = (req, res) => {
     res.render('dashboard');
+}
+
+exports.get_Logout = (req, res) =>{
+  req.logout();
+  res.redirect('/admin/login');
 }

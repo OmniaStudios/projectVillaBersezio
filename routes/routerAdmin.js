@@ -17,6 +17,9 @@ router.route('/register')
 router.route('/dashboard')
     .get(controllerAdmin.get_Dashboard);
 
+router.route('/logout')
+    .get(controllerAdmin.get_Logout);
+
 
 
 

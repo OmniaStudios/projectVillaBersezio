@@ -1,46 +1,40 @@
 const LocalStrategy = require('passport-local').Strategy;
-const mongoose = require('mongoose');
-const bcrypt = require ('bcryptjs');
+const bcrypt = require('bcryptjs');
 
-// Admin model
+// Load User model
 const Admin = require('../models/Admin');
 
-module.exports = function(passport){
-    passport.use(
-        new LocalStrategy({ usernameField: 'userName'}, (userName, password, done) => {
-            //Controllo admin
-            Admin.findOne({userName: userName})
-            .then(admin =>{
-                if(!admin){
-                    console.log('utente inesistente');
-                    return done(null, false);
-                }
-            //controllo pwd
-            bcrypt.compare(password, user.password, (err, isMatch) =>{
-                if(err) throw err;
-
-                if(isMatch){
-                    console.log('pwd matchate');
-                    return done(null, user);
-                }else{
-                    console.log('pwd non matchate');
-                    return done(null, false);
-                }
-            });
-
-            })
-            .catch(err => console.log(err));
-        })
-    )
-
-    passport.serializeUser(function(admin, done){
-        done(null, user.id);
-    });
-
-    passport.deserializeUser(function(id, done){
-        Admin.findById(id, function(err, admin){
-            done(err, admin);
-        })
+module.exports = function(passport) {
+  passport.use(
+    new LocalStrategy({ usernameField: 'userName' }, (userName, password, done) => {
+      // Match user
+      console.log('gotcha');
+      Admin.findOne({
+        userName: userName
+      }).then(user => {
+        if (!user) {
+          return done(null, false, { message: 'That email is not registered' });
+        }
+        // Match password
+        bcrypt.compare(password, user.password, (err, isMatch) => {
+          if (err) throw err;
+          if (isMatch) {
+            return done(null, user);
+          } else {
+            return done(null, false, { message: 'Password incorrect' });
+          }
+        });
+      });
     })
+  );
 
-}
+  passport.serializeUser(function(user, done) {
+    done(null, user.id);
+  });
+
+  passport.deserializeUser(function(id, done) {
+    Admin.findById(id, function(err, user) {
+      done(err, user);
+    });
+  });
+};
