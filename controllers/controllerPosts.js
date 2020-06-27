@@ -36,11 +36,17 @@ exports.getPostCarousel = (req, res) => {
         Post: dataPost
       } );
     }else{
+      if(req.originalUrl == '/fr'){
+        res.render('indexFrench',
+        {
+          Post: dataPost
+        });
+      }else{
       res.render('index',
       {
         Post: dataPost
       } );
-    }
+    }}
     }
   });
 };
