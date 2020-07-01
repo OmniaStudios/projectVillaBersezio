@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+    overflow-x: hidden;
+}
+.navbar-brand{
+    font-family: 'Abril Fatface', cursive;
+    opacity: 0.8;
+}
+
+.fa-home{
+    transition: all 0.1s linear;
+}
+.fa-home:hover{
+    color: green;
+}
+
+.nav-link{
+    padding-right: 20px;
+    transition: all transform .1s linear;
+}
+.nav-link:hover{
+    transform: scale(1.05);
+    border-radius: 100px;
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    color: rgb(30, 189, 30) !important;
+}
+#admin-cockpit{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+#exampleInputEmail1{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#exampleInputEmail1:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#default-picker{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#default-picker:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#example{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#example:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#exampleFormControlTextarea1{
+    transition: all linear transform 1s;
+}
+#exampleFormControlTextarea1:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.btn-save{
+    border-radius: 100px !important;
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: transform linear .3s;
+}
+.btn-save:hover{
+    transform: scale(1.08);
+}
+.img-drop{
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(204, 204, 204);
+    border-radius: 30px;
+    border-color: 1px solid #777;
+    transition: all linear transform 1s;
+}
+.img-drop:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+#img-plus{
+    border: 2px dashed #777;
+    border-radius: 100px;
+    position: relative;
+    top: 18vh;
+    left: 48%;
+}

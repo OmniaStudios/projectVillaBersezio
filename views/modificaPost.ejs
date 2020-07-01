@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parco Villa Bersezio | Administration Cockpit</title>
+    <link rel="icon" href="Logo_VB_D.png">
+    <link rel="stylesheet" href="modificaPost.css">
+    <link rel="stylesheet" href="screen.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body onload="startTime()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Villa Bersezio&nbsp;</a>
+        <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link first" href="index.html"><i class="fas fa-home"></i> Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item second">
+                    <a class="nav-link" href="creaPost.html"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                </li>
+                <li class="nav-item third">
+                    <a class="nav-link" href="modificaPost.html"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+                </li>
+                <li class="nav-item fourth">
+                    <a class="nav-link" href="eliminaPost.html"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+                </li>
+                <li class="nav-item fifth">
+                    <a class="nav-link" href="tuttiPost.html"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row" align="center">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" align="center">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
+                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: #fff;">
+                <div class="modal-header" style="border-bottom: 1px solid #fff;">
+                    <div class="form-group">
+                        <label for=" exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;"></label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Inserire titolo Evento" value="How to pronounce X Æ A-Xii"
+                            style="font-family: 'Abril Fatface', cursive;">
+                    </div>
+                    <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="img-drop-modify" class="card-img-top" src="https://source.unsplash.com/1600x900/?city"
+                        alt="Card image cap">
+                    <div class="md-form md-outline">
+                        <label for="default-picker" style="font-family: 'Abril Fatface', cursive;"></label>
+                        <input type="time" id="default-picker" class="form-control" placeholder="Select time"
+                            value="21:02">
+                    </div>
+                    <div class="md-form md-outline input-with-post-icon datepicker">
+                        <label for="default-picker"
+                            style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
+                        <input placeholder="Select date" type="date" id="example" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"
+                            style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">I'm actually a normal fucking baby so pls fuck off thanks. Lorem ipsum
+                            dolor sit amet consectetur adipisicing elit. Autem, eligendi deserunt at laboriosam expedita provident
+                            excepturi dolore rem odio maiores?</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="button" class="btn"
+                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                        Salva
+                    </button>
+                    <button style="background-color: rgb(255, 41, 41); color: #fff;" type="button" class="btn"
+                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                        Annulla
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="padding-top: 30px;">
+        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;"><b>©
+                All
+                rights Reserved to the OmniaStudios</b></h6>
+    </footer>
+
+</body>
+<script src="script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d9ae1aa779.js" crossorigin="anonymous"></script>
+<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-alert.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</html>

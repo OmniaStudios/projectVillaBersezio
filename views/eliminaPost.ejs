@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parco Villa Bersezio | Administration Cockpit</title>
+    <link rel="icon" href="Logo_VB_D.png">
+    <link rel="stylesheet" href="eliminaPost.css">
+    <link rel="stylesheet" href="screen.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body onload="startTime()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Villa Bersezio&nbsp;</a>
+        <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link first" href="index.html"><i class="fas fa-home"></i> Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item second">
+                    <a class="nav-link" href="creaPost.html"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                </li>
+                <li class="nav-item third">
+                    <a class="nav-link" href="modificaPost.html"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+                </li>
+                <li class="nav-item fourth">
+                    <a class="nav-link" href="eliminaPost.html"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+                </li>
+                <li class="nav-item fifth">
+                    <a class="nav-link" href="tuttiPost.html"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
+        <div class="row" align='center'>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock">12:12/13:13</h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar">21/12/2012</h6>
+                    <div class="card-body">
+                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
+                            unde
+                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                    </div>
+                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">
+                        Elimina
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal" id="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 style="opacity: 0.8; font-family: 'Abril Fatface', cursive !important; font-size: 150%; text-shadow: 0px 0px 12px #777;"
+                        class="modal-title">Elimina Post</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Cliccando sul tasto <b>Elimina</b> andrà ad eliminare irreversibilmente il post selezionato.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="delete-btn" class="btn">Elimina</button>
+                    <button type="button" id="discard-btn" class="btn" data-dismiss="modal">Annulla</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="padding-top: 30px;">
+        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+            <b>© All
+                rights Reserved to the OmniaStudios</b></h6>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/d9ae1aa779.js" crossorigin="anonymous"></script>
+
+</html>

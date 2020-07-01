@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+    overflow-x: hidden;
+}
+.navbar-brand{
+    font-family: 'Abril Fatface', cursive;
+    opacity: 0.8;
+}
+h1{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 300;
+}
+
+.fa-home{
+    transition: all 0.1s linear;
+}
+.fa-home:hover{
+    color: green;
+}
+
+.nav-link{
+    padding-right: 20px;
+    transition: all transform .1s linear;
+}
+.nav-link:hover{
+    transform: scale(1.05);
+    border-radius: 100px;
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    color: rgb(30, 189, 30) !important;
+}
+#admin-cockpit{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.col{
+    padding-top: 30px;
+}
+.card{
+    transition: transform 1s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+#btn-modify{
+    color: blue;
+    border-radius: 100px !important;
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: transform linear .3s;
+}
+#btn-modify:hover{
+    transform: scale(1.08);
+}
+#btn-seeMore{
+    background-color: transparent;
+    color: rgb(60, 73, 192);
+    font-size: 75%;
+  }
+  .text-modal{
+    color: #000;
+  }
+  #btn-close-modal{
+    color: #777 !important;
+    text-shadow: 0px 8px 8px #000;
+    transition-timing-function: linear;
+    transition-property: color;
+    transition-duration: .3s;
+  }
+  #btn-close-modal:hover{
+    color: #e61708 !important;
+  }
+
+.form-group{
+    width: 100% !important;
+}
+#img-drop-modify{
+    transition: all .2s linear;
+}
+#img-drop-modify:hover {
+    -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+#exampleInputEmail1{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#exampleInputEmail1:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#default-picker{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#default-picker:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#example{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#example:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#exampleFormControlTextarea1{
+    transition: all linear transform 1s;
+}
+#exampleFormControlTextarea1:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
