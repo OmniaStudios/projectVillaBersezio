@@ -95,3 +95,32 @@ h1{
     color: rgb(40, 240, 40);
     text-decoration: none;
 }
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 0rem !important;
+    padding: .5rem 0;
+    padding-right: 5px !important;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    text-align: left;
+    list-style: none;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+  }
+  .dropdown-item{
+    color: rgb(228, 91, 91);
+    transition: all .2s linear;
+  }
+  .dropdown-item:hover{
+    color: rgb(255, 0, 0);
+  }
+  .dropdown-toggle::after{
+      color: #777;
+  }
