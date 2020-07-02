@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(/assets/img/bg-login.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh !important;
+}
+.container, .row {
+    height: 100%;
+    min-height: 100%;
+  }
+  .card{
+      border-radius: 20px;
+  }
+  #username{
+      border-radius: 100px;
+      border: 0.5px solid rgb(177, 177, 177);
+      transition: all .2s linear;
+  }
+  #userName:hover{
+      transform: scale(1.05);
+      box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+      7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+  #password{
+      border-radius: 100px;
+      border: 0.5px solid rgb(177, 177, 177);
+      transition: all .2s linear;
+  }
+  #password:hover{
+    transform: scale(1.05);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#lName{
+    border-radius: 100px;
+    border: 0.5px solid rgb(177, 177, 177);
+    transition: all .2s linear;
+}
+#lName:hover{
+  transform: scale(1.05);
+  box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+  7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#fName{
+    border-radius: 100px;
+    border: 0.5px solid rgb(177, 177, 177);
+    transition: all .2s linear;
+}
+#fName:hover{
+  transform: scale(1.05);
+  box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+  7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#password2{
+    border-radius: 100px;
+    border: 0.5px solid rgb(177, 177, 177);
+    transition: all .2s linear;
+}
+#password2:hover{
+  transform: scale(1.05);
+  box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+  7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.btn{
+    border-radius: 100px;
+    color: rgb(38, 38, 245);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: all .1s linear;
+}
+.btn:hover{
+    transform: scale(1.05);
+}
+.card{
+    box-shadow: 0px 0px 8px #000;
+}

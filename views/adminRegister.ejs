@@ -1,26 +1,40 @@
 <%- include('./partials/header')%>
+<link rel="stylesheet" href="/assets/css/styleRegister.css">
+
 <body>
 
-<!------ Include the above in your HEAD tag ---------->
 
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
-
-      <a href="https://gov.ro/ro"><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
-
-
-    <!-- Login Form -->
-    <form class ="form" method ="POST" action ="/admin/register">
-      <input type="mail" id="username" class="fadeIn second" name="login" placeholder="user">
-      <input type="mail" id="fName" class="fadeIn second" name="login" placeholder="nome">
-      <input type="mail" id="lName" class="fadeIn second" name="login" placeholder="cognome">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="password" id="password2" class="fadeIn third" name="login" placeholder="confpassword">
-      <input type="submit" class="fadeIn fourth" value="Register">
-    </form>
-
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="card" style="width: 18rem; height: 65vh !important;">
+            <div class="card-body" style="text-align: center;">
+              <h1 class="card-title"
+                style="opacity: 0.8; text-shadow: 0px 0px 3px; padding-bottom: 20px; text-align: center; font-family: 'Abril Fatface', cursive;">
+                REGISTRATI</h1>
+              <form class="form" method="POST" action="/admin/register">
+                <input style="text-align: center;" type="mail" id="username" class="fadeIn second" name="login"
+                  placeholder="Nome Utente"><br><br>
+                <input style="text-align: center;" type="mail" id="fName" class="fadeIn second" name="login"
+                  placeholder="Nome"><br><br>
+                <input style="text-align: center;" type="mail" id="lName" class="fadeIn second" name="login"
+                  placeholder="Cognome"><br><br>
+                <input style="text-align: center;" type="password" id="password" class="fadeIn third" name="login"
+                  placeholder="Password"><br><br>
+                <input style="text-align: center;" type="password" id="password2" class="fadeIn third" name="login"
+                  placeholder="Conferma Password"><br><br>
+                <input style="text-align: center;" type="submit" class="fadeIn fourth btn" value="REGISTRATI"><br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <footer class="fixed-bottom"
+    style="color: #fff; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 80%;">© All rights
+    reserved to the OmniaStudios</footer>
+
+
 </body>
 <%- include('./partials/footer')%>
