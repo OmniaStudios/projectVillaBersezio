@@ -70,3 +70,28 @@ h1{
 #rotation:hover{
     transform: rotate(360deg);
 }
+.site{
+    text-align: right;
+    width: 60px;
+    height: 40px;
+    background-color: #262626;
+    border-radius: 100px;
+    position: fixed;
+    top: 90vh;
+    left: -25px;
+    transition: all .1s linear;
+}
+.site:hover{
+    transform: scale(1.5);
+}
+.fa-globe-europe{
+    color: #fff;
+    font-size: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+.fa-globe-europe:hover{
+    color: rgb(40, 240, 40);
+    text-decoration: none;
+}
