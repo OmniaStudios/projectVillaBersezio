@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parco Villa Bersezio | Administration Cockpit</title>
-    <link rel="icon" href="Logo_VB_D.png">
-    <link rel="stylesheet" href="modificaPost.css">
-    <link rel="stylesheet" href="screen.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+<%- include('./partials/headerDashboard')%>
+<link rel="stylesheet" href="/assets/css/modificaPost.css">
 
 <body onload="startTime()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,20 +13,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link first" href="index.html"><i class="fas fa-home"></i> Home <span
+                    <a class="nav-link first" href="dashboard.ejs"><i class="fas fa-home"></i> Home <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item second">
-                    <a class="nav-link" href="creaPost.html"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                    <a class="nav-link" href="creaPost.ejs"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
                 </li>
                 <li class="nav-item third">
-                    <a class="nav-link" href="modificaPost.html"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+                    <a class="nav-link" href="modificaPost.ejs"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
                 </li>
                 <li class="nav-item fourth">
-                    <a class="nav-link" href="eliminaPost.html"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+                    <a class="nav-link" href="eliminaPost.ejs"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
                 </li>
                 <li class="nav-item fifth">
-                    <a class="nav-link" href="tuttiPost.html"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+                    <a class="nav-link" href="tuttiPost.ejs"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
                 </li>
 
             </ul>
@@ -235,19 +224,6 @@
     </footer>
 
 </body>
-<script src="script.js"></script>
+<script src="/assets/js/script.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/d9ae1aa779.js" crossorigin="anonymous"></script>
-<script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-alert.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-</html>
+<%- include('./partials/footerDashboard')%>

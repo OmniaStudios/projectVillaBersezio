@@ -1,23 +1,41 @@
 <%- include('./partials/header')%>
+<link rel="stylesheet" href="/assets/css/styleLogin.css">
+
 <body>
 
-<!------ Include the above in your HEAD tag ---------->
+  <!------ Include the above in your HEAD tag ---------->
 
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="card" style="width: 18rem; height: 20vh;">
+            <div class="card-body" style="text-align: center;">
+              <h5 class="card-title" style="padding-top: 15vh; text-align: center;">Login</h5>
+              <form class="form" method="POST" action="/admin/login">
+              <input style="text-align: center;" type="userName" id="userName" class="fadeIn second" name="userName"
+                  placeholder="User Name"><br><br>
+                <input style="text-align: center;" type="password" id="password" class="fadeIn third" name="password"
+                  placeholder="Password"><br><br>
+              <input type="submit" class="fadeIn fourth btn" value="Login">
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <a href="https://gov.ro/ro"><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <form class="form" method="POST" action="/admin/login">
+            <input style="text-align: center;" type="userName" id="userName" class="fadeIn second" name="userName"
+              placeholder="User Name"><br>
+            <input style="text-align: center;" type="password" id="password" class="fadeIn third" name="password"
+              placeholder="Password"><br>
+          </form>
+        </div>
+      </div>
 
-
-    <!-- Login Form -->
-    <form class ="form" method ="POST" action ="/admin/login">
-      <input type="userName" id="userName" class="fadeIn second" name="userName" placeholder="userName">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Login">
-    </form>
-
+    </div>
   </div>
-</div>
 </body>
 <%- include('./partials/footer')%>
