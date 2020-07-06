@@ -17,16 +17,16 @@
               class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item second">
-          <a class="nav-link" href="creaPost.ejs"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+          <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
         </li>
         <li class="nav-item third">
-          <a class="nav-link" href="modificaPost.ejs"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+          <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
         </li>
         <li class="nav-item fourth">
-          <a class="nav-link" href="eliminaPost.ejs"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+          <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
         </li>
         <li class="nav-item fifth">
-          <a class="nav-link" href="tuttiPost.ejs"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+          <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
         </li>
         <li class="nav-item profile">
           <div class="dropdown" style="padding-top: -10px !important;">
@@ -34,7 +34,7 @@
               <img style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png" alt="profile-dropdown">
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" style="font-size: 15px;" href="#"><i class="fas fa-sign-out-alt"></i> Esci</a>
+              <a class="dropdown-item" style="font-size: 15px;" href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Esci</a>
             </div>
           </div>
         </li>
@@ -65,9 +65,13 @@
       <div class="col">
         <div class="card" style="width: 100%;">
           <div class="card-body">
+            <%var contaPost = 0;%>
+                <% Post.forEach((Post, index) => { %>
+                <% contaPost++; %>
+                <%})%>
             <h1 class="card-title"
               style="font-family: 'Abril Fatface', cursive !important; opacity: 0.8; font-size: 150%;">Post Creati</h1>
-            <p class="card-text" style="font-family: 'Montserrat', sans-serif;">444</p>
+            <p class="card-text" style="font-family: 'Montserrat', sans-serif;"><%=contaPost%></p>
             <a href="#" class="card-link"><i class="fas fa-book"></i> Storico dei Post</a>
           </div>
         </div>

@@ -37,9 +37,8 @@ exports.getPostCarousel = (req, res) => {
       } );
     }else{
       res.render('index',
-      {
-        Post: dataPost
-      } );
+      {Post: dataPost}
+      );
     }
     }
   });
@@ -47,10 +46,10 @@ exports.getPostCarousel = (req, res) => {
 
 
 exports.new = (req, res) =>{
-
+  console.log(req.body);
   const newPost = {
-    Author: req.body.author,
-    Title: req.body.title,
+    Author: req.user.name,
+    Title: req.body.titlPPoe,
     Content: req.body.content,
     Uploaded: req.body.uploaded,
     Date: req.body.date,
