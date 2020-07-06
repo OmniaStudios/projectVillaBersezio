@@ -46,14 +46,14 @@ exports.getPostCarousel = (req, res) => {
 
 
 exports.new = (req, res) =>{
-  console.log(req.body);
+  console.log(req);
   const newPost = {
     Author: req.user.name,
-    Title: req.body.titlPPoe,
-    Content: req.body.content,
-    Uploaded: req.body.uploaded,
-    Date: req.body.date,
-    Imgs: req.body.imgs,
+    Title: req.body.Title,
+    Content: req.body.Content,
+  //  Uploaded: req.body.uploaded,
+    Date: req.body.Date//,
+   // Imgs: req.body.imgs,
   };
 
   Post.create(newPost, (err, data) =>{
@@ -64,9 +64,9 @@ exports.new = (req, res) =>{
      });
     } else{
       /*Post created*/
-      /*res.send('Post has been created successfully');*/
+      res.send('Post has been created successfully');
       /*TO CHANGE, redirect to post page*/
-      res.redirect('/');
+      res.redirect('/admin/dashboard');
     }
   })
 };

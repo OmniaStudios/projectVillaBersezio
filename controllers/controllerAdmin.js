@@ -141,3 +141,15 @@ exports.get_Logout = (req, res) =>{
 exports.get_creaPost = (req, res) =>{
   res.render('creaPost')
 }
+
+exports.get_eliminaPost =(req, res) =>{
+  res.render('eliminaPost')
+}
+
+exports.get_modificaPost =(req, res) =>{
+  res.render('modificaPost')
+}
+
+exports.get_tuttiPost =(req, res) =>{
+  res.render('tuttiPost')
+}

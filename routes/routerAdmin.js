@@ -20,9 +20,11 @@ router.route('/creaPost')
     .get(utils.adminCheck, controllerAdmin.get_creaPost)
     .post(utils.adminCheck, controllerPosts.new);
 
-// router.route('/eliminaPost').get(utils.adminCheck, controllerAdmin.get_Dashboard);
+ router.route('/eliminaPost').get(utils.adminCheck, controllerAdmin.get_eliminaPost);
 
-// router.route('/modificaPost').get(utils.adminCheck, controllerAdmin.get_Dashboard);
+ router.route('/modificaPost').get(utils.adminCheck, controllerAdmin.get_modificaPost);
+
+ router.route('/tuttiPost').get(utils.adminCheck, controllerAdmin.get_tuttiPost);
 
 router.route('/logout')
     .get(controllerAdmin.get_Logout);
