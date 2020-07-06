@@ -147,17 +147,17 @@ $(document).ready(function() {
   })
 
   
-   //=========
-  //Dashboard
-  //=========
-  // Time Script
+//=========
+//Dashboard
+//=========
+
+// Time Script
 function startTime()
 {
 var today=new Date();
 var h=today.getHours();
 var m=today.getMinutes();
 var s=today.getSeconds();
-// add a zero in front of numbers<10
 m=checkTime(m);
 s=checkTime(s);
 document.getElementById('txt').innerHTML=h+":"+m+":"+s;
@@ -183,4 +183,43 @@ $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
   })
 
+//Hide & Seek Password
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+   }
+}
+
+//Hide & Seek Password 2
+function myFunction2() {
+  var x = document.getElementById("myInput2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+   }
+}
+
+//Hide & Seek Password 3
+function myFunction3() {
+  var x = document.getElementById("myInput3");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+   }
+}
+
+//Hide & Seek Password 4
+function myFunction4() {
+  var x = document.getElementById("myInput4");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+   }
+}
  

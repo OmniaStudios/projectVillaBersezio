@@ -118,3 +118,9 @@ body{
   .dropdown-toggle::after{
       color: #777;
   }
+  #rotation{
+    transition: transform .3s;
+}
+#rotation:hover{
+    transform: rotate(360deg);
+}
