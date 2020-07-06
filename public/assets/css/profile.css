@@ -140,7 +140,7 @@ body{
   .dropdown-toggle::after{
       color: #777;
   }
-  #rotation{
+#rotation{
     transition: transform .3s;
 }
 #rotation:hover{
