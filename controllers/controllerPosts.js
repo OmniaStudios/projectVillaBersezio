@@ -46,7 +46,7 @@ exports.getPostCarousel = (req, res) => {
 
 
 exports.new = (req, res) =>{
-  console.log(req);
+  console.log('ciaoooooooooooooooooooooo -' + req.user + ' ---------------- ciao');
   const newPost = {
     Author: req.user.name,
     Title: req.body.Title,
@@ -55,6 +55,8 @@ exports.new = (req, res) =>{
     Date: req.body.Date//,
    // Imgs: req.body.imgs,
   };
+
+  console.log(newPost.Author + ' - ' + newPost.Title)
 
   Post.create(newPost, (err, data) =>{
     if(err){

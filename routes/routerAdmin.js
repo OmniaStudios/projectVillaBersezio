@@ -26,6 +26,8 @@ router.route('/creaPost')
 
  router.route('/tuttiPost').get(utils.adminCheck, controllerAdmin.get_tuttiPost);
 
+ router.route('/profile').get(utils.adminCheck, controllerAdmin.get_profile);
+
 router.route('/logout')
     .get(controllerAdmin.get_Logout);
 

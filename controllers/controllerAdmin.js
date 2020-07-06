@@ -153,3 +153,8 @@ exports.get_modificaPost =(req, res) =>{
 exports.get_tuttiPost =(req, res) =>{
   res.render('tuttiPost')
 }
+
+exports.get_profile =(req, res) =>{
+  res.render('profile')
+}
+
