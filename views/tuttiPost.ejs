@@ -1,5 +1,5 @@
 <%- include('./partials/headerDashboard')%>
-
+<link rel="stylesheet" href="/assets/css/tuttiPost.css">
 
 <body onload="startTime()">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,20 +13,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link first" href="dashboard.ejs"><i class="fas fa-home"></i> Home <span
+          <a class="nav-link first" href="dashboard"><i class="fas fa-home"></i> Home <span
               class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item second">
-          <a class="nav-link" href="creaPost.ejs"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+          <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
         </li>
         <li class="nav-item third">
-          <a class="nav-link" href="modificaPost.ejs"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+          <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
         </li>
         <li class="nav-item fourth">
-          <a class="nav-link" href="eliminaPost.ejs"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+          <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
         </li>
         <li class="nav-item fifth">
-          <a class="nav-link" href="tuttiPost.ejs"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+          <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
         </li>
         <li class="nav-item profile">
           <div class="dropdown" style="padding-top: -10px !important;">
@@ -34,8 +34,8 @@
               <img style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png" alt="profile-dropdown">
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="#"><i class="fas fa-user-circle"></i> Profilo</a>
-              <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="#"><i class="fas fa-sign-out-alt"></i> Esci</a>
+              <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i class="fas fa-user-circle"></i> Profilo</a>
+              <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Esci</a>
             </div>
           </div>
         </li>

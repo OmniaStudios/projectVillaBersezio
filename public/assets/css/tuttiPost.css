@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
 }
-
 body{
     background-color: #fff;
     overflow-x: hidden;
@@ -18,6 +17,7 @@ h1{
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 300;
 }
+
 .fa-home{
     transition: all 0.1s linear;
 }
@@ -40,14 +40,32 @@ h1{
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
 }
-
+.col{
+    padding-top: 20px;
+}
+.card{
+    transition: transform 1s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+    #btn-modify{
+        color: blue;
+        border-radius: 100px !important;
+        box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+        7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+        transition: transform linear .3s;
+    }
+    #btn-modify:hover{
+        transform: scale(1.08);
+    }
 #btn-seeMore{
     background-color: transparent;
     color: rgb(60, 73, 192);
     font-size: 75%;
   }
   .text-modal{
-    color: rgb(214, 214, 214);
+    color: #000;
   }
   #btn-close-modal{
     color: #777 !important;
@@ -59,14 +77,53 @@ h1{
   #btn-close-modal:hover{
     color: #e61708 !important;
   }
-  .modal-title{
-    font-family: 'Abril Fatface', cursive;
-    text-shadow: 0px 4px 8px #000;
-  }
-  .text-modal{
-    font-family: 'Montserrat', sans-serif ;
-  }
-  #modal-clock{
+
+.form-group{
+    width: 100% !important;
+}
+#img-drop-modify{
+    transition: all .2s linear;
+}
+#img-drop-modify:hover {
+    -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+    filter: blur(4px);
+}
+#exampleInputEmail1{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#exampleInputEmail1:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#default-picker{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#default-picker:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#example{
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+#example:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#exampleFormControlTextarea1{
+    transition: all linear transform 1s;
+}
+#exampleFormControlTextarea1:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
+    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+#modal-clock{
     position: absolute;
     top: -10px;
     left: 20px;
@@ -124,78 +181,20 @@ h1{
     left: 10px;
     color: rgb(107, 107, 107);
   }
-  .card-text{
-    position: relative;
-    top: -20px;
+  .dropdown-exit{
+    color: rgb(228, 91, 91);
+    transition: all .2s linear;
   }
-  
-  .text-subtitle{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 60%;
-    position: relative;
-    left: -60px;
-    top: -20px;
+  .dropdown-exit:hover{
+    color: rgb(255, 0, 0);
   }
-  .card{
-      transition: all .2s linear;
+  .dropdown-profile{
+    color: rgb(114, 228, 91);
+    transition: all .2s linear;
   }
-  .card:hover{
-      transform: scale(1.01);
+  .dropdown-profile:hover{
+    color: rgb(9, 255, 0);
   }
-
-#btn-delete{
-    width: 85%;
-    background-color: rgb(255, 41, 41);
-    color: #fff;
-    border-radius: 100px !important;
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
-    transition: transform linear .3s;
-}
-#btn-delete:hover{
-    transform: scale(1.08);
-}
-#delete-btn{
-    border-radius: 100px;
-    background-color: rgb(255, 41, 41);
-    color: #fff;
-    transition: all .1s linear;
-}
-#delete-btn:hover{
-    transform: scale(1.05);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
-    transition: transform linear .3s;
-}
-#discard-btn{
-    border-radius: 100px;
-    background-color: rgb(0, 224, 86);
-    color: #fff;
-    transition: all .1s linear;
-}
-#discard-btn:hover{
-    transform: scale(1.05);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
-    transition: transform linear .3s;
-}
-.col{
-    padding-bottom: 20px;
-}
-.dropdown-exit{
-  color: rgb(228, 91, 91);
-  transition: all .2s linear;
-}
-.dropdown-exit:hover{
-  color: rgb(255, 0, 0);
-}
-.dropdown-profile{
-  color: rgb(114, 228, 91);
-  transition: all .2s linear;
-}
-.dropdown-profile:hover{
-  color: rgb(9, 255, 0);
-}
-.dropdown-toggle::after{
-    color: #777;
-}
+  .dropdown-toggle::after{
+      color: #777;
+  }
