@@ -33,20 +33,20 @@
         </div>
     </nav>
 
-    <form style="padding: 30px 30px 30px 30px;">
+    <form style="padding: 30px 30px 30px 30px;" method="POST" action="/admin/creaPost">
         <div class="form-group">
             <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Titolo dell'Evento</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input type="text" class="form-control" name="Title" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Inserire titolo Evento">
         </div>
         <div class="md-form md-outline">
             <label for="default-picker" style="font-family: 'Abril Fatface', cursive;">Ora dell'Evento</label>
-            <input type="time" id="default-picker" class="form-control" placeholder="Select time">
+            <input type="time" id="default-picker" class="form-control" name="Hour" placeholder="Select time">
         </div>
         <div class="md-form md-outline input-with-post-icon datepicker">
             <label for="default-picker" style="font-family: 'Abril Fatface', cursive; padding-top: 15px;">Data
                 dell'Evento</label>
-            <input placeholder="Select date" type="date" id="example" class="form-control">
+            <input placeholder="Select date" type="date" id="example" class="form-control" name="Date">
         </div>
         <h1 style="padding-top: 10px; font-family: 'Abril Fatface', cursive; font-size: 105%;">Inserire l'immagine
             dell'Evento</h1>
@@ -55,12 +55,9 @@
         <div class="form-group">
             <label for="exampleFormControlTextarea1"
                 style="font-family: 'Abril Fatface', cursive; padding-top: 15px;">Informazioni sull'Evento</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Content"></textarea>
         </div>
-        <form method="post"  action="/admin/creaPost">
-            <a class="btn btn-save" id="success" type="button" href="#" role="button">Salva</a>
-            <div id="message"></div>
-        </form>
+            <input class="btn btn-save"type="submit" href="#" role="button">Salva</input>
     </form>
 
 
