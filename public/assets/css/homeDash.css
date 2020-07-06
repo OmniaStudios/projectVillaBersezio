@@ -114,12 +114,19 @@ h1{
     border: 1px solid rgba(0,0,0,.15);
     border-radius: .25rem;
   }
-  .dropdown-item{
+  .dropdown-exit{
     color: rgb(228, 91, 91);
     transition: all .2s linear;
   }
-  .dropdown-item:hover{
+  .dropdown-exit:hover{
     color: rgb(255, 0, 0);
+  }
+  .dropdown-profile{
+    color: rgb(114, 228, 91);
+    transition: all .2s linear;
+  }
+  .dropdown-profile:hover{
+    color: rgb(9, 255, 0);
   }
   .dropdown-toggle::after{
       color: #777;

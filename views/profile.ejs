@@ -1,6 +1,6 @@
 <%- include('./partials/headerDashboard')%>
+<link rel="stylesheet" href="/assets/css/profile.css">
 
-<link rel="stylesheet" href="creaPost.css">
 <body onload="startTime()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Villa Bersezio&nbsp;</a>
@@ -44,29 +44,21 @@
     </nav>
 
     <form style="padding: 30px 30px 30px 30px;">
+            <div class="form-group">
+                <img src="sgarbi.png" alt="Snow">
+              <input style="padding-top: 20px;" type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
         <div class="form-group">
-            <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Titolo dell'Evento</label>
+            <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Inserire titolo Evento">
+                placeholder="Inserire il nome">
         </div>
-        <div class="md-form md-outline">
-            <label for="default-picker" style="font-family: 'Abril Fatface', cursive;">Ora dell'Evento</label>
-            <input type="time" id="default-picker" class="form-control" placeholder="Select time">
-        </div>
-        <div class="md-form md-outline input-with-post-icon datepicker">
-            <label for="default-picker" style="font-family: 'Abril Fatface', cursive; padding-top: 15px;">Data
-                dell'Evento</label>
-            <input placeholder="Select date" type="date" id="example" class="form-control">
-        </div>
-        <h1 style="padding-top: 10px; font-family: 'Abril Fatface', cursive; font-size: 105%;">Inserire l'immagine
-            dell'Evento</h1>
-        <div class="img-drop"><i data-toggle="tooltip" data-placement="top" title="Tooltip on top" id="img-plus"
-                class="fas fa-plus" style="padding: 10px 10px 10px 10px;"></i></div>
         <div class="form-group">
-            <label for="exampleFormControlTextarea1"
-                style="font-family: 'Abril Fatface', cursive; padding-top: 15px;">Informazioni sull'Evento</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Cognome</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Inserire il Cognome">
         </div>
+
         <form method="post">
             <a class="btn btn-save" id="success" type="button" href="#" role="button">Salva</a>
             <div id="message"></div>
@@ -82,6 +74,5 @@
     </footer>
 
 </body>
-<script src="/assets/js/script.js"></script>
-
-<%- include('./partials/footerDashboard')%>
+<script src="script.js"></script>
+<%- include('./partials/headerFooter')%>
