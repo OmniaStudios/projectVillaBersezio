@@ -1,6 +1,7 @@
 const mongoose  = require('mongoose');
 const express = require('express');
-const  Post = require('../models/Post');
+const Post = require('../models/Post');
+const { get_AdminRegister } = require('./controllerAdmin');
 
 const app = express();
 
@@ -13,7 +14,7 @@ exports.get = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);
+     // console.log(dataPost);
         /*Funzione generica*/
     }
   });
@@ -28,7 +29,6 @@ exports.getPostCarousel = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);
 
      if(req.originalUrl == '/eng'){
       res.render('indexEnglish',
@@ -46,27 +46,27 @@ exports.getPostCarousel = (req, res) => {
 
 
 exports.new = (req, res) =>{
-  console.log('ciaoooooooooooooooooooooo -' + req.user + ' ---------------- ciao');
+  var today = new Date();
+
   const newPost = {
-    Author: req.user.name,
+    Author: req.user.userName,
     Title: req.body.Title,
     Content: req.body.Content,
-  //  Uploaded: req.body.uploaded,
+    Uploaded: today.getDay() + '-' + today.getMonth() + '-' + today.getFullYear(),
     Date: req.body.Date//,
    // Imgs: req.body.imgs,
   };
 
-  console.log(newPost.Author + ' - ' + newPost.Title)
-
   Post.create(newPost, (err, data) =>{
     if(err){
+      console.log('Non va :) ' + err)
       res.status(400).json({
         status: 'fail',
         message: 'Post could not be created'
      });
     } else{
       /*Post created*/
-      res.send('Post has been created successfully');
+      /* res.send('Post has been created successfully'); */
       /*TO CHANGE, redirect to post page*/
       res.redirect('/admin/dashboard');
     }

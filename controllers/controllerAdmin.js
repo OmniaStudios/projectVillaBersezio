@@ -12,7 +12,6 @@ exports.get_AdminLogin = (req, res) => {
 exports.post_AdminLogin = (req, res, next) => {
   passport.authenticate('local', function(err, user, info) {
     if (err) { return next(err); }
-    console.log(info);
     if (!user) { return res.redirect('/admin/login'); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
@@ -123,11 +122,10 @@ exports.get_Dashboard = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);
-  
       res.render('dashboard',
       {
-        Post: dataPost
+        Post: dataPost,
+        User: req.user
       } );
     }
   });
