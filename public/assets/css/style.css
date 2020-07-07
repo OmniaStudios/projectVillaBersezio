@@ -8,6 +8,25 @@ body
 }
 
 
+.body-error {
+  /* background: rgb(255, 33, 33); */
+  background-image: url('../img/thomas-dumortier-Ek4yAaAsbmM-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  /* background-size: initial; */
+  /* background-position: center; */
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to bottom, #141414, #000000); */
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #ED213A, #93291E); */
+  /* background: linear-gradient(to right, #333333, #dd1818); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* font-family: 'Poppins', sans-serif; */
+  /* background-image: linear-gradient(-45deg, grey, white); */
+}
+
+
 .fa-long-arrow-alt-down{
   position: absolute;
   top: 90vh;
