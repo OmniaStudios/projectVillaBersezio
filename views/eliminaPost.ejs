@@ -1,4 +1,12 @@
 <%- include('./partials/headerDashboard')%>
+<%function ellipsify (str) {
+    if (str.length > 140) {
+        return (str.substring(0, 138) + "...");
+    }
+    else {
+        return str;
+    }
+  }%>
 <link rel="stylesheet" href="/assets/css/eliminaPost.css">
 
 
@@ -45,151 +53,36 @@
     </nav>
     <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
         <div class="row" align='center'>
+            <% Post.forEach((Post, index) =>{%>
             <div class="col">
                 <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
                     <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
                     <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
+                    <h6 id="text-clock"><%=Post.Uploaded%></h6>
+                    <%if (Post.Date != null){%>
                     <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
+                    <h6 id="text-calendar"><%=Post.Date%></h6>
                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
+                        <p class="card-text"><%=ellipsify(Post.Content)%></p>
                     </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="padding-bottom: 15px; width: 18rem; background-color: #fff;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?food" alt="Card image cap">
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock">12:12/13:13</h6>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar">21/12/2012</h6>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta aliquam
-                            unde
-                            dignissimos totam amet dolor nihil modi nobis, aspernatur ea!</p>
-                    </div>
-                    <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                        data-target="#modal">
-                        Elimina
-                    </button>
-                </div>
-            </div>
 
+                <%}else{%>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text"><%=ellipsify(Post.Content)%></p>
+                        <!-- Button trigger modal -->
+                        
+                        
+                        <%}%>
+                        <form action = '/admin/'
+                        <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                        data-target="#modal">                           
+                        Elimina
+                    </button>
+                        </div>
+                      </div>
+            </div>
+            <%})%>
         </div>
     </div>
 

@@ -1,4 +1,12 @@
 <%- include('./partials/headerDashboard')%>
+<%function ellipsify (str) {
+  if (str.length > 140) {
+      return (str.substring(0, 138) + "...");
+  }
+  else {
+      return str;
+  }
+}%>
 <link rel="stylesheet" href="/assets/css/tuttiPost.css">
 
 <body onload="startTime()">
@@ -45,27 +53,42 @@
 
   <div class="container-fluid">
     <div class="row" align="center">
+
+          
       <div class="col">
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap">
           <i class="fas fa-clock"></i>
-          <h6 id="text-clock">12:12/13:13</h6>
+          <h6 id="text-clock"><%=Post.Uploaded%></h6>
+          <%if (Post.Date != null){%>
           <i class="fas fa-calendar"></i>
-          <h6 id="text-calendar">21/12/2012</h6>
+          <h6 id="text-calendar"><%=Post.Date%></h6>
           <div class="card-body">
             <h5 class="card-title"></h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-              iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
+            <p class="card-text"><%=ellipsify(Post.Content)%></p>
             <!-- Button trigger modal -->
             <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
               Guarda di più...
             </button>
           </div>
-        </div>
-      </div>
+          
+      <%}else{%>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"><%=ellipsify(Post.Content)%></p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                Guarda di più...
 
-    </div>
-  </div>
+              </div>
+              <%}%>
+            </div>
+   
+ 
+</div>
+<%})%>
+</div>
+</div>
 
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">

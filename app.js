@@ -33,8 +33,10 @@ app.use(express.json());       // to support JSON-encoded bodies
 app.use(session({
     secret: 'Romanian government',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {_expires : 60000000}
 }) )
+
 app.use(passport.initialize());
 app.use(passport.session());
 

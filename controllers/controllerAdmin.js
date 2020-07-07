@@ -4,6 +4,7 @@ const Admin = require("../models/Admin");
 const bcrypt = require("bcryptjs");
 const passport = require('passport');
 const  Post = require('../models/Post');
+const controllerPost = require('../controllers/controllerPosts');
 
 exports.get_AdminLogin = (req, res) => {
   res.status(200).render("adminLogin");
@@ -141,7 +142,20 @@ exports.get_creaPost = (req, res) =>{
 }
 
 exports.get_eliminaPost =(req, res) =>{
-  res.render('eliminaPost')
+  Post.find((err, dataPost) => {
+    if (err) {
+      /* */
+      res.status(404).render('404');
+    } else {
+      /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
+     // console.log(dataPost);
+        /*Funzione generica*/
+        res.render('eliminaPost',{
+          Post: dataPost
+        }
+        )
+    }
+  });
 }
 
 exports.get_modificaPost =(req, res) =>{
@@ -149,7 +163,20 @@ exports.get_modificaPost =(req, res) =>{
 }
 
 exports.get_tuttiPost =(req, res) =>{
-  res.render('tuttiPost')
+  Post.find((err, dataPost) => {
+    if (err) {
+      /* */
+      res.status(404).render('404');
+    } else {
+      /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
+     // console.log(dataPost);
+        /*Funzione generica*/
+        res.render('tuttiPost',{
+          Post: dataPost
+        }
+        )
+    }
+  });
 }
 
 exports.get_profile =(req, res) =>{
