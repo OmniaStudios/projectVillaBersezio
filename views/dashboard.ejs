@@ -31,12 +31,15 @@
         </li>
         <li class="nav-item profile">
           <div class="dropdown" style="padding-top: -10px !important;">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img id="rotation"  style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png" alt="profile-dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png" alt="profile-dropdown">
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i class="fas fa-user-circle"></i> Profilo</a>
-              <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Esci</a>
+              <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
+                  class="fas fa-user-circle"></i> Profilo</a>
+              <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
+                  class="fas fa-sign-out-alt"></i> Esci</a>
             </div>
           </div>
         </li>
@@ -50,7 +53,8 @@
           <div class="card-body align-items-center d-flex justify-content-center">
             <img src="/assets/img/sgarbi.png" alt="Profile Photo" id="rotation"
               style="position: relative; top: -10px; left: -30px;">
-            <h5 class="card-title" style="font-family: 'Abril Fatface', cursive; font-size: 200%;">Bentornato, <%= User.fName %>
+            <h5 class="card-title" style="font-family: 'Abril Fatface', cursive; font-size: 200%;">Bentornato,
+              <%= User.fName %>
             </h5>
           </div>
         </div>
@@ -68,9 +72,9 @@
         <div class="card" style="width: 100%;">
           <div class="card-body">
             <%var contaPost = 0;%>
-                <% Post.forEach((Post, index) => { %>
-                <% contaPost++; %>
-                <%})%>
+            <% Post.forEach((Post, index) => { %>
+            <% contaPost++; %>
+            <%})%>
             <h1 class="card-title"
               style="font-family: 'Abril Fatface', cursive !important; opacity: 0.8; font-size: 150%;">Post Creati</h1>
             <p class="card-text" style="font-family: 'Montserrat', sans-serif;"><%=contaPost%></p>
@@ -101,21 +105,21 @@
         </div>
       </div>
       <div class="col">
-        <div class="card" style="width: 100%;">
+        <div class="card" style="width: 40vh;">
           <div class="card-body">
-            <h1 class="card-title"
-              style="font-family: 'Abril Fatface', cursive !important; font-size: 150%;opacity: 0.8;">Visualizzazioni
-              del Sito</h1>
-            <h6 class="card-text" style="font-family: 'Montserrat', sans-serif;">1492</h6>
-            <p class="card-text" style="font-size: 60%; font-family: 'Montserrat', sans-serif;">Qui trovi le
-              visualizzazioni totali prodotte dal sito.</p>
+            <a class="weatherwidget-io" href="https://forecast7.com/it/44d437d50/passatore/" data-label_1="PASSATORE"
+              data-font="Roboto" data-icons="Climacons Animated" data-mode="Current" data-theme="pure">PASSATORE</a>
+            <script>
+              !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+            </script>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-<button class="btn site" data-toggle="tooltip" data-placement="right" title="Vai al Sito"><a href="/#home" style="display: block; text-align: right;" class="fas fa-globe-europe"></a></button>
+  <button class="btn site" data-toggle="tooltip" data-placement="right" title="Vai al Sito"><a href="/#home"
+      style="display: block; text-align: right;" class="fas fa-globe-europe"></a></button>
   <footer style="padding-top: 30px;">
     <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;"><b>© All
         rights Reserved to the OmniaStudios</b></h6>
