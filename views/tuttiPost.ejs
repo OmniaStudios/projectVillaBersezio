@@ -63,8 +63,9 @@
           <%if (Post.Date != null){%>
           <i class="fas fa-calendar"></i>
           <h6 id="text-calendar"><%=Post.Date%></h6>
+          <h5 class="card-title"></h5>
           <div class="card-body">
-            <h5 class="card-title"></h5>
+            
             <p class="card-text"><%=ellipsify(Post.Content)%></p>
             <!-- Button trigger modal -->
             <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
@@ -74,7 +75,7 @@
           
       <%}else{%>
             <div class="card-body">
-              <h5 class="card-title"></h5>
+              <h5 class="card-title"><%=Post.Title%></h5>
               <p class="card-text"><%=ellipsify(Post.Content)%></p>
               <!-- Button trigger modal -->
               <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">

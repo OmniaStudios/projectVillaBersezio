@@ -52,7 +52,7 @@ exports.new = (req, res) =>{
     Author: req.user.userName,
     Title: req.body.Title,
     Content: req.body.Content,
-    Uploaded: today.getDay() + '-' + today.getMonth() + '-' + today.getFullYear(),
+    Uploaded: today.getDay() + '/' + today.getMonth() + '/' + today.getFullYear(),
     Date: req.body.Date//,
    // Imgs: req.body.imgs,
   };
@@ -115,7 +115,8 @@ exports.get_edit = (req, res) => {
     if (err) {
       res.status(404).render('404')
     } else {
-      res.render('index', {
+      console.log(req.params);
+      res.render('modificaPost', {
         post: data
       })
     }
@@ -135,7 +136,7 @@ exports.remove = (req, res) => {
         message: 'Post could not deleted'
       })
     } else {
-      res.redirect('/')
+      res.redirect('/admin/eliminaPost')
     }
   }
   )
