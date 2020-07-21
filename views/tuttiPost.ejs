@@ -1,12 +1,20 @@
 <%- include('./partials/headerDashboard')%>
 <%function ellipsify (str) {
   if (str.length > 140) {
-      return (str.substring(0, 138) + "...");
+      return (str.substring(0, 138) + " ...");
   }
   else {
       return str;
   }
 }%>
+
+            
+<% function tokenize (str) { 
+  newStr = str.replace(/ /g, "§");
+  return(newStr);
+} %>
+
+
 <link rel="stylesheet" href="/assets/css/tuttiPost.css">
 
 <body onload="startTime()">
@@ -54,48 +62,58 @@
   <div class="container-fluid">
     <div class="row" align="center">
 
-      <% Post.forEach((Post, index) =>{%>
+      <% Post.forEach((Post, index) =>{ %>
       <div class="col">
         <div class="card" style="width: 18rem;">
+
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap">
-          <i class="fas fa-clock"></i>
-          <h6 id="text-clock"><%=Post.Uploaded%></h6>
-          <%if (Post.Date != null){%>
-          <i class="fas fa-calendar"></i>
-          <h6 id="text-calendar"><%=Post.Date%></h6>
-          <h5 class="card-title"></h5>
-          <div class="card-body">
+
+          <% console.log(Post.Date)  %>
+
+          <%if (Post.Date){%>
             
-            <p class="card-text"><%=ellipsify(Post.Content)%></p>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
-              Guarda di più...
-            </button>
-          </div>
+            <i class="fas fa-clock"></i>
+            <h6 id="text-clock"><%=Post.Hour%></h6>
+
           
+            <i class="fas fa-calendar"></i>
+            <h6 id="text-calendar"><%=Post.Date%></h6>
+            <h5 class="card-title"><%=Post.Title%></h5>
+            <div class="card-body">
+            
+              <p class="card-text"><%=ellipsify(Post.Content)%></p>
+              <!-- Button trigger modal -->
+
+              <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModal" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-ora=<%=Post.Hour%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+              Guarda di più ...
+              </button>
+            </div>
+            
+
       <%}else{%>
+
+        
             <div class="card-body">
               <h5 class="card-title"><%=Post.Title%></h5>
               <p class="card-text"><%=ellipsify(Post.Content)%></p>
               <!-- Button trigger modal -->
-              <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
-                Guarda di più...
+              <button type="button" class="btn" id="btn-modify" data-toggle="modalNoData" data-target="#exampleModalNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                Guarda di più ...
 
               </div>
               <%}%>
             </div>
-   
- 
 </div>
 <%})%>
 </div>
 </div>
 
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="background-color: #fff; border: #fff;">
         <div class="modal-header" style="border-bottom: 1px solid #fff;">
+
           <h1
             style="font-size: 150%; font-family: 'Abril Fatface', cursive !important; opacity: 0.8; text-shadow: 0px 0px 2px #000;"
             class="modal-title text-black" id="exampleModalLongTitle">How to pronounce X Æ A-Xii</h1>
@@ -103,30 +121,66 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+
         <div class="modal-body">
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
           <i class="fas fa-clock" id="modal-clock"></i>
-          <h6 id="text-clock-modal">21:02</h6>
+          <h6 id="text-clock-modal" class='text-clock'></h6>
           <i class="fas fa-calendar" id="modal-calendar"></i>
-          <h6 id="text-calendar-modal">21/06/2020</h6>
+          <h6 id="text-calendar-modal" class='text-calendar'></h6>
           <br><br>
-          <h8 style="font-family: 'Montserrat', sans-serif;" class="text-modal" align="justify">I'm actually a normal
-            fucking baby so pls fuck off thanks. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Autem, eligendi deserunt at laboriosam expedita provident
-            excepturi dolore rem odio maiores?</h8>
+          <h8 style="font-family: 'Montserrat', sans-serif;" class="text-modal" align="justify">NULL</h8>
         </div>
+
         <div class="modal-footer" style="border-top: 1px solid #fff;">
-          <h6 class="text-subtitle" style="color: #000;">X Æ A-Xii</h6>
+          <h6 class="text-subtitle" style="color: #000;">NULL</h6>
         </div>
+
       </div>
     </div>
   </div>
+  
+
+
+
+
+
+
+  <div class="modalNoData fade" id="exampleModalNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: #fff; border: #fff;">
+      <div class="modal-header" style="border-bottom: 1px solid #fff;">
+
+        <h1
+          style="font-size: 150%; font-family: 'Abril Fatface', cursive !important; opacity: 0.8; text-shadow: 0px 0px 2px #000;"
+          class="modal-title text-black" id="exampleModalLongTitle">How to pronounce X Æ A-Xii</h1>
+        <button id="btn-close-modal" type="button" class="close" data-dismiss="modalNoData" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
+        <br><br>
+        <h8 style="font-family: 'Montserrat', sans-serif;" class="text-modal" align="justify">I'm actually a normal
+          fucking baby so pls fuck off thanks. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Autem, eligendi deserunt at laboriosam expedita provident
+          excepturi dolore rem odio maiores?</h8>
+      </div>
+
+      <div class="modal-footer" style="border-top: 1px solid #fff;">
+        <h6 class="text-subtitle" style="color: #000;">X Æ A-Xii, caricatogiorno caricamento</h6>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
   <footer style="padding-top: 30px;">
     <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;"><b>© All
         rights Reserved to the OmniaStudios</b></h6>
   </footer>
-  <script src="/assets/js/script.js"></script>
 
-</body>
 <%- include('./partials/footerDashboard')%>

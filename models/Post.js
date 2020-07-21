@@ -15,6 +15,7 @@ var schema = new mongoose.Schema({
     },
     Uploaded: String,
     Date: String,
+    Hour: String,
     Imgs: Array
 });
 

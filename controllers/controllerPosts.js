@@ -52,11 +52,12 @@ exports.new = (req, res) =>{
     Author: req.user.userName,
     Title: req.body.Title,
     Content: req.body.Content,
-    Uploaded: today.getDay() + '/' + today.getMonth() + '/' + today.getFullYear(),
-    Date: req.body.Date//,
+    Uploaded: today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear(),
+    Date: req.body.Date,
+    Hour: req.body.Hour
    // Imgs: req.body.imgs,
   };
-
+  console.log(newPost.Uploaded);
   Post.create(newPost, (err, data) =>{
     if(err){
       console.log('Non va :) ' + err)
@@ -87,7 +88,8 @@ exports.edit = (req, res) => {
     Content: req.body.content,
     Uploaded: req.body.uploaded,
     Date: req.body.date,
-    Imgs: req.body.imgs,
+    Hour: req.body.Hour,
+   // Imgs: req.body.imgs
   }
 
   Post.findById(id, (err, data) => {

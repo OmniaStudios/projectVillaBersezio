@@ -142,9 +142,58 @@ $(document).ready(function() {
   });
 
 
-  $('#exampleModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
+  $(document).on('show.bs.modal', '#exampleModal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+
+    var titolo = button.data('titolo') // Extract info from data-* attributes
+    var contenuto = button.data('contenuto')
+    var data = button.data('data')
+    var ora = button.data('ora')
+    var caricato = button.data('caricato')
+    var autore = button.data('autore')
+    var autoreData = autore + ', ' + caricato;
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+
+    modal.find('.modal-title').text(Detokenize(titolo))
+    modal.find('.text-modal').text(Detokenize(contenuto))
+    modal.find('.text-calendar').text(Detokenize(data))
+    modal.find('.text-clock').text(Detokenize(ora))
+    modal.find('.text-subtitle').text(Detokenize(autoreData))
   })
+
+
+
+  $(document).on('show.bs.modal', '#exampleModalNoData', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+
+    var titolo = button.data('titolo') // Extract info from data-* attributes
+    var contenuto = button.data('contenuto')
+    var caricato = button.data('caricato')
+    var autore = button.data('autore')
+    var autoreData = autore + ', ' + caricato;
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+
+    modal.find('.modal-title').text(Detokenize(titolo))
+    modal.find('.text-modal').text(Detokenize(contenuto))
+    modal.find('.text-subtitle').text(Detokenize(autoreData))
+  })
+
+  function Detokenize (str) { 
+    newStr = str.replace(/§/g, " ");
+    return(newStr);
+  }
+         
+  function tokenize (str) { 
+    newStr = str.replace(/ /g, "§");
+    return(newStr);
+  }
+
+
+
 
   
 //=========
@@ -223,18 +272,5 @@ function myFunction4() {
    }
 }
  
-// $(document).ready(function(){
-//   $('#modal').on('show.bs.modal', function (event) {
-//     console.log('albanese')
-//     var button = $(event.relatedTarget) // Button that triggered the modal
-//     var recipient = button.data('request') // Extract info from data-* attributes
-//     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-//     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-//     var modal = $(this)
-//     console.log(modal);
-//     // modal.find('.modal-title').text('New message to ' + recipient)
-//     // modal.find('.modal-body input').val(recipient)
-//   })
-  
 
-// });
+            
