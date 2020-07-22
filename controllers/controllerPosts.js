@@ -127,6 +127,7 @@ exports.get_edit = (req, res) => {
 
 
 exports.remove = (req, res) => {
+  console.log("Arrivato eliminazione");
   let id = req.params.id;
   Post.deleteOne({
     _id: id

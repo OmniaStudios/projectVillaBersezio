@@ -7,6 +7,8 @@
         return str;
     }
   }%>
+  <% var currentID = null %>
+
 <link rel="stylesheet" href="/assets/css/eliminaPost.css">
 
 
@@ -62,21 +64,30 @@
       <div class="col">
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap">
-          <i class="fas fa-clock"></i>
-          <h6 id="text-clock"><%=Post.Uploaded%></h6>
+          
           <%if (Post.Date){%>
-          <i class="fas fa-calendar"></i>
-          <h6 id="text-calendar"><%=Post.Date%></h6><%}%>
+            <i class="fas fa-clock"></i>
+            <h6 id="text-clock"><%=Post.Hour%></h6>
+
+          
+            <i class="fas fa-calendar"></i>
+            <h6 id="text-calendar"><%=Post.Date%></h6>
+          <%}%>
+
+          
           <h5 class="card-title"><%=Post.Title%></h5>
 
           <div class="card-body">
 
             <p class="card-text"><%=ellipsify(Post.Content)%></p>
             <!-- Button trigger modal -->
-            <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                            data-target="#modal" data-request="<%=Post._id%>">                           
+
+              <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal" data-target="#exampleModalEliminazione" data-id="<%=Post._id%>">                           
                             Elimina
-                        </button>
+                </button>
+
+
+
           </div>
           
 
@@ -88,7 +99,7 @@
 <%})%>
 </div>
 </div>
-<div class="modal" id="modal" tabindex="-1" role="dialog">
+<div class="modal fade" id="exampleModalEliminazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalEliminazione">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -97,30 +108,37 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
+            </div>  
             <div class="modal-body">
                 <p>Cliccando sul tasto <b>Elimina</b> andrà ad eliminare irreversibilmente il post selezionato.</p>
             </div>
             <div class="modal-footer">  
-                <a type="button" id="delete-btn" class="btn" href="/admin/eliminapost/<%=Post._id%>">Elimina</a>
+                <div id='idPost' class="modal-id" style="visibility: hidden;"></div>
+
+
+                 <script>
+                    function gId() {
+                        currentID = document.getElementById('idPost').innerHTML
+                        console.log("TriccheTraccheBombeAMano")
+                        return(currentID)
+                        
+                    }
+                </script> 
+                
+                <%console.log(currentID)%>
+
+                
+                <form action="/admin/eliminaPost/<%=currentID%>" method ="POST">
+                    <input type = "hidden" name = "_method" value = "DELETE">
+                     <button type="submit" align="center" class="btn" id="btn-delete" data-toggle="modal" data-target="#modal">Elimina</button>
+                        </form>
+
                 <a type="button" id="discard-btn" class="btn" data-dismiss="modal">Annulla</a>
             </div>
         </div>
     </div>
 </div>
-<script>
-    $('#modal').on('show.bs.modal', function (event) {
-    console.log('albanese')
-    var button = $(event.relatedTarget) // Button that triggered the modal
-    var recipient = button.data('request') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    console.log(modal);
-    // modal.find('.modal-title').text('New message to ' + recipient)
-    // modal.find('.modal-body input').val(recipient)
-  })
-</script>
+
     
 
     <footer style="padding-top: 30px;">

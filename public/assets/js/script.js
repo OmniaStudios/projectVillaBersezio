@@ -1,22 +1,22 @@
-
 //=============
 // Scroll Arrow
 // ============
 
 window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-}
-
-
+  window.scrollTo(0, 0);
+};
 
 $(document).ready(function () {
-    $('.fa-long-arrow-alt-down').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $(".title-homepage").offset().top
-        }, 1000);
-    });
+  $(".fa-long-arrow-alt-down").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $(".title-homepage").offset().top,
+      },
+      1000
+    );
+  });
 });
 
 //==============
@@ -26,211 +26,250 @@ $(document).ready(function () {
 // Scroll Home
 
 $(document).ready(function () {
-    $('.fa-home').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $('navbar').offset().top
-        }, 1000);
-    });
+  $(".fa-home").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $("navbar").offset().top,
+      },
+      1000
+    );
+  });
 });
 
 // Scroll About
 
 $(document).ready(function () {
-    $('.fa-user').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $(".about-us").offset().top
-        }, 1000);
-    });
+  $(".fa-user").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $(".about-us").offset().top,
+      },
+      1000
+    );
+  });
 });
 
 // Scroll New Post
 
 $(document).ready(function () {
-    $('.fa-newspaper').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $(".new-post").offset().top
-        }, 1000);
-    });
+  $(".fa-newspaper").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $(".new-post").offset().top,
+      },
+      1000
+    );
+  });
 });
 
 // Scroll Gallery
 
 $(document).ready(function () {
-    $('.fa-images').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $(".gallery").offset().top
-        }, 1000);
-    });
+  $(".fa-images").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $(".gallery").offset().top,
+      },
+      1000
+    );
+  });
 });
 
 // Scroll Position
 
 $(document).ready(function () {
-    $('.fa-map').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $(".position").offset().top
-        }, 1000);
-    });
+  $(".fa-map").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $(".position").offset().top,
+      },
+      1000
+    );
+  });
 });
-
-
 
 // Scroll Contact
 
 $(document).ready(function () {
-    $('.fa-mobile-alt').on('click', function () {
-        $("html").scrollTop(0);
-        console.log("Clicked!");
-        $('html, body').animate({
-            scrollTop: $(".contact").offset().top
-        }, 1000);
-    });
+  $(".fa-mobile-alt").on("click", function () {
+    $("html").scrollTop(0);
+    console.log("Clicked!");
+    $("html, body").animate(
+      {
+        scrollTop: $(".contact").offset().top,
+      },
+      1000
+    );
+  });
 });
 
 //======================
 //Navbar + Pagepiling.js
 //======================
 
-$(document).ready(function() {
-    $('#pagepiling').pagepiling({
-      menu: '#myMenu',
-        scrollingSpeed: 300,
-      anchors: ['home', 'about', 'post', 'gallery', 'position', 'contact'],
-      sectionsColor: ['#000', '#000', '#000', '#000', '#000', '#000'],
-      navigation: {
-        'position': 'right',
-        'tooltips': ['Home', 'Chi Siamo', 'Nuovi Post', 'Galleria', 'Dove Siamo', 'Contatti']
-      },
-      afterRender: function() {
-        $('#myMenu').addClass('custom');
-      },
-      afterLoad: function(anchorLink, index) {
-        if (index > 1) {
-          $('#myMenu').removeClass('custom');
-        } else {
-          $('#myMenu').addClass('custom');
-        }
+$(document).ready(function () {
+  $("#pagepiling").pagepiling({
+    menu: "#myMenu",
+    scrollingSpeed: 300,
+    anchors: ["home", "about", "post", "gallery", "position", "contact"],
+    sectionsColor: ["#000", "#000", "#000", "#000", "#000", "#000"],
+    navigation: {
+      position: "right",
+      tooltips: [
+        "Home",
+        "Chi Siamo",
+        "Nuovi Post",
+        "Galleria",
+        "Dove Siamo",
+        "Contatti",
+      ],
+    },
+    afterRender: function () {
+      $("#myMenu").addClass("custom");
+    },
+    afterLoad: function (anchorLink, index) {
+      if (index > 1) {
+        $("#myMenu").removeClass("custom");
+      } else {
+        $("#myMenu").addClass("custom");
       }
-    });
-  
+    },
   });
+});
 
-  //====================
-  //Carousel Full Screen
-  //====================
+//====================
+//Carousel Full Screen
+//====================
 
-  $('.carousel').carousel({
-    interval: null
-  })
+$(".carousel").carousel({
+  interval: null,
+});
 
-  //=========
-  //Tooltips
-  //=========
+//=========
+//Tooltips
+//=========
 
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-  });
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
+$(document).on("show.bs.modal", "#exampleModal", function (event) {
+  var button = $(event.relatedTarget); // Button that triggered the modal
 
-  $(document).on('show.bs.modal', '#exampleModal', function (event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
+  var titolo = button.data("titolo"); // Extract info from data-* attributes
+  var contenuto = button.data("contenuto");
+  var data = button.data("data");
+  var ora = button.data("ora");
+  var caricato = button.data("caricato");
+  var autore = button.data("autore");
+  var autoreData = autore + ", " + caricato;
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this);
 
-    var titolo = button.data('titolo') // Extract info from data-* attributes
-    var contenuto = button.data('contenuto')
-    var data = button.data('data')
-    var ora = button.data('ora')
-    var caricato = button.data('caricato')
-    var autore = button.data('autore')
-    var autoreData = autore + ', ' + caricato;
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
+  modal.find(".modal-title").text(Detokenize(titolo));
+  modal.find(".text-modal").text(Detokenize(contenuto));
+  modal.find(".text-calendar").text(Detokenize(data));
+  modal.find(".text-clock").text(Detokenize(ora));
+  modal.find(".text-subtitle").text(Detokenize(autoreData));
+});
 
-    modal.find('.modal-title').text(Detokenize(titolo))
-    modal.find('.text-modal').text(Detokenize(contenuto))
-    modal.find('.text-calendar').text(Detokenize(data))
-    modal.find('.text-clock').text(Detokenize(ora))
-    modal.find('.text-subtitle').text(Detokenize(autoreData))
-  })
+$(document).on("show.bs.modal", "#exampleModalNoData", function (event) {
+  var button = $(event.relatedTarget); // Button that triggered the modal
+  var titolo = button.data("titolo"); // Extract info from data-* attributes
+  var contenuto = button.data("contenuto");
+  var caricato = button.data("caricato");
+  var autore = button.data("autore");
+  var autoreData = autore + ", " + caricato;
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this);
 
+  modal.find(".modal-title").text(Detokenize(titolo));
+  modal.find(".text-modal").text(Detokenize(contenuto));
+  modal.find(".text-subtitle").text(Detokenize(autoreData));
+});
 
+$(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
+  console.log("yet another albanese");
 
-  $(document).on('show.bs.modal', '#exampleModalNoData', function (event) {
-    var button = $(event.relatedTarget) // Button that triggered the modal
+  var button = $(event.relatedTarget); // Button that triggered the modal
 
-    var titolo = button.data('titolo') // Extract info from data-* attributes
-    var contenuto = button.data('contenuto')
-    var caricato = button.data('caricato')
-    var autore = button.data('autore')
-    var autoreData = autore + ', ' + caricato;
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
+  var currentPostID = button.data("id"); // Extract info from data-* attributes
 
-    modal.find('.modal-title').text(Detokenize(titolo))
-    modal.find('.text-modal').text(Detokenize(contenuto))
-    modal.find('.text-subtitle').text(Detokenize(autoreData))
-  })
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this);
 
-  function Detokenize (str) { 
-    newStr = str.replace(/§/g, " ");
-    return(newStr);
-  }
-         
-  function tokenize (str) { 
-    newStr = str.replace(/ /g, "§");
-    return(newStr);
-  }
-
-
+  modal.find(".modal-id").text(currentPostID);
 
 
-  
+  currentID = document.getElementById('idPost').innerHTML
+  console.log("TriccheTraccheBombeAMano")
+  console.log(currentID)
+});
+
+function Detokenize(str) {
+  newStr = str.replace(/§/g, " ");
+  return newStr;
+}
+
+function tokenize(str) {
+  newStr = str.replace(/ /g, "§");
+  return newStr;
+}
+
+function getId() {
+  var id = document.getElementById("idPost");
+  return id;
+}
+
+function getID(str) {
+  var id = document.getElementById("idPost");
+  return id;
+}
+
 //=========
 //Dashboard
 //=========
 
 // Time Script
-function startTime()
-{
-var today=new Date();
-var h=today.getHours();
-var m=today.getMinutes();
-var s=today.getSeconds();
-m=checkTime(m);
-s=checkTime(s);
-document.getElementById('txt').innerHTML=h+":"+m+":"+s;
-t=setTimeout('startTime()',500);
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+  t = setTimeout("startTime()", 500);
 }
-function checkTime(i)
-{
-if (i<10)
-{
-i="0" + i;
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
 }
-return i;
-}
-
 
 //ToolTip
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  }) 
+  $('[data-toggle="tooltip"]').tooltip();
+});
 
 //Modal
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+$("#myModal").on("shown.bs.modal", function () {
+  $("#myInput").trigger("focus");
+});
 
 //Hide & Seek Password
 function myFunction() {
@@ -239,7 +278,7 @@ function myFunction() {
     x.type = "text";
   } else {
     x.type = "password";
-   }
+  }
 }
 
 //Hide & Seek Password 2
@@ -249,7 +288,7 @@ function myFunction2() {
     x.type = "text";
   } else {
     x.type = "password";
-   }
+  }
 }
 
 //Hide & Seek Password 3
@@ -259,7 +298,7 @@ function myFunction3() {
     x.type = "text";
   } else {
     x.type = "password";
-   }
+  }
 }
 
 //Hide & Seek Password 4
@@ -269,8 +308,5 @@ function myFunction4() {
     x.type = "text";
   } else {
     x.type = "password";
-   }
+  }
 }
- 
-
-            

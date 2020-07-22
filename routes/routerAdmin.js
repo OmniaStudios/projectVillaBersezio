@@ -22,7 +22,7 @@ router.route('/creaPost')
 
  router.route('/eliminaPost').get(utils.adminCheck, controllerAdmin.get_eliminaPost);
 
- router.route('/eliminaPost/:id').get(utils.adminCheck, controllerPosts.remove);
+ router.route('/eliminaPost/:id').delete(utils.adminCheck, controllerPosts.remove);
 
  router.route('/modificaPost').get(utils.adminCheck, controllerPosts.get_edit);
 

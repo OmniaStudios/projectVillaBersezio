@@ -97,8 +97,9 @@
               <h5 class="card-title"><%=Post.Title%></h5>
               <p class="card-text"><%=ellipsify(Post.Content)%></p>
               <!-- Button trigger modal -->
-              <button type="button" class="btn" id="btn-modify" data-toggle="modalNoData" data-target="#exampleModalNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+              <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
                 Guarda di più ...
+              </button>
 
               </div>
               <%}%>
@@ -146,7 +147,7 @@
 
 
 
-  <div class="modalNoData fade" id="exampleModalNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
+  <div class="modal fade" id="exampleModalNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content" style="background-color: #fff; border: #fff;">
@@ -155,7 +156,7 @@
         <h1
           style="font-size: 150%; font-family: 'Abril Fatface', cursive !important; opacity: 0.8; text-shadow: 0px 0px 2px #000;"
           class="modal-title text-black" id="exampleModalLongTitle">How to pronounce X Æ A-Xii</h1>
-        <button id="btn-close-modal" type="button" class="close" data-dismiss="modalNoData" aria-label="Close">
+        <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
