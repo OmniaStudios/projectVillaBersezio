@@ -7,8 +7,6 @@
         return str;
     }
   }%>
-  <% var currentID = null %>
-
 <link rel="stylesheet" href="/assets/css/eliminaPost.css">
 
 
@@ -59,7 +57,9 @@
 
     <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
     <div class="row" align="center">
+    
 
+    <%if(Post.length){%>
       <% Post.forEach((Post, index) =>{%>
       <div class="col">
         <div class="card" style="width: 18rem;">
@@ -97,6 +97,21 @@
  
             
 <%})%>
+<%}else{%>
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////FARE L'ELEMENTO INFO QUI AL POSTO DELLA RIGA SOTTO, OVVIAMENTE POI RIMUOVI IL COMMENTO :* //////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+<%console.log("non ci sono post da visualizzare, vai a crea un post con annesso link")%>
+<%}%>
 </div>
 </div>
 <div class="modal fade" id="exampleModalEliminazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalEliminazione">
@@ -113,22 +128,8 @@
                 <p>Cliccando sul tasto <b>Elimina</b> andrà ad eliminare irreversibilmente il post selezionato.</p>
             </div>
             <div class="modal-footer">  
-                <div id='idPost' class="modal-id" style="visibility: hidden;"></div>
 
-
-                 <script>
-                    function gId() {
-                        currentID = document.getElementById('idPost').innerHTML
-                        console.log("TriccheTraccheBombeAMano")
-                        return(currentID)
-                        
-                    }
-                </script> 
-                
-                <%console.log(currentID)%>
-
-                
-                <form action="/admin/eliminaPost/<%=currentID%>" method ="POST">
+                <form action="/admin/eliminaPost/" method ="POST" name='triste' id='triste'>
                     <input type = "hidden" name = "_method" value = "DELETE">
                      <button type="submit" align="center" class="btn" id="btn-delete" data-toggle="modal" data-target="#modal">Elimina</button>
                         </form>

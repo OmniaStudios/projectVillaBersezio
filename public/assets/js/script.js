@@ -201,22 +201,11 @@ $(document).on("show.bs.modal", "#exampleModalNoData", function (event) {
 });
 
 $(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
-  console.log("yet another albanese");
-
-  var button = $(event.relatedTarget); // Button that triggered the modal
-
-  var currentPostID = button.data("id"); // Extract info from data-* attributes
-
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var button = $(event.relatedTarget);
   var modal = $(this);
-
-  modal.find(".modal-id").text(currentPostID);
-
-
-  currentID = document.getElementById('idPost').innerHTML
-  console.log("TriccheTraccheBombeAMano")
-  console.log(currentID)
+  window.currentID = button.data("id");
+  document.triste.action += currentID;
+  console.log("SCRIPT - " + window.currentID)
 });
 
 function Detokenize(str) {
