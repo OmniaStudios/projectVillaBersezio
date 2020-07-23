@@ -64,7 +64,7 @@
 
       <% Post.forEach((Post, index) =>{ %>
       <div class="col">
-        <div class="card" style="width: 18rem;">
+        <div class="card" id="card" style="width: 18rem;">
 
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap">
 
@@ -178,10 +178,17 @@
   </div>
 </div>
 
+<style>
+  body{
+      min-height: 120vh !important;
+  }
+</style>
 
-  <footer style="padding-top: 30px;">
-    <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;"><b>© All
-        rights Reserved to the OmniaStudios</b></h6>
-  </footer>
+
+<footer class="fixed-bottom" style="padding-top: 30px;">
+  <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+      <b>© All
+          rights Reserved to the OmniaStudios</b></h6>
+</footer>
 
 <%- include('./partials/footerDashboard')%>

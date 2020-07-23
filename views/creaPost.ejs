@@ -31,15 +31,19 @@
                 </li>
                 <li class="nav-item profile">
                     <div class="dropdown" style="padding-top: -10px !important;">
-                      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img id="rotation"  style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png" alt="profile-dropdown">
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i class="fas fa-user-circle"></i> Profilo</a>
-                        <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Esci</a>
-                      </div>
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png"
+                                alt="profile-dropdown">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
+                                    class="fas fa-user-circle"></i> Profilo</a>
+                            <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
+                                    class="fas fa-sign-out-alt"></i> Esci</a>
+                        </div>
                     </div>
-                  </li>
+                </li>
             </ul>
         </div>
     </nav>
@@ -68,17 +72,24 @@
                 style="font-family: 'Abril Fatface', cursive; padding-top: 15px;">Informazioni sull'Evento</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Content" required></textarea>
         </div>
-            <input style="color: blue;" class="btn btn-save" type="submit" href="#" role="button"></input>
+        <input style="color: blue;" class="btn btn-save" type="submit" href="#" role="button"></input>
     </form>
 
 
 
-    <footer style="padding-top: 30px;">
-        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;"><b>©
-                All
+    <style>
+        body {
+            min-height: 120vh !important;
+        }
+    </style>
+
+
+    <footer class="fixed-bottom" style="padding-top: 30px;">
+        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+            <b>© All
                 rights Reserved to the OmniaStudios</b></h6>
     </footer>
 
 
 
-<%- include('./partials/footerDashboard')%>
+    <%- include('./partials/footerDashboard')%>

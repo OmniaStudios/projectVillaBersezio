@@ -43,12 +43,15 @@
                     <div class="dropdown" style="padding-top: -10px !important;">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img id="rotation"  style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png" alt="profile-dropdown">
+                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png"
+                                alt="profile-dropdown">
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i class="fas fa-user-circle"></i> Profilo</a>
-                            <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Esci</a>
-                          </div>
+                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
+                                    class="fas fa-user-circle"></i> Profilo</a>
+                            <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
+                                    class="fas fa-sign-out-alt"></i> Esci</a>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -59,48 +62,62 @@
 
     <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
         <div class="row" align="center">
-            
-        <% if (Post.length) { %>
+
+            <% if (Post.length) { %>
             <% Post.forEach((Post) => { %>
 
-                <div class="col">    
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap">
-                        
-                            <%if (Post.Date){%>
-                                <i class="fas fa-clock"></i>
-                                <h6 id="text-clock"><%=Post.Hour%></h6>
-                    
-                              
-                                <i class="fas fa-calendar"></i>
-                                <h6 id="text-calendar"><%=Post.Date%></h6>
-                            <%}%>
+            <div class="col">
+                <div class="card" id="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
+                        alt="Card image cap">
+
+                    <%if (Post.Date){%>
+                    <i class="fas fa-clock"></i>
+                    <h6 id="text-clock"><%=Post.Hour%></h6>
+
+
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <%}%>
 
                             <h5 class="card-title"><%= Post.Title %></h5>
 
-                            <div class="card-body">
+                    <div class="card-body">
 
-                                <p class="card-text"><%= ellipsify(Post.Content) %></p>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
-                                    Modifica
-                                </button>
-                            </div>
+                        <p class="card-text"><%= ellipsify(Post.Content) %></p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
+                            data-target="#exampleModalLong">
+                            Modifica
+                        </button>
                     </div>
-
                 </div>
+
+            </div>
 
         </div>
 
 
 
         <% }) %>
-    <% } else { %>
+        <% } else { %>
 
-        //////////////////////////////////////////////////////////////////////////////////////////////FARE L'ELEMENTO INFO QUI AL POSTO DELLA RIGA SOTTO, OVVIAMENTE POI RIMUOVI IL COMMENTO :* //////////////////////////////////////////////////////////////
+
+            <div class="container">
+                <div class="card card-ops">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h1><i style="color: rgb(190, 1, 1); background-color: #fff; width: 50px; height: 50px; padding-top: 5px; border-radius: 50px;"
+                                    class="fas fa-exclamation-circle"></i>&nbsp;Nessun post da visualizzare.</h1>
+                            <p>Clicca qui sotto per creare il tuo primo post.</p><br>
+                            <a href="/admin/creaPost" class="btn btn-ops"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <%console.log("non ci sono post da visualizzare, vai a crea un post con annesso link")%>
-    <%}%>
+        <%}%>
 
 
     </div>
@@ -154,9 +171,16 @@
             </div>
         </div>
     </div>
-    <footer style="padding-top: 30px;">
-        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;"><b>©
-                All
+    <style>
+        body{
+            min-height: 120vh !important;
+        }
+    </style>
+    
+    
+    <footer class="fixed-bottom" style="padding-top: 30px;">
+        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+            <b>© All
                 rights Reserved to the OmniaStudios</b></h6>
     </footer>
 

@@ -1,86 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     background-color: #fff;
     overflow-x: hidden;
 }
-.navbar-brand{
+
+nav {
+    box-shadow: 0px -16px 51px -2px rgba(0, 0, 0, 0.479);
+}
+
+.navbar-brand {
     font-family: 'Abril Fatface', cursive;
     opacity: 0.8;
 }
 
-.fa-home{
+.fa-home {
     transition: all 0.1s linear;
 }
-.fa-home:hover{
+
+.fa-home:hover {
     color: green;
 }
 
-.nav-link{
+.nav-link {
     padding-right: 20px;
     transition: all transform .1s linear;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     transform: scale(1.05);
     border-radius: 100px;
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
     color: rgb(30, 189, 30) !important;
 }
-#admin-cockpit{
+
+#admin-cockpit {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
 }
-#exampleInputEmail1{
+
+#exampleInputEmail1 {
     border-radius: 100px;
     transition: all linear transform 1s;
 }
-#exampleInputEmail1:hover{
+
+#exampleInputEmail1:hover {
     transform: scale(1.01);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
-#default-picker{
+
+#default-picker {
     border-radius: 100px;
     transition: all linear transform 1s;
 }
-#default-picker:hover{
+
+#default-picker:hover {
     transform: scale(1.01);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
-#example{
+
+#example {
     border-radius: 100px;
     transition: all linear transform 1s;
 }
-#example:hover{
+
+#example:hover {
     transform: scale(1.01);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
-#exampleFormControlTextarea1{
+
+#exampleFormControlTextarea1 {
     transition: all linear transform 1s;
 }
-#exampleFormControlTextarea1:hover{
+
+#exampleFormControlTextarea1:hover {
     transform: scale(1.01);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
-.btn-save{
+
+.btn-save {
     border-radius: 100px !important;
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
     transition: transform linear .3s;
 }
-.btn-save:hover{
+
+.btn-save:hover {
     transform: scale(1.08);
 }
-.img-drop{
+
+.img-drop {
     width: 100%;
     height: 40vh;
     background-color: rgb(204, 204, 204);
@@ -88,39 +101,46 @@ body{
     border-color: 1px solid #777;
     transition: all linear transform 1s;
 }
-.img-drop:hover{
+
+.img-drop:hover {
     transform: scale(1.01);
-    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7),
-    7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-#img-plus{
+#img-plus {
     border: 2px dashed #777;
     border-radius: 100px;
     position: relative;
     top: 18vh;
     left: 48%;
 }
-.dropdown-exit{
+
+.dropdown-exit {
     color: rgb(228, 91, 91);
     transition: all .2s linear;
-  }
-  .dropdown-exit:hover{
+}
+
+.dropdown-exit:hover {
     color: rgb(255, 0, 0);
-  }
-  .dropdown-profile{
+}
+
+.dropdown-profile {
     color: rgb(114, 228, 91);
     transition: all .2s linear;
-  }
-  .dropdown-profile:hover{
+}
+
+.dropdown-profile:hover {
     color: rgb(9, 255, 0);
-  }
-  .dropdown-toggle::after{
-      color: #777;
-  }
-  #rotation{
+}
+
+.dropdown-toggle::after {
+    color: #777;
+}
+
+#rotation {
     transition: transform .3s;
 }
-#rotation:hover{
+
+#rotation:hover {
     transform: rotate(360deg);
 }
