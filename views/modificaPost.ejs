@@ -1,4 +1,15 @@
 <%- include('./partials/headerDashboard')%>
+
+<%function ellipsify (str) {
+    if (str.length > 140) {
+        return (str.substring(0, 138) + "...");
+    }
+    else {
+        return str;
+    }
+  }%>
+
+
 <link rel="stylesheet" href="/assets/css/modificaPost.css">
 
 <body onload="startTime()">
@@ -43,142 +54,58 @@
             </ul>
         </div>
     </nav>
-    <%console.log(post)%>
 
-    <div class="container-fluid">
+
+
+    <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
         <div class="row" align="center">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
+            
+        <% if (Post.length) { %>
+            <% Post.forEach((Post) => { %>
+
+                <div class="col">    
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap">
+                        
+                            <%if (Post.Date){%>
+                                <i class="fas fa-clock"></i>
+                                <h6 id="text-clock"><%=Post.Hour%></h6>
+                    
+                              
+                                <i class="fas fa-calendar"></i>
+                                <h6 id="text-calendar"><%=Post.Date%></h6>
+                            <%}%>
+
+                            <h5 class="card-title"><%= Post.Title %></h5>
+
+                            <div class="card-body">
+
+                                <p class="card-text"><%= ellipsify(Post.Content) %></p>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                                    Modifica
+                                </button>
+                            </div>
                     </div>
+
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
+
         </div>
-        <div class="row" align="center">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ad
-                            iure iste ut quibusdam beatae saepe vel commodi minima quo.</p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
-                            Modifica
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+
+        <% }) %>
+    <% } else { %>
+
+        //////////////////////////////////////////////////////////////////////////////////////////////FARE L'ELEMENTO INFO QUI AL POSTO DELLA RIGA SOTTO, OVVIAMENTE POI RIMUOVI IL COMMENTO :* //////////////////////////////////////////////////////////////
+
+        <%console.log("non ci sono post da visualizzare, vai a crea un post con annesso link")%>
+    <%}%>
+
+
     </div>
+
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">

@@ -24,7 +24,7 @@ router.route('/creaPost')
 
  router.route('/eliminaPost/:id').delete(utils.adminCheck, controllerPosts.remove);
 
- router.route('/modificaPost').get(utils.adminCheck, controllerPosts.get_edit);
+ router.route('/modificaPost').get(utils.adminCheck, controllerAdmin.get_modificaPost);
 
  router.route('/tuttiPost').get(utils.adminCheck, controllerAdmin.get_tuttiPost);
 

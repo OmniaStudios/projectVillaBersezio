@@ -119,7 +119,7 @@ exports.get_edit = (req, res) => {
     } else {
       console.log(req.params);
       res.render('modificaPost', {
-        post: data
+        Post: data
       })
     }
   })

@@ -141,7 +141,7 @@ exports.get_creaPost = (req, res) =>{
   res.render('creaPost')
 }
 
-exports.get_eliminaPost =(req, res) =>{
+exports.get_eliminaPost = (req, res) =>{
   Post.find((err, dataPost) => {
     if (err) {
       /* */
@@ -158,8 +158,17 @@ exports.get_eliminaPost =(req, res) =>{
   });
 }
 
-exports.get_modificaPost =(req, res) =>{
-  res.render('modificaPost')
+exports.get_modificaPost = (req, res) =>{
+  Post.find((err, data) => {
+    if (err) {
+      res.status(404).render('404');
+    } else {
+      console.log('ciao')
+        res.render('modificaPost', {
+          Post: data
+        })
+    }
+  })
 }
 
 exports.get_tuttiPost =(req, res) =>{
