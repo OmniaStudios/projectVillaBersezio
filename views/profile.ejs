@@ -152,6 +152,9 @@
                     </div>
                 </div>
             </div>
+
+           
+
             <div class="col">
                 <div class="card">
                     <div class="card-body">
@@ -165,30 +168,23 @@
                                     <th scope="col">Cognome</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
+                                <%Admin.forEach((Admin, index) =>{%>
                                 <tr>
-                                    <th scope="row" style="font-family: 'Abril Fatface', cursive !important;">1</th>
-                                    <td>Il_Profeta</td>
-                                    <td>Vittorio</td>
-                                    <td>Sgarbi</td>
+                                    <th scope="row" style="font-family: 'Abril Fatface', cursive !important;"><%=index+1%></th>
+                                    <td><%=Admin.userName%></td>
+                                    <td><%=Admin.fName%></td>
+                                    <td><%=Admin.lName%></td>
                                 </tr>
-                                <tr>
-                                    <th scope="row" style="font-family: 'Abril Fatface', cursive !important;">2</th>
-                                    <td>Der Kommentator</td>
-                                    <td>Guido</td>
-                                    <td>Meda</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" style="font-family: 'Abril Fatface', cursive !important;">3</th>
-                                    <td>Io Sono Groviera</td>
-                                    <td>Nicolae</td>
-                                    <td>Ceaușescu</td>
-                                </tr>
+                                <%})%>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
+
+
+            
         </div>
     </div>
 

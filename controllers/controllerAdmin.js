@@ -189,6 +189,15 @@ exports.get_tuttiPost =(req, res) =>{
 }
 
 exports.get_profile =(req, res) =>{
-  res.render('profile')
+  Admin.find((err, dataAdmin) =>{
+    if(err){
+      res.status(404).render('404');
+    }else{
+      res.render('profile', {
+        Admin: dataAdmin
+      });
+
+    }
+  });
 }
 

@@ -46,6 +46,7 @@ exports.getPostCarousel = (req, res) => {
 
 
 exports.new = (req, res) =>{
+  
   var today = new Date();
 
   const newPost = {
@@ -53,7 +54,7 @@ exports.new = (req, res) =>{
     Title: req.body.Title,
     Content: req.body.Content,
     Uploaded: today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear(),
-    Date: req.body.Date,
+    Date: req.body.Date.replace(/-/g, "/"),
     Hour: req.body.Hour
    // Imgs: req.body.imgs,
   };
