@@ -104,7 +104,7 @@ exports.edit = (req, res) => {
       if (err) {
         res.status(500).json({
           status: 'failed',
-          message: 'Post could not deleted'
+          message: 'Post could not be deleted'
         })
       } else {
         res.redirect('/')

@@ -26,7 +26,6 @@ exports.get_AdminRegister = (req, res) => {
 };
 
 exports.post_AdminRegister = (req, res) => {
-  console.log(req.body);
   const userName = req.body.login[0];
   const fName = req.body.login[1];
   const lName = req.body.login[2];
@@ -155,7 +154,7 @@ exports.get_eliminaPost = (req, res) =>{
           Post: dataPost
         }
         )
-    }
+        register   }
   });
 }
 
@@ -195,10 +194,75 @@ exports.get_profile =(req, res) =>{
       res.status(404).render('404');
     }else{
       res.render('profile', {
-        Admin: dataAdmin
+        Admin: dataAdmin,
+        currentAdmin: req.user
       });
 
     }
   });
+}
+
+exports.cambiaPassword=(req, res) =>{
+  var password = req.body.pChange[0];
+  var confermaPassword = req.body.pChange[1];
+  var err = false;
+
+  if(!password || !confermaPassword){
+    console.log("Riempi i due fields");
+    err = true;
+  }
+
+  if(password != confermaPassword){
+    console.log("I due campi non combaciano");
+    err = true;
+  }
+
+  if(password.length < 6){
+    console.log("password troppo lunga");
+    err = true;
+  }
+
+  if(err){
+    res.redirect("/admin/profile");
+  }
+
+  /*HASH PWD*/
+
+  bcrypt.genSalt(10, (err, salt) =>
+          bcrypt.hash(password, salt, (err, hash) => {
+              if(err) console.log(err);
+
+              //PSW = hashed
+              password = hash;
+
+              //SAVE ADMIN
+             const updated = {
+               _id: req.user._id,
+               userName: req.user.userName,
+               fName: req.user.fName,
+               lName: req.user.lName,
+               password: password
+             }
+
+               Admin.findById(updated._id, (err, data) =>{
+                 if(err){
+                   res.status(404).json({
+                     status: 'failed',
+                     message: 'Admin does not exist | Invalid'
+                   })
+                 }
+                 data.replaceOne(updated, err=>{
+                   if(err){
+                     res.status(500).json({
+                       status: 'failed',
+                       message: 'Admin could not be deleted '
+                     })
+                    }else{
+                      res.redirect('/admin/login');
+                    }
+                 })
+               })
+          })
+        );
 }
 

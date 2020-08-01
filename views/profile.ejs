@@ -3,7 +3,7 @@
 
 <body onload="startTime()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Villa Bersezio&nbsp;</a>
+        <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
         <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,14 +62,15 @@
                                 <label for="exampleInputEmail1"
                                     style="font-family: 'Abril Fatface', cursive;">Nome</label>
                                 <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il nome"
-                                    value="Vittorio" disabled>
+                                    value=<%=currentAdmin.fName%> disabled>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"
                                     style="font-family: 'Abril Fatface', cursive;">Cognome</label>
                                 <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il Cognome"
-                                    value="Sgarbi" disabled>
+                                    value=<%=currentAdmin.lName%> disabled>
                             </div>
+                            
 
                             <a class="btn btn-save" type="button" href="#" role="button">Salva</a>
                         </form>
@@ -130,6 +131,7 @@
 
 
                             <input class="btn btn-save" type="submit" value="Registrati">
+                            </form>
 
 
 
@@ -138,24 +140,27 @@
                 </div>
             </div>
         </div>
+        
         <div class="row" style="padding-top: 30px;">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+                        <form class="form" action="/admin/cambiaPassword" method="POST">
                         <h1 style="font-family: 'Abril Fatface', cursive; font-size: 150%;">CAMBIA PASSWORD</h1>
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Password
                                 *</label><br>
-                            <input class="form-control" type="password" value="Password" id="myInput3"><br>
+                            <input class="form-control" type="password" value="Password" id="myInput3" name="pChange"><br>
                             <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction3()">
                         </div>
                         <div class="form-group" style="padding-bottom: 20px;">
                             <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Ripeti
                                 Password
                                 *</label><br>
-                            <input class="form-control" type="password" value="Password" id="myInput4"><br>
+                            <input class="form-control" type="password" value="Password" id="myInput4" name="pChange"><br>
                             <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction4()">
-                            <a class="btn btn-save" ype="button" href="#" role="button">Salva</a>
+                            <input class="btn btn-save" type="submit" role="button">
+                            </form>
                         </div>
                     </div>
                 </div>

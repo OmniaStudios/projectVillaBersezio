@@ -6,6 +6,8 @@ const controllerBasic = require('../controllers/controllerBasic');
 const controllerPosts = require('../controllers/controllerPosts');
 const controllerAdmin = require('../controllers/controllerAdmin');
 
+router.route('/').get(utils.adminCheck, controllerAdmin.get_Dashboard);
+
 router.route('/login')
     .get(controllerAdmin.get_AdminLogin)
     .post(controllerAdmin.post_AdminLogin);
@@ -29,6 +31,8 @@ router.route('/creaPost')
  router.route('/tuttiPost').get(utils.adminCheck, controllerAdmin.get_tuttiPost);
 
  router.route('/profile').get(utils.adminCheck, controllerAdmin.get_profile);
+
+ router.route('/cambiaPassword').post(utils.adminCheck, controllerAdmin.cambiaPassword);
 
 router.route('/logout')
     .get(controllerAdmin.get_Logout);
