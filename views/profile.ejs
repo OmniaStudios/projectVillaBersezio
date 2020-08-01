@@ -79,53 +79,61 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <form style="padding: 30px 30px 30px 30px;">
+
+
+                        
+                        <form class="form" style="padding: 30px 30px 30px 30px;" action="/admin/register" method="POST">
+
                             <h1 style="font-family: 'Abril Fatface', cursive; font-size: 150%;">REGISTRA UN NUOVO UTENTE
                             </h1>
+
+
                             <div class="form-group">
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome
                                     Utente *</label>
-                                <input class="form-control" id="exampleInputEmail1"
+                                <input class="form-control" id="username" name="login"
                                     placeholder="Inserire il Nome Utente" value="Il_Profeta">
                             </div>
+
+
                             <div class="form-group">
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome
                                     *</label>
-                                <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il Nome"
+                                <input class="form-control" id="fName" placeholder="Inserire il Nome" name="login"
                                     value="Vittorio">
                             </div>
+
+
                             <div class="form-group">
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Cognome
                                     *</label>
-                                <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il Cognome"
+                                <input class="form-control" id="lName" placeholder="Inserire il Cognome" name ="login"
                                     value="Sgarbi">
                             </div>
-                            <div class="form-group">
+
+
+                            <div class="form-group" >
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Password
                                     *</label><br>
-                                <input class="form-control" type="password" value="aH no?!" id="myInput"><br>
+                                <input class="form-control" type="password" value="password" id="myInput" name="login"><br>
                                 <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction()">
                             </div>
+
+
                             <div class="form-group" style="padding-bottom: 20px;">
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Ripeti
                                     Password
                                     *</label><br>
-                                <input class="form-control" type="password" value="aH no?!" id="myInput2"><br>
+                                <input class="form-control" type="password" value="Password" id="myInput2" name ="login"><br>
                                 <input id="checkbox2" style="float: left;" type="checkbox" onclick="myFunction2()">
                             </div>
-                            <div class="dropdown" align="left" style="font-family: 'Abril Fatface', cursive;">
-                                <button class="btn btn-save dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Permessi
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                                    style="font-family: 'Montserrat', sans-serif;">
-                                    <a class="dropdown-item" href="#">Admin</a>
-                                    <a class="dropdown-item" href="#">Normal User</a>
-                                </div>
-                            </div>
-                            <a class="btn btn-save" ype="button" href="#" role="button">REGISTRA</a>
-                        </form>
+
+
+                            <input class="btn btn-save" type="submit" value="Registrati">
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -138,14 +146,14 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Password
                                 *</label><br>
-                            <input class="form-control" type="password" value="aH no?!" id="myInput3"><br>
+                            <input class="form-control" type="password" value="Password" id="myInput3"><br>
                             <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction3()">
                         </div>
                         <div class="form-group" style="padding-bottom: 20px;">
                             <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Ripeti
                                 Password
                                 *</label><br>
-                            <input class="form-control" type="password" value="aH no?!" id="myInput4"><br>
+                            <input class="form-control" type="password" value="Password" id="myInput4"><br>
                             <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction4()">
                             <a class="btn btn-save" ype="button" href="#" role="button">Salva</a>
                         </div>

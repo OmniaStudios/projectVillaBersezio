@@ -26,6 +26,7 @@ exports.get_AdminRegister = (req, res) => {
 };
 
 exports.post_AdminRegister = (req, res) => {
+  console.log(req.body);
   const userName = req.body.login[0];
   const fName = req.body.login[1];
   const lName = req.body.login[2];
