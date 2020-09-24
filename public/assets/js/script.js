@@ -236,6 +236,27 @@ $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
   console.log("SCRIPT - " + window.currentID) */
 });
 
+
+$(document).on("show.bs.modal", "#exampleModalLongNoData", function (event) {
+  console.log("albanese senza documenti")
+  var button = $(event.relatedTarget);
+  var titolo = button.data("titolo");
+  var contenuto = button.data("contenuto");
+  var caricato = button.data("caricato");
+  var autore = button.data("autore");
+  var autoreData = autore + ", " + caricato;
+  console.log(autore)
+
+  var modal = $(this);
+
+  console.log(titolo)
+
+  modal.find('.modal-title').val(Detokenize(titolo))
+  modal.find('.modal-contenuto').text(Detokenize(contenuto))
+  modal.find('.modal-caricato').text(Detokenize(caricato))
+  modal.find('.modal-autore').text(Detokenize(autore))
+});
+
 function Detokenize(str) {
   console.log(str)
   newStr = str.replace(/§/g, " ");

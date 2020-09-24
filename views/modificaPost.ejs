@@ -83,7 +83,7 @@
 
                     <i class="fas fa-calendar"></i>
                     <h6 id="text-calendar"><%=Post.Date%></h6>
-                    <%}%>
+                    
 
                             <h5 class="card-title"><%= Post.Title %></h5>
 
@@ -95,7 +95,23 @@
                             Modifica
                         </button>
                     </div>
-                </div>
+                    <%} else { %> 
+
+
+
+
+
+                        <h5 class="card-title"><%= Post.Title %></h5>
+
+                    <div class="card-body">
+
+                        <p class="card-text"><%= ellipsify(Post.Content) %></p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLongNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                            Modifica
+                        </button>
+                    </div>
+                    <%}%>
 
             </div>
 
@@ -176,6 +192,51 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="exampleModalLongNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: #fff;">
+                <div class="modal-header" style="border-bottom: 1px solid #fff;">
+                    <div class="form-group">
+                        <label for=" exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;"></label>
+                        <input type="text" class="modal-title" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Inserire titolo Evento"
+                            style="font-family: 'Abril Fatface', cursive;">
+                    </div>
+                    <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="img-drop-modify" class="card-img-top" src="https://source.unsplash.com/1600x900/?city"
+                        alt="Card image cap">
+                
+                   
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"
+                            style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
+                        <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="button" class="btn"
+                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                        Salva
+                    </button>
+                    <button style="background-color: rgb(255, 41, 41); color: #fff;" type="button" class="btn"
+                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                        Annulla
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <style>
         body{
             min-height: 120vh !important;
