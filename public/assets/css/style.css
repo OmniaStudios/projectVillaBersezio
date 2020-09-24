@@ -276,6 +276,7 @@ iframe {
   top: -20px;
 }
 
+
 .text-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-size: 60%;
@@ -469,8 +470,13 @@ p {
 
 .icon-OS_Logo {
   padding-left: 10px;
+  cursor: pointer;
   font-size: 22px;
   color: #444;
+}
+
+.icon-OS_Logo:hover {
+  color: #f700c4;
 }
 
 #text-footer {
@@ -535,4 +541,8 @@ p {
 
 .zoom:hover {
   transform: scale(1.2);
+}
+
+::selection {
+  background: #b3b3b3; /* WebKit/Blink Browsers */
 }

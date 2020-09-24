@@ -144,3 +144,7 @@ nav {
 #rotation:hover {
     transform: rotate(360deg);
 }
+
+::selection {
+    background: #b3b3b3; /* WebKit/Blink Browsers */
+  }

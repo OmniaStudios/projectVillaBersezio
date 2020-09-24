@@ -79,3 +79,7 @@ body{
 .card{
     box-shadow: 0px 0px 8px #000;
 }
+
+::selection {
+    background: #b3b3b3; /* WebKit/Blink Browsers */
+  }

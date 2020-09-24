@@ -154,7 +154,7 @@ exports.get_eliminaPost = (req, res) =>{
           Post: dataPost
         }
         )
-        register   }
+       }
   });
 }
 
