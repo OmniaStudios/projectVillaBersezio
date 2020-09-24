@@ -208,7 +208,36 @@ $(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
   console.log("SCRIPT - " + window.currentID)
 });
 
+$(document).on("show.bs.modal", "#exampleModalLong", function (event) {
+  console.log("albanese")
+  var button = $(event.relatedTarget);
+  var titolo = button.data("titolo");
+  var contenuto = button.data("contenuto");
+  var data = button.data("data");
+  var ora = button.data("ora");
+  var caricato = button.data("caricato");
+  var autore = button.data("autore");
+  var autoreData = autore + ", " + caricato;
+  console.log(autore)
+
+  var modal = $(this);
+
+  console.log(titolo)
+
+  modal.find('.modal-title').val(Detokenize(titolo))
+  modal.find('.modal-contenuto').text(Detokenize(contenuto))
+  modal.find('.modal-ora').val(Detokenize(ora))
+  modal.find('.modal-data').val(Detokenize(data))
+  modal.find('.modal-caricato').text(Detokenize(caricato))
+  modal.find('.modal-autore').text(Detokenize(autore))
+
+  /* window.currentID = button.data("id");
+  document.triste.action += currentID;
+  console.log("SCRIPT - " + window.currentID) */
+});
+
 function Detokenize(str) {
+  console.log(str)
   newStr = str.replace(/§/g, " ");
   return newStr;
 }

@@ -9,6 +9,11 @@
     }
   }%>
 
+<% function tokenize (str) {
+    newStr = str.replace(/ /g, "§");
+    return(newStr);
+} %>
+
 
 <link rel="stylesheet" href="/assets/css/modificaPost.css">
 
@@ -86,8 +91,7 @@
 
                         <p class="card-text"><%= ellipsify(Post.Content) %></p>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal"
-                            data-target="#exampleModalLong">
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-ora=<%=Post.Hour%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
                             Modifica
                         </button>
                     </div>
@@ -132,8 +136,8 @@
                 <div class="modal-header" style="border-bottom: 1px solid #fff;">
                     <div class="form-group">
                         <label for=" exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;"></label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Inserire titolo Evento" value="How to pronounce X Æ A-Xii"
+                        <input type="text" class="modal-title" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Inserire titolo Evento"
                             style="font-family: 'Abril Fatface', cursive;">
                     </div>
                     <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -145,18 +149,18 @@
                         alt="Card image cap">
                     <div class="md-form md-outline">
                         <label for="default-picker" style="font-family: 'Abril Fatface', cursive;"></label>
-                        <input type="time" id="default-picker" class="form-control" placeholder="Select time"
+                        <input type="time" id="default-picker" class="modal-ora" placeholder="Select time"
                             value="21:02">
                     </div>
                     <div class="md-form md-outline input-with-post-icon datepicker">
                         <label for="default-picker"
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
-                        <input placeholder="Select date" type="date" id="example" class="form-control">
+                        <input placeholder="Select date" type="date" id="example" class="modal-data" value="12/12/2020">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
