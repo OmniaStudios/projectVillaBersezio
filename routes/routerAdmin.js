@@ -28,6 +28,8 @@ router.route('/creaPost')
 
  router.route('/modificaPost').get(utils.adminCheck, controllerAdmin.get_modificaPost);
 
+ router.route('/modificaPost/:id').patch(utils.adminCheck, controllerPosts.modify);
+
  router.route('/tuttiPost').get(utils.adminCheck, controllerAdmin.get_tuttiPost);
 
  router.route('/profile').get(utils.adminCheck, controllerAdmin.get_profile);

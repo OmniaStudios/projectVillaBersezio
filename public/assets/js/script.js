@@ -209,7 +209,6 @@ $(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
 });
 
 $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
-  console.log("albanese")
   var button = $(event.relatedTarget);
   var titolo = button.data("titolo");
   var contenuto = button.data("contenuto");
@@ -217,19 +216,23 @@ $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
   var ora = button.data("ora");
   var caricato = button.data("caricato");
   var autore = button.data("autore");
+  var id = button.data("id");
   var autoreData = autore + ", " + caricato;
-  console.log(autore)
+  data = data.replace(/\//g , "-");
+
 
   var modal = $(this);
 
   console.log(titolo)
-
+  modal.find('.modal-footer').attr("action", "/admin/modificaPost/"+id + "?_method=patch");
   modal.find('.modal-title').val(Detokenize(titolo))
   modal.find('.modal-contenuto').text(Detokenize(contenuto))
-  modal.find('.modal-ora').val(Detokenize(ora))
-  modal.find('.modal-data').val(Detokenize(data))
+  modal.find('.modal-ora').val(ora)
+  modal.find('.modal-data').val(data)
   modal.find('.modal-caricato').text(Detokenize(caricato))
   modal.find('.modal-autore').text(Detokenize(autore))
+
+  
 
   /* window.currentID = button.data("id");
   document.triste.action += currentID;
@@ -244,13 +247,11 @@ $(document).on("show.bs.modal", "#exampleModalLongNoData", function (event) {
   var contenuto = button.data("contenuto");
   var caricato = button.data("caricato");
   var autore = button.data("autore");
+  var id = button.id("id");
   var autoreData = autore + ", " + caricato;
-  console.log(autore)
-
   var modal = $(this);
-
-  console.log(titolo)
-
+  
+  modal.find('.modal-footer').attr("action", "/admin/modificaPost/"+id + "?_method=patch" );
   modal.find('.modal-title').val(Detokenize(titolo))
   modal.find('.modal-contenuto').text(Detokenize(contenuto))
   modal.find('.modal-caricato').text(Detokenize(caricato))
@@ -258,13 +259,13 @@ $(document).on("show.bs.modal", "#exampleModalLongNoData", function (event) {
 });
 
 function Detokenize(str) {
-  console.log(str)
+  //console.log(str)
   newStr = str.replace(/§/g, " ");
   return newStr;
 }
 
 function tokenize(str) {
-  newStr = str.replace(/ /g, "§");
+  //newStr = str.replace(/ /g, "§");
   return newStr;
 }
 

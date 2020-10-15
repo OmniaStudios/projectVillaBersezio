@@ -91,7 +91,7 @@
 
                         <p class="card-text"><%= ellipsify(Post.Content) %></p>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-ora=<%=Post.Hour%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLong" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-ora=<%=Post.Hour%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%> data-id = <%=Post._id%>>
                             Modifica
                         </button>
                     </div>
@@ -107,7 +107,7 @@
 
                         <p class="card-text"><%= ellipsify(Post.Content) %></p>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLongNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                        <button type="button" class="btn" id="btn-modify" data-toggle="modal" data-target="#exampleModalLongNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%> data-id = <%=Post._id%> >
                             Modifica
                         </button>
                     </div>
@@ -178,9 +178,14 @@
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
                         <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
+                    <span class="modal-id" style="color:rgba(0, 0, 0, 0); height: 1px;"></span>
                 </div>
-                <div class="modal-footer">
-                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="button" class="btn"
+                <!--
+                    Non togliere span necessaria a passaggio parametri, MALEH!
+                -->
+                
+                <form class="modal-footer" method="POST" action="">
+                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="submit" class="btn"
                         id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
                         Salva
                     </button>
@@ -220,9 +225,11 @@
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
                         <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
+                    
                 </div>
-                <div class="modal-footer">
-                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="button" class="btn"
+                <span class="modal-id" style="color:rgba(0, 0, 0, 0); height: 1px;"></span>
+                <form action="" method="POST" class="modal-footer">
+                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="submit" class="btn"
                         id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
                         Salva
                     </button>
