@@ -82,16 +82,9 @@ exports.get_new = (req, res) => {
 
 
 exports.edit = (req, res) => {
+  console.log(req.body);
   let id = req.params.id;
-  const updated = {
-    Author: req.body.author,
-    Title: req.body.title,
-    Content: req.body.content,
-    Uploaded: req.body.uploaded,
-    Date: req.body.date,
-    Hour: req.body.Hour,
-   // Imgs: req.body.imgs
-  }
+  
 
   Post.findById(id, (err, data) => {
     if (err) {
@@ -100,6 +93,18 @@ exports.edit = (req, res) => {
         message: 'Post does not exist | Invalid'
      })
     }
+
+    const updated = {
+      Author: data.Author,
+      Title: req.body.demo_title,
+      Content: req.body.demo_content,
+      Uploaded: data.Uploaded,
+      Date: req.body.demo_date,
+      Hour: req.body.demo_hour
+     // Imgs: req.body.imgs
+    }
+
+
     data.replaceOne(updated, err => {
       if (err) {
         res.status(500).json({
@@ -107,10 +112,10 @@ exports.edit = (req, res) => {
           message: 'Post could not be deleted'
         })
       } else {
-        res.redirect('/')
+        res.redirect('/admin/tuttiPost')
       }
     })
-  })
+  }) 
 }
 
 exports.get_edit = (req, res) => {
@@ -144,10 +149,4 @@ exports.remove = (req, res) => {
     }
   }
   )
-}
-
-exports.modify = (req, res) =>{
-  console.log("arrivato MOD");
-  
-  /*IMPLEMENTARE MODIFICA*/
 }

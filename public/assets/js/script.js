@@ -209,7 +209,8 @@ $(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
 });
 
 $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
-  var button = $(event.relatedTarget);
+  console.log("SIFRA"); 
+  var button = $(event.relatedTarget);  
   var titolo = button.data("titolo");
   var contenuto = button.data("contenuto");
   var data = button.data("data");

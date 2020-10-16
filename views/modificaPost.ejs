@@ -152,7 +152,7 @@
                 <div class="modal-header" style="border-bottom: 1px solid #fff;">
                     <div class="form-group">
                         <label for=" exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;"></label>
-                        <input type="text" class="modal-title" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        <input type="text" class="modal-title" id="title" aria-describedby="emailHelp"
                             placeholder="Inserire titolo Evento"
                             style="font-family: 'Abril Fatface', cursive;">
                     </div>
@@ -171,22 +171,28 @@
                     <div class="md-form md-outline input-with-post-icon datepicker">
                         <label for="default-picker"
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
-                        <input placeholder="Select date" type="date" id="example" class="modal-data" value="12/12/2020">
+                        <input placeholder="Select date" type="date" id="date" class="modal-data" value="12/12/2020">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
                         <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <span class="modal-id" style="color:rgba(0, 0, 0, 0); height: 1px;"></span>
                 </div>
-                <!--
-                    Non togliere span necessaria a passaggio parametri, MALEH!
-                -->
-                
+                <!--Action non necessaria in quanto ereditata da script.js-->
                 <form class="modal-footer" method="POST" action="">
+
+                    <!--PASSAGGIO DATI, MALEH-->
+                    <!-- <input type="hidden" id='demoAuthor' name='demo_author'> -->
+                    <input type="hidden" id='demoTitle' name='demo_title'>
+                    <input type="hidden" id='demoContent' name='demo_content'>
+                    <!-- <input type="hidden" id='demoUploaded' name='demo_uploaded'> -->
+                    <input type="hidden" id='demoDate' name='demo_date'>
+                    <input type="hidden" id='demoHour' name='demo_hour'>
+                    
+
                     <button style="background-color: rgb(0, 224, 86); color: #fff;" type="submit" class="btn"
-                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong" onclick="getValore()">
                         Salva
                     </button>
                     <button style="background-color: rgb(255, 41, 41); color: #fff;" type="button" class="btn"
@@ -223,14 +229,15 @@
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1"
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
-                        <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="modal-contenuto" id="content" rows="3"></textarea>
                     </div>
                     
                 </div>
                 <span class="modal-id" style="color:rgba(0, 0, 0, 0); height: 1px;"></span>
+                <!--Action non necessaria in quanto ereditata da script.js-->
                 <form action="" method="POST" class="modal-footer">
                     <button style="background-color: rgb(0, 224, 86); color: #fff;" type="submit" class="btn"
-                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
+                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong" onclick="getValore()">
                         Salva
                     </button>
                     <button style="background-color: rgb(255, 41, 41); color: #fff;" type="button" class="btn"
@@ -256,6 +263,41 @@
             <b>© All
                 rights Reserved to the OmniaStudios</b></h6>
     </footer>
+
+
+    <script>
+        function getValore() {
+            
+            console.log('0');
+            var demo_title = document.getElementById('title').value;
+            document.getElementById('demoTitle').value = demo_title;
+
+            console.log("1");
+
+        //document.getElementById('content').value = 'ciao pippo!'
+            var demo_content = document.getElementById('exampleFormControlTextarea1').value;
+            /* console.log('1.5' + document.getElementById('exampleFormControlTextarea1').value  + ' />')    */
+            document.getElementById('demoContent').value = demo_content;
+            console.log("2 " + demo_content);
+
+            var demo_date = document.getElementById('date').value;
+            document.getElementById('demoDate').value = demo_date;
+            console.log(demo_date);
+
+            console.log('3');
+
+            var demo_hour = document.getElementById('default-picker').value;
+            document.getElementById('demoHour').value = demo_hour;
+
+            console.log('4')
+
+           /* var demo_uploaded = document.getElementById('uploaded').value;
+            document.getElementById('demoUploaded').value = demo_uploaded;*/
+
+            /* var demoVal = document.getElementById('demo').value; */
+            /* alert(document.getElementById('demo-title').value); */
+        }
+    </script>
 
 
 
