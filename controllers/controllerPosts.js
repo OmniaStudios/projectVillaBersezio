@@ -82,6 +82,7 @@ exports.get_new = (req, res) => {
 
 
 exports.edit = (req, res) => {
+  console.log(req);
   let id = req.params.id;
   const updated = {
     Author: req.body.author,
@@ -92,6 +93,7 @@ exports.edit = (req, res) => {
     Hour: req.body.Hour,
    // Imgs: req.body.imgs
   }
+  console.log(updated)
 
   Post.findById(id, (err, data) => {
     if (err) {
@@ -144,10 +146,4 @@ exports.remove = (req, res) => {
     }
   }
   )
-}
-
-exports.modify = (req, res) =>{
-  console.log("arrivato MOD");
-  
-  /*IMPLEMENTARE MODIFICA*/
 }
