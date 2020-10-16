@@ -82,9 +82,24 @@ exports.get_new = (req, res) => {
 
 
 exports.edit = (req, res) => {
+<<<<<<< HEAD
   console.log(req.body);
   let id = req.params.id;
   
+=======
+  console.log(req);
+  let id = req.params.id;
+  const updated = {
+    Author: req.body.author,
+    Title: req.body.title,
+    Content: req.body.content,
+    Uploaded: req.body.uploaded,
+    Date: req.body.date,
+    Hour: req.body.Hour,
+   // Imgs: req.body.imgs
+  }
+  console.log(updated)
+>>>>>>> 692a8853e535845a00f9b7d03071b4740698ce3d
 
   Post.findById(id, (err, data) => {
     if (err) {

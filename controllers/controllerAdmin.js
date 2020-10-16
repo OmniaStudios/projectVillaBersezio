@@ -148,7 +148,7 @@ exports.get_eliminaPost = (req, res) =>{
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-     // console.log(dataPost);
+     console.log(dataPost);
         /*Funzione generica*/
         res.render('eliminaPost',{
           Post: dataPost
