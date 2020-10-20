@@ -108,9 +108,8 @@ h1 {
     filter: blur(4px);
 }
 
-#exampleInputEmail1 {
-    border-radius: 100px;
-    transition: all linear transform 1s;
+#exampleInputEmail1{
+    padding: 100px !important;
 }
 
 #exampleInputEmail1:hover {
@@ -121,6 +120,17 @@ h1 {
 #default-picker {
     border-radius: 100px;
     transition: all linear transform 1s;
+}
+
+input{
+    /* border: 1px solid white; */
+    border: 1px solid rgba(85, 85, 85, 0.384);
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+input:hover{
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 #default-picker:hover {
@@ -146,6 +156,84 @@ h1 {
     transform: scale(1.01);
     box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
+
+
+#modal-title {
+    padding-left: 10px !important;
+    border-radius: 100px;
+    transition: all linear transform 1s;
+}
+
+#modal-title:hover {
+    transform: scale(1.01);
+    box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+#modal-clock {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    color: rgb(107, 107, 107);
+  }
+  
+  #modal-calendar {
+    position: absolute;
+    top: -10px;
+    left: 120px;
+    color: rgb(107, 107, 107);
+  }
+  
+  #text-clock-modal {
+    position: absolute;
+    top: -11px;
+    left: 40px;
+    color: rgb(107, 107, 107);
+  }
+  
+  #text-calendar-modal {
+    position: absolute;
+    top: -11px;
+    left: 140px;
+    color: rgb(107, 107, 107);
+  }
+  
+  #btn-mobile-seeMore {
+    position: absolute;
+    top: 80px;
+    color: rgb(60, 73, 192);
+    background-color: transparent;
+  }
+  
+  #text-clock {
+    position: relative;
+    left: -60px;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 80%;
+    color: #777;
+  }
+  
+  #text-calendar {
+    position: relative;
+    top: -39px;
+    left: 60px;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 80%;
+    color: #777;
+  }
+  
+  .fa-clock {
+    position: relative;
+    left: -112px;
+    top: 15px;
+    color: rgb(107, 107, 107);
+  }
+  
+  .fa-calendar {
+    position: relative;
+    top: -23px;
+    left: 10px;
+    color: rgb(107, 107, 107);
+  }
 
 .dropdown-exit {
     color: rgb(228, 91, 91);
@@ -181,7 +269,7 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    /* transform: translateX(-50%) translateY(-50%); */
     background-color: #aaa9ad;
     border: 2px solid rgba(85, 85, 85, 0.384);
     border-radius: 30px;

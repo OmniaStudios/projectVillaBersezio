@@ -136,7 +136,7 @@
                 </div>
             </div>
 
-        <%console.log("non ci sono post da visualizzare, vai a crea un post con annesso link")%>
+        <%console.log("non ci sono post da visualizzare, vai a creare un post con annesso link")%>
         <%}%>
 
 
@@ -145,7 +145,7 @@
 
 
     <!-- Modal -->
-    <form></form>
+    
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -179,15 +179,7 @@
                             style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
                         <textarea class="modal-contenuto" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-<<<<<<< HEAD
-                </div>
-                <!--Action non necessaria in quanto ereditata da script.js-->
-=======
-                    
-                </div>
-    
-                
->>>>>>> 692a8853e535845a00f9b7d03071b4740698ce3d
+
                 <form class="modal-footer" method="POST" action="">
 
                     <!--PASSAGGIO DATI, MALEH-->
@@ -212,56 +204,6 @@
         </div>
     </div>
 
-
-
-    <div class="modal fade" id="exampleModalLongNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content" style="background-color: #fff;">
-                <div class="modal-header" style="border-bottom: 1px solid #fff;">
-                    <div class="form-group">
-                        <label for=" exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;"></label>
-                        <input type="text" class="modal-title" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Inserire titolo Evento"
-                            style="font-family: 'Abril Fatface', cursive;">
-                    </div>
-                    <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img id="img-drop-modify" class="card-img-top" src="https://source.unsplash.com/1600x900/?city"
-                        alt="Card image cap">
-                
-                   
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1"
-                            style="font-family: 'Abril Fatface', cursive; padding-top: 15px;"></label>
-                        <textarea class="modal-contenuto" id="content" rows="3"></textarea>
-                    </div>
-                    
-                </div>
-<<<<<<< HEAD
-                <span class="modal-id" style="color:rgba(0, 0, 0, 0); height: 1px;"></span>
-                <!--Action non necessaria in quanto ereditata da script.js-->
-=======
->>>>>>> 692a8853e535845a00f9b7d03071b4740698ce3d
-                <form action="" method="POST" class="modal-footer">
-                    <button style="background-color: rgb(0, 224, 86); color: #fff;" type="submit" class="btn"
-                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong" onclick="getValore()">
-                        Salva
-                    </button>
-                    <button style="background-color: rgb(255, 41, 41); color: #fff;" type="button" class="btn"
-                        id="btn-modify" data-toggle="modal" data-target="#exampleModalLong">
-                        Annulla
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
     <style>
         body{
             min-height: 120vh !important;
@@ -285,7 +227,7 @@
 
             console.log("1");
 
-        //document.getElementById('content').value = 'ciao pippo!'
+        //document.getElementById('content').value = 'ciao pippo! <- Cit. Tosello '
             var demo_content = document.getElementById('exampleFormControlTextarea1').value;
             /* console.log('1.5' + document.getElementById('exampleFormControlTextarea1').value  + ' />')    */
             document.getElementById('demoContent').value = demo_content;
