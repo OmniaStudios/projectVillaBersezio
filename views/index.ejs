@@ -63,11 +63,14 @@
                       alt="Card image cap">
                     <i class="fas fa-clock"></i>
                     <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                    <%if(Post.Date != null){%>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <%if(Post.Date != '') {%>
+                      <i class="fas fa-calendar"></i>
+                      <h6 id="text-calendar"><%=Post.Date%></h6>
+                      
                     <%}%>
+                    
                       <div class="card-body">
+                        <div><%= Post.Title %></div>
                         <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
 
                     <!-- Button trigger modal -->
@@ -82,7 +85,7 @@
                       </span>
                     </button>
                   </div>
-                  <h6 class="text-subtitle"><%=Post.Author%></h6>
+                  <h6 class="text-subtitle">Ciao - <%=Post.Author%></h6>
                 </div>
                 <!-- Modal -->
 
@@ -97,14 +100,17 @@
                   <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
                   <i class="fas fa-clock"></i>
                   <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                  <%if(Post.Date != null){%>
-                  <i class="fas fa-calendar"></i>
-                  <h6 id="text-calendar"><%=Post.Date%></h6>
+                  <%if(Post.Date != ''){%>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar"><%=Post.Date%></h6>
+                
                   <%}%>
+                  
                     <div class="card-body">
                       <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
+                    </div>
                 </div>
-                <h6 class="text-subtitle"><%=Post.Author%></h6>
+                <h6 class="text-subtitle">Ciao - <%=Post.Author%></h6>
               </div>
             </div>
             <%}%>
