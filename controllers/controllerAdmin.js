@@ -117,6 +117,7 @@ exports.post_AdminRegister = (req, res) => {
 };
 
 exports.get_Dashboard = (req, res) => {
+ // console.log(req);
   Post.find((err, dataPost) => {
     if (err) {
       /* */

@@ -220,6 +220,7 @@ $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
   var id = button.data("id");
   var autoreData = autore + ", " + caricato;
   data = data.replace(/\//g , "-");
+  console.log(titolo + " : " + contenuto );
 
 
   var modal = $(this);
@@ -248,11 +249,13 @@ $(document).on("show.bs.modal", "#exampleModalLongNoData", function (event) {
   var contenuto = button.data("contenuto");
   var caricato = button.data("caricato");
   var autore = button.data("autore");
-  var id = button.id("id");
+  var id = button.data("id");
   var autoreData = autore + ", " + caricato;
   var modal = $(this);
+  console.log(titolo + ":" + contenuto);
   
-  modal.find('.modal-footer').attr("action", "/admin/modificaPost/"+id + "?_method=patch" );
+  modal.find('.modal-footer-NoData').attr("action", "/admin/modificaPost/"+id + "?_method=patch" );
+  /* modal.find('.modal-footer-NoData').attr("action", "/admin/modificaPost/"+id + "?_method=patch" ); */
   modal.find('.modal-title').val(Detokenize(titolo))
   modal.find('.modal-contenuto').text(Detokenize(contenuto))
   modal.find('.modal-caricato').text(Detokenize(caricato))

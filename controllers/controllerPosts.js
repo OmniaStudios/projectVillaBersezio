@@ -82,9 +82,8 @@ exports.get_new = (req, res) => {
 
 
 exports.edit = (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   let id = req.params.id;
-
   Post.findById(id, (err, data) => {
     if (err) {
       res.status(404).json({
@@ -93,6 +92,9 @@ exports.edit = (req, res) => {
      })
     }
 
+    console.log(req.body.demo_title)
+
+    
     const updated = {
       Author: data.Author,
       Title: req.body.demo_title,
