@@ -40,11 +40,11 @@ app.use(
 app.set('view engine', 'ejs');
 
 
-
 app.use('/', routerBasic);
 app.use('/eng', routerEnglish);
 app.use('/fr', routerFrench);
 app.use('/err', routerError);
+
 
 
 

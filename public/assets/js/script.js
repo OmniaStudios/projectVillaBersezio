@@ -28,7 +28,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fa-home').on('click', function () {
         $("html").scrollTop(0);
-        console.log("Clicked!");
         $('html, body').animate({
             scrollTop: $('navbar').offset().top
         }, 1000);
@@ -40,7 +39,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fa-user').on('click', function () {
         $("html").scrollTop(0);
-        console.log("Clicked!");
         $('html, body').animate({
             scrollTop: $(".about-us").offset().top
         }, 1000);
@@ -52,7 +50,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fa-newspaper').on('click', function () {
         $("html").scrollTop(0);
-        console.log("Clicked!");
         $('html, body').animate({
             scrollTop: $(".new-post").offset().top
         }, 1000);
@@ -64,7 +61,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fa-images').on('click', function () {
         $("html").scrollTop(0);
-        console.log("Clicked!");
         $('html, body').animate({
             scrollTop: $(".gallery").offset().top
         }, 1000);
@@ -76,7 +72,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fa-map').on('click', function () {
         $("html").scrollTop(0);
-        console.log("Clicked!");
         $('html, body').animate({
             scrollTop: $(".position").offset().top
         }, 1000);
@@ -90,7 +85,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.fa-mobile-alt').on('click', function () {
         $("html").scrollTop(0);
-        console.log("Clicked!");
         $('html, body').animate({
             scrollTop: $(".contact").offset().top
         }, 1000);
@@ -123,25 +117,48 @@ $(document).ready(function() {
       }
     });
   
-  });
+});
 
   //====================
   //Carousel Full Screen
   //====================
 
-  $('.carousel').carousel({
+$('.carousel').carousel({
     interval: null
-  })
+})
 
   //=========
   //Tooltips
   //=========
 
-  $(document).ready(function(){
+$(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
-  });
+});
 
 
-  $('#exampleModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+   /* $('#exampleModalLongTitle').on('shown.bs.modal', function () {
+    console.log("DIO")
+  }); */
+
+
+$(document).on("show.bs.modal", "#exampleModally", function (event) {
+    console.log("bella al");
+    console.log("bella al");
+
+    var button = $(event.relatedTarget);
+
+    var titolo = button.data("titolo");
+    var contenuto = button.data("contenuto")
+    var data = button.data("ora")
+    var caricato = button.data("caricato")
+    var autore = button.data("autore")
+    var autoreData = autore + ", " + caricato
+
+    var modal = $(this);
+
+    modal.find(".modal-title").text(Detokenize(titolo))
+    modal.find(".text-modal").text(Detokenize(contenuto))
+    modal.find(".text-calendar").text(Detokenize(data))
+    modal.find(".text-clock").text(Detokenize(ora))
+    modal.find(".text-subtitle").text(Detokenize(autoreData))
+});

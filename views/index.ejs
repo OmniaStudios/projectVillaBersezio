@@ -1,12 +1,18 @@
 <%- include('./partials/header')%>
 <%function ellipsify (str) {
-  if (str.length > 140) {
-      return (str.substring(0, 138) + "...");
+  if (str.length > 70 ) {
+      return (str.substring(0, 70) + "...");
   }
   else {
       return str;
   }
 }%>
+
+<% function tokenize (str) {
+  newStr = str.replace(/ /g, "§");
+  return(newStr);
+} %>
+
 
 <body>
   <div id="pagepiling">
@@ -64,20 +70,32 @@
                     <%if(Post.Date != null){%>
                     <i class="fas fa-calendar"></i>
                     <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <span><%=Post.Title%></span>
+                    <%} else { %>
+
+                      <i class="fas fa-calendar" style="visibility: hidden;"></i>
+                      <h6 id="text-calendar" style="visibility: hidden;">2020-12-12</h6>
+                      <span><%=Post.Title%></span>
                     <%}%>
                       <div class="card-body">
-                        <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
-                    <!-- Button trigger modal -->
-                    <button id="btn-seeMore" type="button" class="btn pull-left" data-toggle="modal"
-                      data-target="#exampleModalLong">
-                      Guarda di più...
-                    </button>
-                    <button id="btn-mobile-seeMore" type="button" class="btn pull-left" data-toggle="modal"
-                      data-target="#exampleModalLong">
-                      <span class="material-icons" id="modal-mobile-seeMore" style="position: relative; top: 8px;">
-                        keyboard_arrow_down
-                      </span>
-                    </button>
+                        <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
+                    
+                    
+                    
+                    
+                        <!-- Button trigger modal -->
+                        <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-ora=<%=Post.Hour%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%> data-id=<%=Post._id%>>
+                          Guarda di più...
+                        </button>
+
+
+
+
+                   
+
+
+
+
                   </div>
                   <h6 class="text-subtitle"><%=Post.Author%></h6>
                 </div>
@@ -90,11 +108,27 @@
                   <i class="fas fa-clock"></i>
                   <h6 id="text-clock"><%=Post.Uploaded%></h6>
                   <%if(Post.Date != null){%>
-                  <i class="fas fa-calendar"></i>
-                  <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <span><%=Post.Title%></span>      
+                  <%} else { %>
+                    <i class="fas fa-calendar" style="visibility: hidden;"></i>
+                    <h6 id="text-calendar" style="visibility: hidden;">2020-12-12</h6>         
+                    <span><%=Post.Title%></span> 
                   <%}%>
                     <div class="card-body">
-                      <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
+                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
+
+                      <!-- Button trigger modal -->
+                    <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-ora=<%=Post.Hour%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%> data-id=<%=Post._id%>>
+                      Guarda di più...
+                    </button>
+
+
+
+
+
+
                 </div>
                 <h6 class="text-subtitle"><%=Post.Author%></h6>
               </div>
@@ -119,11 +153,6 @@
   </div>
 
 
-
-
-
-
-
   <div class="section" id="gallery">
     <h1 class="title-gallery">GALLERIA</h1>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -134,7 +163,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src=https://source.unsplash.com/1600x900/?mountain" alt="First slide">
+          <img class="d-block w-100" src="Shttps://source.unsplash.com/1600x900/?mountain" alt="First slide">
           <div class="carousel-caption d-none d-md-block">
             <h5 id="text-on-photos">Foto di una montagna</h5>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, assumenda?</p>
@@ -210,7 +239,13 @@
           class="fas fa-mobile-alt" href="#contact"></a></li><br>
     </ul>
   </nav>
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+
+
+
+
+
+
+  <div class="modal fade" id="exampleModally" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="background-color: #262626;">
@@ -223,11 +258,11 @@
         <div class="modal-body">
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
           <i class="fas fa-clock" id="modal-clock"></i>
-          <h6 id="text-clock-modal"><%=Post.Date%></h6>
+          <h6 id="text-clock-modal" class='modal-ora'></h6>
           <i class="fas fa-calendar" id="modal-calendar"></i>
-          <h6 id="text-calendar-modal"><%=Post.Uploaded%></h6>
+          <h6 id="text-calendar-modal" class='modal-caricato'></h6>
           <br><br>
-          <h8 class="text-modal" align="justify"><%=Post.Content%>?</h8>
+          <h8 class="text-modal" align="justify" class='modal-contenuto'></h8>
         </div>
         <div class="modal-footer" style="border-top: 1px solid #262626;">
           <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
@@ -235,6 +270,11 @@
       </div>
     </div>
   </div>
+
+
+
+
+
   <!-- Languages Switch -->
   <div class="dropdown" style="z-index: 100; float: right;">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -243,10 +283,10 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <div class="zoom">
-        <a class="dropdown-item" href="/eng#home"><img src="https://www.countryflags.io/us/flat/32.png"></a>
+        <a class="dropdown-item" href="/eng/home"><img src="https://www.countryflags.io/us/flat/32.png"></a>
       </div>
       <div class="zoom">
-        <a class="dropdown-item" href="/fr#home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
+        <a class="dropdown-item" href="/fr/home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
       </div>
     </div>
   </div>
