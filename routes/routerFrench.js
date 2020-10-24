@@ -4,7 +4,7 @@ const controllerPosts = require ('../controllers/controllerPosts');
 
 const router = express.Router();
 
-router.route('/')
+router.route('/home')
     .get(controllerPosts.getPostCarousel);
 
 

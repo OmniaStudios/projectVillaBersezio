@@ -9,6 +9,6 @@ router.route('/')
     .get(controllerPosts.getPostCarousel);
 
 
-router.route('/*').get(controllerError.pageNotFound)
+//router.route('/*').get(controllerError.pageNotFound)
 
 module.exports = router;

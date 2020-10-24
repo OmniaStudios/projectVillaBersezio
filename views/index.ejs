@@ -51,10 +51,8 @@
                 <% contaPost++; %>
                 <%if(contaPost  == 4){%>
                 <%contaPost = 1%>
-
               </div>
             </div>
-
             <div class="carousel-item">
               <div class="row" align='center'>
                 <div class="col">
@@ -69,7 +67,6 @@
                     <%}%>
                       <div class="card-body">
                         <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
-
                     <!-- Button trigger modal -->
                     <button id="btn-seeMore" type="button" class="btn pull-left" data-toggle="modal"
                       data-target="#exampleModalLong">
@@ -85,13 +82,8 @@
                   <h6 class="text-subtitle"><%=Post.Author%></h6>
                 </div>
                 <!-- Modal -->
-
               </div>
-
-
-
               <% }else{%>
-
               <div class="col">
                 <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
                   <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
@@ -173,7 +165,6 @@
       </a>
     </div>
   </div>
-
   <div class="section" id="position">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4031021518476!2d7.503200351332539!3d44.43384130951536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd6b54788667a9%3A0x7947cc5e5514b019!2sVilla%20Bersezio!5e1!3m2!1sit!2sit!4v1592496383359!5m2!1sit!2sit"
@@ -183,7 +174,7 @@
     <h2 class="title-contact" align="center">CONTATTI</h2>
     <div class="container-fluid">
       <div class="container-fluid" align="center">
-        <i class="fas fa-map-marker-alt"></i>
+        <a href="https://www.google.com/maps/place/Villa+Bersezio/@44.433838,7.505394,834m/data=!3m1!1e3!4m5!3m4!1s0x0:0x7947cc5e5514b019!8m2!3d44.4338375!4d7.5053944?hl=it" class="fas fa-map-marker-alt"></a>
         <p>Via Rocca 3, Passatore (CN), Italia</p>
         <a href="tel:+390171697961" class="fa fa-phone"></a>
         <p>(+39) 345 286 23 54</p>
@@ -195,13 +186,11 @@
       <div class="text-center center-block fixed-bottom">
         <br />
         <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://twitter.com/parco_villa"><i class="fab fa-twitter"></i></a>
         <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
         <a href="https://gov.ro/ro"><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
-
         <p id="text-footer">© All rights reserved to OmniaStudios.</p>
       </div>
-
     </footer>
   </div>
   </div>
@@ -226,7 +215,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content" style="background-color: #262626;">
         <div class="modal-header" style="border-bottom: 1px solid #262626;">
-          <h5 class="modal-title text-white" id="exampleModalLongTitle"><%=Post.Title%></h5>
+          <h5 class="modal-title text-white" id="exampleModalLongTitle">How to pronounce X Æ A-Xii</h5>
           <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -234,14 +223,16 @@
         <div class="modal-body">
           <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
           <i class="fas fa-clock" id="modal-clock"></i>
-          <h6 id="text-clock-modal"><%=Post.Date%></h6>
+          <h6 id="text-clock-modal">21:02</h6>
           <i class="fas fa-calendar" id="modal-calendar"></i>
-          <h6 id="text-calendar-modal"><%=Post.Uploaded%></h6>
+          <h6 id="text-calendar-modal">21/06/2020</h6>
           <br><br>
-          <h8 class="text-modal" align="justify"><%=Post.Content%>?</h8>
+          <h8 class="text-modal" align="justify">I'm actually a normal fucking baby so pls fuck off thanks. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Autem, eligendi deserunt at laboriosam expedita provident
+            excepturi dolore rem odio maiores?</h8>
         </div>
         <div class="modal-footer" style="border-top: 1px solid #262626;">
-          <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
+          <h6 class="text-subtitle" style="color: white;">X Æ A-Xii</h6>
         </div>
       </div>
     </div>
@@ -258,6 +249,15 @@
       </div>
       <div class="zoom">
         <a class="dropdown-item" href="/fr#home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+_<%- include('./partials/footer')%>_
+      <div class="zoom">
+        <a class="dropdown-item" href="/fr_home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
       </div>
     </div>
   </div>
