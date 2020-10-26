@@ -9,7 +9,6 @@ window.onbeforeunload = function () {
 $(document).ready(function () {
   $(".fa-long-arrow-alt-down").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
     $("html, body").animate(
       {
         scrollTop: $(".title-homepage").offset().top,
@@ -165,8 +164,6 @@ $(document).ready(function () {
 });
 
 $(document).on("show.bs.modal", "#exampleModally", function (event) {
-  console.log("bella al");
-  console.log("bella al");
 
   var button = $(event.relatedTarget);
 
@@ -176,7 +173,6 @@ $(document).on("show.bs.modal", "#exampleModally", function (event) {
   var caricato = button.data("caricato");
   var autore = button.data("autore");
   var autoreData = autore + ", " + caricato;
-  console.log(caricato);
 
   var modal = $(this);
 
@@ -188,8 +184,6 @@ $(document).on("show.bs.modal", "#exampleModally", function (event) {
 });
 
 $(document).on("show.bs.modal", "#exampleModallyNoData", function (event) {
-  console.log("bella al");
-  console.log("bella al");
 
   var button = $(event.relatedTarget);
 
@@ -198,7 +192,6 @@ $(document).on("show.bs.modal", "#exampleModallyNoData", function (event) {
   var caricato = button.data("caricato");
   var autore = button.data("autore");
   var autoreData = autore + ", " + caricato;
-  console.log(caricato);
 
   var modal = $(this);
 

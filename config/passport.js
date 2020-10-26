@@ -8,7 +8,6 @@ module.exports = function(passport) {
   passport.use(
     new LocalStrategy({ usernameField: 'userName' }, (userName, password, done) => {
       // Match user
-      console.log('gotcha');
       Admin.findOne({
         userName: userName
       }).then(user => {
