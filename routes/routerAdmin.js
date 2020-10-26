@@ -13,7 +13,7 @@ router.route('/login')
     .post(controllerAdmin.post_AdminLogin);
 
 router.route('/register')
-    .get(controllerAdmin.get_AdminRegister)
+    //.get(controllerAdmin.get_AdminRegister)
     .post(controllerAdmin.post_AdminRegister);
 
 router.route('/dashboard').get(utils.adminCheck, controllerAdmin.get_Dashboard);

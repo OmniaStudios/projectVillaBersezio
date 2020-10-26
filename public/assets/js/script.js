@@ -9,7 +9,6 @@ window.onbeforeunload = function () {
 $(document).ready(function () {
   $(".fa-long-arrow-alt-down").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
     $("html, body").animate(
       {
         scrollTop: $(".title-homepage").offset().top,
@@ -28,7 +27,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-home").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
+
     $("html, body").animate(
       {
         scrollTop: $("navbar").offset().top,
@@ -43,7 +42,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-user").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
     $("html, body").animate(
       {
         scrollTop: $(".about-us").offset().top,
@@ -58,7 +56,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-newspaper").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
     $("html, body").animate(
       {
         scrollTop: $(".new-post").offset().top,
@@ -73,7 +70,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-images").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
     $("html, body").animate(
       {
         scrollTop: $(".gallery").offset().top,
@@ -88,7 +84,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-map").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
+
     $("html, body").animate(
       {
         scrollTop: $(".position").offset().top,
@@ -103,7 +99,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-mobile-alt").on("click", function () {
     $("html").scrollTop(0);
-    console.log("Clicked!");
+
     $("html, body").animate(
       {
         scrollTop: $(".contact").offset().top,
@@ -205,11 +201,9 @@ $(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
   var modal = $(this);
   window.currentID = button.data("id");
   document.triste.action += currentID;
-  console.log("SCRIPT - " + window.currentID)
 });
 
 $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
-  console.log("SIFRA"); 
   var button = $(event.relatedTarget);  
   var titolo = button.data("titolo");
   var contenuto = button.data("contenuto");
@@ -220,12 +214,10 @@ $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
   var id = button.data("id");
   var autoreData = autore + ", " + caricato;
   data = data.replace(/\//g , "-");
-  console.log(titolo + " : " + contenuto );
 
 
   var modal = $(this);
 
-  console.log("GOTHERE")
   modal.find('.modal-footer').attr("action", "/admin/modificaPost/"+id + "?_method=patch");
   modal.find('.modal-title').val(Detokenize(titolo))
   modal.find('.modal-contenuto').text(Detokenize(contenuto))
@@ -243,7 +235,6 @@ $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
 
 
 $(document).on("show.bs.modal", "#exampleModalLongNoData", function (event) {
-  console.log("albanese senza documenti")
   var button = $(event.relatedTarget);
   var titolo = button.data("titolo");
   var contenuto = button.data("contenuto");
@@ -252,7 +243,6 @@ $(document).on("show.bs.modal", "#exampleModalLongNoData", function (event) {
   var id = button.data("id");
   var autoreData = autore + ", " + caricato;
   var modal = $(this);
-  console.log(titolo + ":" + contenuto);
   
   modal.find('.modal-footer-NoData').attr("action", "/admin/modificaPost/"+id + "?_method=patch" );
   /* modal.find('.modal-footer-NoData').attr("action", "/admin/modificaPost/"+id + "?_method=patch" ); */

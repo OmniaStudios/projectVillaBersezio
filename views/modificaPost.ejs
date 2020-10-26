@@ -96,7 +96,6 @@
                         </button>
                     </div>
                     <%} else { %> 
-                        <%console.log("NO DATA")%>
 
 
 
@@ -115,7 +114,7 @@
                     <%}%>
 
             </div>
-
+            </div>
         
 
 
@@ -137,7 +136,6 @@
                 </div>
             </div>
 
-        <%console.log("non ci sono post da visualizzare, vai a creare un post con annesso link")%>
         <%}%>
 
 
@@ -276,29 +274,22 @@
     <script>
         function getValore() {
             
-            console.log('0');
             var demo_title = document.getElementById('title').value;
             document.getElementById('demoTitle').value = demo_title;
 
-            console.log("1");
 
         //document.getElementById('content').value = 'ciao pippo! <- Cit. Tosello NOICE '
             var demo_content = document.getElementById('exampleFormControlTextarea1').value;
             /* console.log('1.5' + document.getElementById('exampleFormControlTextarea1').value  + ' />')    */
             document.getElementById('demoContent').value = demo_content;
-            console.log("2 " + demo_content);
-            console.log(demo_content)
 
             var demo_date = document.getElementById('date').value;
             document.getElementById('demoDate').value = demo_date;
-            console.log(demo_date);
 
-            console.log('3');
 
             var demo_hour = document.getElementById('default-picker').value;
             document.getElementById('demoHour').value = demo_hour;
 
-            console.log('4')
 
            /* var demo_uploaded = document.getElementById('uploaded').value;
             document.getElementById('demoUploaded').value = demo_uploaded;*/
@@ -310,17 +301,14 @@
 
         function getValoreNoData() {
             
-            console.log('NoData - 0');
             var demo_title = document.getElementById('titleNoData').value;
             document.getElementById('demoTitleNoData').value = demo_title;
-            console.log('1 - ' + demo_title)
 
 
             var demo_content = document.getElementById('exampleFormControlTextarea1NoData').value;
 
             document.getElementById('demoContentNoData').value = demo_content;
 
-            console.log("2 " + demo_content);
         }
     </script>
 

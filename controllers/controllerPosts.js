@@ -58,10 +58,8 @@ exports.new = (req, res) =>{
     Hour: req.body.Hour
    // Imgs: req.body.imgs,
   };
-  console.log(newPost.Uploaded);
   Post.create(newPost, (err, data) =>{
     if(err){
-      console.log('Non va :) ' + err)
       res.status(400).json({
         status: 'fail',
         message: 'Post could not be created'
@@ -92,7 +90,6 @@ exports.edit = (req, res) => {
      })
     }
 
-    console.log(req.body.demo_title)
 
     
     const updated = {
@@ -124,7 +121,6 @@ exports.get_edit = (req, res) => {
     if (err) {
       res.status(404).render('404')
     } else {
-      console.log(req.params);
       res.render('modificaPost', {
         Post: data
       })
@@ -134,7 +130,6 @@ exports.get_edit = (req, res) => {
 
 
 exports.remove = (req, res) => {
-  console.log("Arrivato eliminazione");
   let id = req.params.id;
   Post.deleteOne({
     _id: id

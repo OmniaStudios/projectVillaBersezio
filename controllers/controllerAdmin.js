@@ -34,7 +34,6 @@ exports.post_AdminRegister = (req, res) => {
 
   var err = false;
   if (!userName || !fName || !lName || !password || !password2) {
-    console.log("Riempi tutti i fields");
     err = true;
     res.render("adminRegister", {
       userName,
@@ -47,7 +46,6 @@ exports.post_AdminRegister = (req, res) => {
 
   if (password != password2) {
     err = true;
-    console.log("Le due psw non combaciano");
     res.render("adminRegister", {
       userName,
       fName,
@@ -59,7 +57,6 @@ exports.post_AdminRegister = (req, res) => {
 
   if (password.length < 6) {
     err = true;
-    console.log("Psw troppo corta");
     res.render("adminRegister", {
       userName,
       fName,
@@ -69,7 +66,6 @@ exports.post_AdminRegister = (req, res) => {
     });
   }
   if (err == true) {
-    console.log("Psw troppo corta");
     res.render("adminRegister", {
       userName,
       fName,
@@ -80,7 +76,6 @@ exports.post_AdminRegister = (req, res) => {
   } else {
     Admin.findOne({ userName: userName }).then((admin) => {
       if (admin) {
-        console.log("Username già presente");
         res.render("adminRegister", {
           userName,
           fName,
@@ -149,7 +144,6 @@ exports.get_eliminaPost = (req, res) =>{
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-     console.log(dataPost);
         /*Funzione generica*/
         res.render('eliminaPost',{
           Post: dataPost
@@ -164,7 +158,6 @@ exports.get_modificaPost = (req, res) =>{
     if (err) {
       res.status(404).render('404');
     } else {
-      console.log('ciao')
         res.render('modificaPost', {
           Post: data
         })
@@ -209,17 +202,14 @@ exports.cambiaPassword=(req, res) =>{
   var err = false;
 
   if(!password || !confermaPassword){
-    console.log("Riempi i due fields");
     err = true;
   }
 
   if(password != confermaPassword){
-    console.log("I due campi non combaciano");
     err = true;
   }
 
   if(password.length < 6){
-    console.log("password troppo lunga");
     err = true;
   }
 
