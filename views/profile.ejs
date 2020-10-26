@@ -1,0 +1,221 @@
+<%- include('./partials/headerDashboard')%>
+<link rel="stylesheet" href="/assets/css/profile.css">
+
+<body onload="startTime()">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
+        <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link first" href="dashboard"><i class="fas fa-home"></i> Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item second">
+                    <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                </li>
+                <li class="nav-item third">
+                    <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+                </li>
+                <li class="nav-item fourth">
+                    <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+                </li>
+                <li class="nav-item fifth">
+                    <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+                </li>
+                <li class="nav-item profile">
+                    <div class="dropdown" style="padding-top: -10px !important;">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png"
+                                alt="profile-dropdown">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
+                                    class="fas fa-user-circle"></i> Profilo</a>
+                            <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
+                                    class="fas fa-sign-out-alt"></i> Esci</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="padding: 30px 30px 30px 30px;">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form style="padding: 30px 30px 30px 30px;">
+                            <div class="form-group">
+                                <img id="rotation" src="/assets/img/sgarbi.png">
+                                <input style="padding-top: 20px;" type="file" class="form-control-file"
+                                    id="exampleFormControlFile1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"
+                                    style="font-family: 'Abril Fatface', cursive;">Nome</label>
+                                <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il nome"
+                                    value=<%=currentAdmin.fName%> disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"
+                                    style="font-family: 'Abril Fatface', cursive;">Cognome</label>
+                                <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il Cognome"
+                                    value=<%=currentAdmin.lName%> disabled>
+                            </div>
+                            
+
+                            <a class="btn btn-save" type="button" href="#" role="button">Salva</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+
+
+                        
+                        <form class="form" style="padding: 30px 30px 30px 30px;" action="/admin/register" method="POST">
+
+                            <h1 style="font-family: 'Abril Fatface', cursive; font-size: 150%;">REGISTRA UN NUOVO UTENTE
+                            </h1>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome
+                                    Utente *</label>
+                                <input class="form-control" id="username" name="login"
+                                    placeholder="Inserire il Nome Utente" value="Il_Profeta">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome
+                                    *</label>
+                                <input class="form-control" id="fName" placeholder="Inserire il Nome" name="login"
+                                    value="Vittorio">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Cognome
+                                    *</label>
+                                <input class="form-control" id="lName" placeholder="Inserire il Cognome" name ="login"
+                                    value="Sgarbi">
+                            </div>
+
+
+                            <div class="form-group" >
+                                <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Password
+                                    *</label><br>
+                                <input class="form-control" type="password" value="password" id="myInput" name="login"><br>
+                                <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction()">
+                            </div>
+
+
+                            <div class="form-group" style="padding-bottom: 20px;">
+                                <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Ripeti
+                                    Password
+                                    *</label><br>
+                                <input class="form-control" type="password" value="Password" id="myInput2" name ="login"><br>
+                                <input id="checkbox2" style="float: left;" type="checkbox" onclick="myFunction2()">
+                            </div>
+
+
+                            <input class="btn btn-save" type="submit" value="Registrati">
+                            </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" style="padding-top: 30px;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form" action="/admin/cambiaPassword" method="POST">
+                        <h1 style="font-family: 'Abril Fatface', cursive; font-size: 150%;">CAMBIA PASSWORD</h1>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Password
+                                *</label><br>
+                            <input class="form-control" type="password" value="Password" id="myInput3" name="pChange"><br>
+                            <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction3()">
+                        </div>
+                        <div class="form-group" style="padding-bottom: 20px;">
+                            <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Ripeti
+                                Password
+                                *</label><br>
+                            <input class="form-control" type="password" value="Password" id="myInput4" name="pChange"><br>
+                            <input id="checkbox" style="float: left;" type="checkbox" onclick="myFunction4()">
+                            <input class="btn btn-save" type="submit" role="button">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 style="font-family: 'Abril Fatface', cursive; font-size: 150%;">CONSOLE LOG UTENTI</h1>
+                        <table class="table table-borderless" style="font-family: 'Montserrat', cursive;">
+                            <thead>
+                                <tr style="font-family: 'Abril Fatface', cursive !important;">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nome Utente</th>
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Cognome</th>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                <%Admin.forEach((Admin, index) =>{%>
+                                <tr>
+                                    <th scope="row" style="font-family: 'Abril Fatface', cursive !important;"><%=index+1%></th>
+                                    <td><%=Admin.userName%></td>
+                                    <td><%=Admin.fName%></td>
+                                    <td><%=Admin.lName%></td>
+                                </tr>
+                                <%})%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+
+
+
+    <style>
+        body{
+            min-height: 120vh !important;
+        }
+    </style>
+    
+    
+    <footer class="fixed-bottom" style="padding-top: 30px;">
+        <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+            <b>© All
+                rights Reserved to the OmniaStudios</b></h6>
+    </footer>
+
+
+
+<%- include('./partials/footerDashboard')%>

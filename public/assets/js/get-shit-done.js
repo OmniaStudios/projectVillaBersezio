@@ -43,7 +43,6 @@ $(document).ready(function(){
     
     $('[data-toggle="gsdk-collapse"]').hover(
     function(){
-            console.log('on hover');
             var thisdiv = $(this).attr("data-target");
 
             if(!$(this).hasClass('state-open')){

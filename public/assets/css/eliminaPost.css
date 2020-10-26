@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+nav {
+  box-shadow: 0px -16px 51px -2px rgba(0, 0, 0, 0.479);
+}
+
+.navbar-brand {
+  font-family: 'Abril Fatface', cursive;
+  opacity: 0.8;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300;
+}
+
+.fa-home {
+  transition: all 0.1s linear;
+}
+
+.fa-home:hover {
+  color: green;
+}
+
+.nav-link {
+  padding-right: 20px;
+  transition: all transform .1s linear;
+}
+
+.nav-link:hover {
+  transform: scale(1.05);
+  border-radius: 100px;
+  box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(30, 189, 30) !important;
+}
+
+#admin-cockpit {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+}
+
+#btn-seeMore {
+  background-color: transparent;
+  color: rgb(60, 73, 192);
+  font-size: 75%;
+}
+
+.text-modal {
+  color: rgb(214, 214, 214);
+}
+
+#btn-close-modal {
+  color: #777 !important;
+  text-shadow: 0px 8px 8px #000;
+  transition-timing-function: linear;
+  transition-property: color;
+  transition-duration: .3s;
+}
+
+#btn-close-modal:hover {
+  color: #e61708 !important;
+}
+
+.modal-title {
+  font-family: 'Abril Fatface', cursive;
+  text-shadow: 0px 4px 8px #000;
+}
+
+.text-modal {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#modal-clock {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  color: rgb(107, 107, 107);
+}
+
+#modal-calendar {
+  position: absolute;
+  top: -10px;
+  left: 120px;
+  color: rgb(107, 107, 107);
+}
+
+#text-clock-modal {
+  position: absolute;
+  top: -11px;
+  left: 40px;
+  color: rgb(107, 107, 107);
+}
+
+#text-calendar-modal {
+  position: absolute;
+  top: -11px;
+  left: 140px;
+  color: rgb(107, 107, 107);
+}
+
+#btn-mobile-seeMore {
+  position: absolute;
+  top: 80px;
+  color: rgb(60, 73, 192);
+  background-color: transparent;
+}
+
+#text-clock {
+  position: relative;
+  left: -60px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 80%;
+  color: #777;
+}
+
+#text-calendar {
+  position: relative;
+  top: -39px;
+  left: 60px;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 80%;
+  color: #777;
+}
+
+.fa-clock {
+  position: relative;
+  left: -112px;
+  top: 15px;
+  color: rgb(107, 107, 107);
+}
+
+.fa-calendar {
+  position: relative;
+  top: -23px;
+  left: 10px;
+  color: rgb(107, 107, 107);
+}
+
+.card-text {
+  position: relative;
+  top: -20px;
+}
+
+.text-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60%;
+  position: relative;
+  left: -60px;
+  top: -20px;
+}
+
+#card {
+  transition: all .2s linear;
+}
+
+#card:hover {
+  transform: scale(1.01);
+}
+
+#btn-delete {
+  width: 85%;
+  background-color: rgb(255, 41, 41);
+  color: #fff;
+  border-radius: 100px !important;
+  box-shadow: -7px -7px 20px 0 rgba(134, 134, 134, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: transform linear .3s;
+}
+
+#btn-delete:hover {
+  transform: scale(1.08);
+}
+
+#delete-btn {
+  border-radius: 100px;
+  background-color: rgb(255, 41, 41);
+  color: #fff;
+  transition: all .1s linear;
+}
+
+#delete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: transform linear .3s;
+}
+
+#discard-btn {
+  border-radius: 100px;
+  background-color: rgb(0, 224, 86);
+  color: #fff;
+  transition: all .1s linear;
+}
+
+#discard-btn:hover {
+  transform: scale(1.05);
+  box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: transform linear .3s;
+}
+
+.col {
+  padding-bottom: 20px;
+}
+
+.dropdown-exit {
+  color: rgb(228, 91, 91);
+  transition: all .2s linear;
+}
+
+.dropdown-exit:hover {
+  color: rgb(255, 0, 0);
+}
+
+.dropdown-profile {
+  color: rgb(114, 228, 91);
+  transition: all .2s linear;
+}
+
+.dropdown-profile:hover {
+  color: rgb(9, 255, 0);
+}
+
+.dropdown-toggle::after {
+  color: #777;
+}
+
+#rotation {
+  transition: transform .3s;
+}
+
+#rotation:hover {
+  transform: rotate(360deg);
+}
+
+.card-ops {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #aaa9ad;
+  border: 2px solid rgba(85, 85, 85, 0.384);
+  border-radius: 30px;
+  color: #fff;
+  -webkit-box-shadow: 10px 10px 51px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 51px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 51px -16px rgba(0, 0, 0, 0.75);
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-ops {
+  border-radius: 50px;
+  background-color: #fff;
+  transition: all 0.5s linear;
+}
+
+.btn-ops:hover {
+  transform: scale(1.05);
+  border-radius: 100px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.24);
+}
+
+::selection {
+  background: #b3b3b3; /* WebKit/Blink Browsers */
+}

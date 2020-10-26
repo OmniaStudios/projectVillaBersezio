@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
 
 /* Definizione app */
 const app = express();
@@ -12,14 +14,33 @@ const routerBasic = require('./routes/routerBasic');
 const routerEnglish = require('./routes/RouterEnglish');
 const routerFrench = require('./routes/routerFrench');
 const routerError = require('./routes/routerError')
+const routerAdmin = require('./routes/routerAdmin');
+const passport = require('passport');
+
+require('./config/passport')(passport);
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(express.json());
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+
+
+
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('_method'));
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json());       // to support JSON-encoded bodies
+
+app.use(session({
+    secret: 'Romanian government',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {_expires : 60000000}
+}) )
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* Impostazione del motore di rendering - Non è quindi necessario specificare l'estensione dei file nel 'res.render('nomeFile)' */
 app.set('view engine', 'ejs');
@@ -46,6 +67,7 @@ app.use('/fr', routerFrench);
 app.use('/err', routerError);
 
 
+app.use('/admin', routerAdmin);
 
 
 

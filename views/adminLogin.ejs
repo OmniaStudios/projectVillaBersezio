@@ -1,0 +1,32 @@
+<%- include('./partials/header')%>
+<link rel="stylesheet" href="/assets/css/styleLogin.css">
+
+<body>
+
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div class="card" style="width: 18rem; height: 40vh !important;">
+            <div class="card-body" style="text-align: center;">
+              <h1 class="card-title"
+                style="opacity: 0.8; text-shadow: 0px 0px 3px; padding-bottom: 20px;  text-align: center; font-family: 'Abril Fatface', cursive;">
+                LOGIN</h1>
+              <form class="form" method="POST" action="/admin/login">
+                <input style="text-align: center;" type="userName" id="userName" class="fadeIn second" name="userName"
+                  placeholder="Nome Utente"><br><br>
+                <input style="text-align: center;" type="password" id="password" class="fadeIn third" name="password"
+                  placeholder="Password"><br><br>
+                <input type="submit" class="fadeIn fourth btn" value="ACCEDI">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="fixed-bottom"
+    style="color: #fff; text-align: center; font-family: 'Montserrat', sans-serif; font-size: 80%;">© All rights
+    reserved to the OmniaStudios</footer>
+</body>
+<%- include('./partials/footer')%>

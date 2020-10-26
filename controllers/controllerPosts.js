@@ -1,6 +1,7 @@
 const mongoose  = require('mongoose');
 const express = require('express');
-const  Post = require('../models/Post');
+const Post = require('../models/Post');
+const { get_AdminRegister } = require('./controllerAdmin');
 
 const app = express();
 
@@ -13,7 +14,7 @@ exports.get = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);  
+     // console.log(dataPost);
         /*Funzione generica*/
     }
   });
@@ -55,19 +56,18 @@ exports.getPostCarousel = (req, res) => {
 
 
 exports.new = (req, res) =>{
+  
+  var today = new Date();
 
   const newPost = {
-    Author: req.body.author,
-    Title: req.body.title,
-    Content: req.body.content,
-    Uploaded: req.body.uploaded,
-    Date: req.body.date,
-    Imgs: req.body.imgs,
-    Comments: req.body.comments,
-    Likes: req.body.likes,
-    Dislikes: req.body.dislikes
+    Author: req.user.userName,
+    Title: req.body.Title,
+    Content: req.body.Content,
+    Uploaded: today.getDate() + '/' + (today.getMonth()+1) + '/' + today.getFullYear(),
+    Date: req.body.Date.replace(/-/g, "/"),
+    Hour: req.body.Hour
+   // Imgs: req.body.imgs,
   };
-
   Post.create(newPost, (err, data) =>{
     if(err){
       res.status(400).json({
@@ -76,9 +76,9 @@ exports.new = (req, res) =>{
      });
     } else{
       /*Post created*/
-      /*res.send('Post has been created successfully');*/
+      /* res.send('Post has been created successfully'); */
       /*TO CHANGE, redirect to post page*/
-      res.redirect('/');
+      res.redirect('/admin/dashboard');
     }
   })
 };
@@ -90,37 +90,40 @@ exports.get_new = (req, res) => {
 
 
 exports.edit = (req, res) => {
+  //console.log(req.body);
   let id = req.params.id;
-  const updated = {
-    Author: req.body.author,
-    Title: req.body.title,
-    Content: req.body.content,
-    Uploaded: req.body.uploaded,
-    Date: req.body.date,
-    Imgs: req.body.imgs,
-    Comments: req.body.comments,
-    Likes: req.body.likes,
-    Dislikes: req.body.dislikes   
-  }
-
   Post.findById(id, (err, data) => {
     if (err) {
       res.status(404).json({
         status: 'failed',
         message: 'Post does not exist | Invalid'
      })
-    } 
+    }
+
+
+    
+    const updated = {
+      Author: data.Author,
+      Title: req.body.demo_title,
+      Content: req.body.demo_content,
+      Uploaded: data.Uploaded,
+      Date: req.body.demo_date,
+      Hour: req.body.demo_hour  
+     // Imgs: req.body.imgs
+    }
+
+
     data.replaceOne(updated, err => {
       if (err) {
         res.status(500).json({
           status: 'failed',
-          message: 'Post could not deleted'
+          message: 'Post could not be deleted'
         })
       } else {
-        res.redirect('/')
+        res.redirect('/admin/tuttiPost')
       }
     })
-  })
+  }) 
 }
 
 exports.get_edit = (req, res) => {
@@ -128,8 +131,8 @@ exports.get_edit = (req, res) => {
     if (err) {
       res.status(404).render('404')
     } else {
-      res.render('index', {
-        post: data
+      res.render('modificaPost', {
+        Post: data
       })
     }
   })
@@ -148,7 +151,7 @@ exports.remove = (req, res) => {
         message: 'Post could not deleted'
       })
     } else {
-      res.redirect('/')
+      res.redirect('/admin/eliminaPost')
     }
   }
   )
