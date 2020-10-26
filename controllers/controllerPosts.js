@@ -28,20 +28,28 @@ exports.getPostCarousel = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-      console.log(dataPost);  
-
-     if(req.originalUrl == '/eng'){
-      res.render('indexEnglish',
-      {
-        Post: dataPost
-      } );
-    }else{
+      /* console.log(dataPost);  
+      console.log(req.originalUrl) */
+     if(req.originalUrl == '/'){
       res.render('index',
       {
         Post: dataPost
       } );
+    }else{
+      if(req.originalUrl == '/fr/home'){
+      res.render('indexFrench',
+      {
+        Post: dataPost
+      } );
     }
+  else{
+    res.render('indexEnglish',
+      {
+        Post: dataPost
+      } );
+  }
     }
+  }
   });
 };
 

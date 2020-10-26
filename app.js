@@ -10,6 +10,8 @@ const app = express();
 
 const routerBasic = require('./routes/routerBasic');
 const routerEnglish = require('./routes/RouterEnglish');
+const routerFrench = require('./routes/routerFrench');
+const routerError = require('./routes/routerError')
 
 app.use(express.static(__dirname + '/public'));
 
@@ -40,6 +42,10 @@ app.set('view engine', 'ejs');
 
 app.use('/', routerBasic);
 app.use('/eng', routerEnglish);
+app.use('/fr', routerFrench);
+app.use('/err', routerError);
+
+
 
 
 

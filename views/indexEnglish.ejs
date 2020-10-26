@@ -1,12 +1,17 @@
 <%- include('./partials/header')%>
 <%function ellipsify (str) {
-  if (str.length > 140) {
-      return (str.substring(0, 138) + "...");
+  if (str.length > 20 ) {
+      return (str.substring(0, 20) + "...");
   }
   else {
       return str;
   }
 }%>
+
+<% function tokenize (str) {
+  newStr = str.replace(/ /g, "§");
+  return(newStr);
+} %>
 
 <body>
   <div id="pagepiling">
@@ -42,76 +47,125 @@
           <div class="carousel-inner" role="listbox">
             <!--Prima Slide-->
 
-           
+
 
             <div class="carousel-item active">
               <div class="row" align='center'>
-              <%var contaPost = 0;%>
-              <% Post.forEach((Post, index) => { %>
-              <% contaPost++; %> 
+                <%var contaPost = 0;%>
+                <% Post.forEach((Post, index) => { %>
+                <% contaPost++; %>
                 <%if(contaPost  == 4){%>
-                  <%contaPost = 1%>
-
-                </div>
+                <%contaPost = 1%>
               </div>
-
-                  <div class="carousel-item">
-                   <div class="row" align='center'> 
-                   <div class="col"> 
-                    <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                      <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city"
-                        alt="Card image cap">
-                      <i class="fas fa-clock"></i>
-                      <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                      <%if(Post.Date != null){%>
-                    <i class="fas fa-calendar"></i>
-                     <h6 id="text-calendar"><%=Post.Date%></h6>
-                     <%}%>
-                      <div class="card-body">
-                        <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
-                      </div>
-                      <h6 class="text-subtitle"><%=Post.Author%></h6>
-                    </div>
-                   </div> 
-
-
-
-               <% }else{%>
-                
-                <div class = "col">
+            </div>
+            <div class="carousel-item">
+              <div class="row" align='center'>
+                <div class="col">
                   <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
                     <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city"
                       alt="Card image cap">
                     <i class="fas fa-clock"></i>
                     <h6 id="text-clock"><%=Post.Uploaded%></h6>
                     <%if(Post.Date != null){%>
-                      <i class="fas fa-calendar"></i>
-                       <h6 id="text-calendar"><%=Post.Date%></h6>
-                       <%}%>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <span><%=Post.Title%></span>
                     <div class="card-body">
-                      <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
-                    </div>
-                    <h6 class="text-subtitle"><%=Post.Author%></h6>
+                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
+                  
+                  
+                  
+                      <!-- Button trigger modal -->
+                      <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                        See more...
+                      </button>
+                    <%} else { %>
+
+                      <i class="fas fa-calendar" style="visibility: hidden;"></i>
+                      <h6 id="text-calendar" style="visibility: hidden;">2020-12-12</h6>
+                      <span><%=Post.Title%></span>
+                      <div class="card-body">
+                        <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
+                    
+                    
+                    
+                        <!-- Button trigger modal -->
+                        <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModallyNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                          See more...
+                        </button>
+                    <%}%>
+                     
+
+
+
+
+                   
+
+
+
+
                   </div>
+                  <h6 class="text-subtitle"><%=Post.Author%></h6>
                 </div>
-                <%}%>
+                <!-- Modal -->
+              </div>
+              <% }else{%>
+              <div class="col">
+                <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
+                  <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
+                  <i class="fas fa-clock"></i>
+                  <h6 id="text-clock"><%=Post.Uploaded%></h6>
+                  <%if(Post.Date != null){%>
+                    <i class="fas fa-calendar"></i>
+                    <h6 id="text-calendar"><%=Post.Date%></h6>
+                    <span><%=Post.Title%></span>     
+                    <div class="card-body">
+                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
+
+                      <!-- Button trigger modal -->
+                    <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                      See more...
+                    </button> 
+                  <%} else { %>
+                    <i class="fas fa-calendar" style="visibility: hidden;"></i>
+                    <h6 id="text-calendar" style="visibility: hidden;">2020-12-12</h6>         
+                    <span><%=Post.Title%></span> 
+                    <div class="card-body">
+                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
+
+                      <!-- Button trigger modal -->
+                    <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModallyNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
+                      See more...
+                    </button>
+                  <%}%>
+                    
+
+
+
+
+
+
+                </div>
+                <h6 class="text-subtitle"><%=Post.Author%></h6>
+              </div>
+            </div>
+            <%}%>
                 <%})%>
 
-            </div>
-            </div>
-          </div>
-          
-
-          <br>
-          <div class="controls-top"><i class=""></i>
-            <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
-                class="fas fa-arrow-circle-left">&nbsp;&nbsp;&nbsp;</i></a>
-            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-                class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
+
+      <br>
+      <div class="controls-top"><i class=""></i>
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
+            class="fas fa-arrow-circle-left">&nbsp;&nbsp;&nbsp;</i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+            class="fas fa-arrow-circle-right"></i></a>
+      </div>
     </div>
+  </div>
+  </div>
     
 
     
@@ -178,7 +232,8 @@
           <p>villabersezio@gmail.com</p>
         </div>
       </div>
-      <footer>
+
+      <footer class="page-footer black fixed-bottom">
         <div class="text-center center-block fixed-bottom">
           <br />
           <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
@@ -187,6 +242,7 @@
           <a href=""><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
   
           <p id="text-footer">© All rights reserved to OmniaStudios.</p>
+          
         </div>
         
       </footer>
@@ -208,6 +264,58 @@
           class="fas fa-mobile-alt" href="#contact"></a></li><br>
     </ul>
   </nav>
+
+  <div class="modal fade" id="exampleModally" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: #262626;">
+        <div class="modal-header" style="border-bottom: 1px solid #262626;">
+          <h5 class="modal-title text-white" id="exampleModalLongTitle"><%=Post.Title%></h5>
+          <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
+          <i class="fas fa-clock" id="modal-clock"></i>
+          <h6 id="text-clock-modal" class='modal-ora'></h6>
+          <i class="fas fa-calendar" id="modal-calendar"></i>
+          <h6 id="text-calendar-modal" class='modal-caricato'></h6>
+          <br><br>
+          <h8 class="text-modal" align="justify" class='modal-contenuto'></h8>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #262626;">
+          <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModallyNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: #262626;">
+        <div class="modal-header" style="border-bottom: 1px solid #262626;">
+          <h5 class="modal-title text-white" id="exampleModalLongTitle"><%=Post.Title%></h5>
+          <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
+          <i class="fas fa-clock" id="modal-clock"></i>
+          <h6 id="text-clock-modal" class='modal-ora'></h6>
+          <br><br>
+          <h8 class="text-modal" align="justify" class='modal-contenuto'></h8>
+        </div>
+        <div class="modal-footer" style="border-top: 1px solid #262626;">
+          <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
     <!-- Languages Switch -->
     <div class="dropdown" style="z-index: 100; float: right;">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -216,10 +324,10 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div class="zoom">
-          <a class="dropdown-item" href="/#home"><img src="https://www.countryflags.io/it/flat/32.png"></a>
+          <a class="dropdown-item" href="/"><img src="https://www.countryflags.io/it/flat/32.png"></a>
         </div>
         <div class="zoom">
-          <a class="dropdown-item" href="/fr#home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
+          <a class="dropdown-item" href="/fr/home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
         </div>
       </div>
     </div>
