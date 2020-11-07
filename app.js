@@ -1,5 +1,5 @@
 
-/* Importazione Pacchetti necessari - Se non presenti lanciare 'npm i --save' per caricare come da package.json*/
+/*  Importazione Pacchetti necessari - Se non presenti lanciare 'npm i --save' per caricare come da package.json*/
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
