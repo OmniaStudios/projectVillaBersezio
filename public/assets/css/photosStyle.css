@@ -1,0 +1,8 @@
+img, .card{
+    filter: grayscale(50%) !important;
+    transition: all .3s ease-in-out !important;
+}
+img:hover{
+    filter: grayscale(0%) !important;
+    object-fit: contain !important;
+}

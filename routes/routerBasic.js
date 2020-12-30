@@ -9,6 +9,9 @@ const router = express.Router();
 router.route('/')
     .get(controllerPosts.getPostCarousel);
 
+router.route('/photos')
+    .get(controllerBasic.get_photos);
+
 
 
 

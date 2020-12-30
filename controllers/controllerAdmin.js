@@ -1,10 +1,7 @@
-const mongoose = require("mongoose");
-const express = require("express");
 const Admin = require("../models/Admin");
 const bcrypt = require("bcryptjs");
 const passport = require('passport');
 const  Post = require('../models/Post');
-const controllerPost = require('../controllers/controllerPosts');
 
 exports.get_AdminLogin = (req, res) => {
   res.status(200).render("adminLogin");

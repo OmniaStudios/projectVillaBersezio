@@ -1,4 +1,3 @@
-const mongoose  = require('mongoose');
 const express = require('express');
 const Post = require('../models/Post');
 const { get_AdminRegister } = require('./controllerAdmin');
