@@ -196,6 +196,21 @@ exports.get_profile =(req, res) =>{
   });
 }
 
+exports.get_imagesDB = (req, res) =>{
+  /* Image.find((err, dataImage) =>{
+    if(err){
+      res.status(404).render('404');
+    }else{
+      res.render('imagesDB', {
+        Images: dataImage
+      });
+
+    }
+  }); */
+  
+  res.render('imagesDB');
+}
+
 exports.cambiaPassword=(req, res) =>{
   var password = req.body.pChange[0];
   var confermaPassword = req.body.pChange[1];

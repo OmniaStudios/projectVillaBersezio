@@ -34,6 +34,8 @@ router.route('/creaPost')
 
  router.route('/profile').get(utils.adminCheck, controllerAdmin.get_profile);
 
+ router.route('/imagesDB').get(controllerAdmin.get_imagesDB);
+
  router.route('/cambiaPassword').post(utils.adminCheck, controllerAdmin.cambiaPassword);
 
 router.route('/logout')
