@@ -24,21 +24,15 @@ h1 {
     font-weight: 300;
 }
 
-.card {
-    border-color: transparent !important;
-    background-color: #fff !important;
-    transition: transform .2s;
-}
-
-.card:hover {
-    transform: scale(1.01);
-}
 
 .card-body {
     border-radius: 34px;
     background: #fff;
     box-shadow: -7px -7px 20px 0 rgba(219, 219, 219, 0.7), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
     text-align: center !important;
+}
+.card{
+    border: 1px solid white;
 }
 
 .fa-home {
@@ -158,3 +152,4 @@ h1 {
 ::selection {
     background: #b3b3b3; /* WebKit/Blink Browsers */
   }
+
