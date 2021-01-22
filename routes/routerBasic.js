@@ -1,12 +1,17 @@
 const express = require ('express');
 const controllerBasic = require('../controllers/controllerBasic');
 const controllerPosts = require('../controllers/controllerPosts');
+const controllerImages = require('../controllers/controllerImages');
 
 
 const router = express.Router();
 
 router.route('/')
     .get(controllerPosts.getPostCarousel);
+
+
+router.route('/photos')
+    .get(controllerImages.get_photos);
 
 
 

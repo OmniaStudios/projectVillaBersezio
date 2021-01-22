@@ -5,20 +5,21 @@ const utils = require('../config/utils');
 const controllerBasic = require('../controllers/controllerBasic');
 const controllerPosts = require('../controllers/controllerPosts');
 const controllerAdmin = require('../controllers/controllerAdmin');
+const controllerImages = require('../controllers/controllerImages');
 
-router.route('/').get(utils.adminCheck, controllerAdmin.get_Dashboard);
+ router.route('/').get(utils.adminCheck, controllerAdmin.get_Dashboard);
 
-router.route('/login')
+ router.route('/login')
     .get(controllerAdmin.get_AdminLogin)
     .post(controllerAdmin.post_AdminLogin);
 
-router.route('/register')
+ router.route('/register')
     //.get(controllerAdmin.get_AdminRegister)
     .post(controllerAdmin.post_AdminRegister);
 
-router.route('/dashboard').get(utils.adminCheck, controllerAdmin.get_Dashboard);
+ router.route('/dashboard').get(utils.adminCheck, controllerAdmin.get_Dashboard);
 
-router.route('/creaPost')
+ router.route('/creaPost')
     .get(utils.adminCheck, controllerAdmin.get_creaPost)
     .post(utils.adminCheck, controllerPosts.new);
 
@@ -34,11 +35,15 @@ router.route('/creaPost')
 
  router.route('/profile').get(utils.adminCheck, controllerAdmin.get_profile);
 
- router.route('/imagesDB').get(controllerAdmin.get_imagesDB);
+ router.route('/imagesDB')
+    .get(utils.adminCheck, controllerImages.get_imagesDB)
+    .post(utils.adminCheck, controllerImages.newImage);
 
+ router.route('/imagesDB/del/:id').delete(controllerImages.remove);
+ 
  router.route('/cambiaPassword').post(utils.adminCheck, controllerAdmin.cambiaPassword);
 
-router.route('/logout')
+ router.route('/logout')
     .get(controllerAdmin.get_Logout);
 
 

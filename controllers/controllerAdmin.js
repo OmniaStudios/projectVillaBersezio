@@ -197,22 +197,6 @@ exports.get_profile =(req, res) =>{
   });
 }
 
-exports.get_imagesDB = (req, res) =>{
-  Image.find((err, dataImage) => {
-    if (err) {
-      /* */
-      res.status(404).render('404');
-    } else {
-      /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-     // console.log(dataPost);
-        /*Funzione generica*/
-        res.render('imagesDB',{
-          Images: dataImage
-        }
-        )
-    }
-  });
-}
 
 exports.cambiaPassword=(req, res) =>{
   var password = req.body.pChange[0];

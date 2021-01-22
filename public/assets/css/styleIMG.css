@@ -39,3 +39,10 @@ h1 {
 .container-due {
   width: 100% !important;
 }
+.submit_lidl{
+  transition: all .3s ease;
+}
+.submit_lidl:hover{
+  transform: scale(1.02);
+  background-color: rgb(55, 235, 55);
+}
