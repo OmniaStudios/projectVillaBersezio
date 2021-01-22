@@ -3,7 +3,8 @@ const express = require("express");
 const Admin = require("../models/Admin");
 const bcrypt = require("bcryptjs");
 const passport = require('passport');
-const  Post = require('../models/Post');
+const Post = require('../models/Post');
+const Image = require('../models/Image');
 const controllerPost = require('../controllers/controllerPosts');
 
 exports.get_AdminLogin = (req, res) => {
@@ -197,18 +198,20 @@ exports.get_profile =(req, res) =>{
 }
 
 exports.get_imagesDB = (req, res) =>{
-  /* Image.find((err, dataImage) =>{
-    if(err){
+  Image.find((err, dataImage) => {
+    if (err) {
+      /* */
       res.status(404).render('404');
-    }else{
-      res.render('imagesDB', {
-        Images: dataImage
-      });
-
+    } else {
+      /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
+     // console.log(dataPost);
+        /*Funzione generica*/
+        res.render('imagesDB',{
+          Images: dataImage
+        }
+        )
     }
-  }); */
-  
-  res.render('imagesDB');
+  });
 }
 
 exports.cambiaPassword=(req, res) =>{

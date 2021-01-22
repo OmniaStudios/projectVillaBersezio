@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const schema = mongoose.schema;
 
-var imageSchema = new Schema({
+var imageSchema = new mongoose.Schema({
     link:{
         type: String,
         required: true
@@ -9,4 +8,4 @@ var imageSchema = new Schema({
 });
 
 var Image = mongoose.model('Image', imageSchema);
-module.export = Image;
+module.exports = Image;
