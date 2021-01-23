@@ -80,17 +80,19 @@ exports.remove = (req, res) => {
   let id = req.params.id;
 
   Image.findOne({ _id: id }, function (err, docs) {
+    //console.log(docs);
     if (err) {
       console.log(err);
     } else {
       if (docs.link != null) {
-        docs.link = docs.link.substring(57, docs.link.length);
-        var params = { Bucket: keys.S3.S3_BUCKET, Key: docs.length };
+        let nome =  docs.link.substring(52, docs.link.length);
+
+        var params = { Bucket: keys.S3.S3_BUCKET, Key: nome };
         s3.deleteObject(params, function (err, data) {
-          console.log(params.Key);
-          if (err) console.log("______________________" + err, err.stack);
+          //console.log(params.Key);
+          if (err) console.log(err, err.stack);
           // error
-          else console.log("Forza giuve"); // deleted
+          else console.log("Successfully deleted!"); // deleted
         });
       }
     }
