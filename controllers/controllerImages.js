@@ -31,7 +31,7 @@ var upload = multer({
     key: function (req, file, cb) {
       let name = file.originalname.split('.').slice(0, -1).join('.');
       let type = file.originalname.split('.').pop();
-      console.log(name + '.' + type);
+      //console.log(name + '.' + type);
       cb(null, name + "-" + Date.now() + '.' + type);
     }
   }),
@@ -118,7 +118,7 @@ exports.remove = (req, res) => {
 
 
 exports.newImage = (req, res) => {
-
+  if(req.files){
     upload(req, res, function (err) {
       if (err) {
         return res.end("Error uploading file.");
@@ -144,4 +144,7 @@ exports.newImage = (req, res) => {
         }
       });
     })
+  }else{
+    res.status(200).redirect('/admin/imagesDB');
+  };
 }; 
