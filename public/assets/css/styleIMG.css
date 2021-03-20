@@ -46,3 +46,7 @@ h1 {
   transform: scale(1.02);
   background-color: rgb(55, 235, 55);
 }
+
+#rotation{
+  border-radius: 100%;
+}

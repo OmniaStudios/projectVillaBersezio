@@ -20,29 +20,6 @@ const fileFilter = (req, file, cb) => {
   }
 }
 
-/* const storage = multerS3({
-  s3: s3,
-  bucket: keys.S3.S3_BUCKET,
-  acl: 'public-read',
-  metadata: function (req, file, cb) {
-    cb(null, { fieldName: file.fieldname });
-  },
-  key: function (req, file, cb) {
-    let name = file.originalname.split('.').slice(0, -1).join('.');
-    let type = file.originalname.split('.').pop();
-    //console.log(name + '.' + type);
-    cb(null, name + "-" + Date.now() + '.' + type);
-  }
-}); */
-
-/* var upload = multer({
-  storage: storage,
-  fileFilter: fileFilter,
-  limits: {
-    fileSize: 1024 * 1024 * 15
-  }
-}).single('myImg'); */
-
 var upload = multer({
   storage: multerS3({
     s3: s3,

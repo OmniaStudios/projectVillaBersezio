@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/assets/css/eliminaPost.css">
 
 
-<body onload="startTime()">
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
         <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
@@ -41,11 +41,11 @@
                     <div class="dropdown" style="padding-top: -10px !important;">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/p1.png"
+                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/profilePic.png"
                                 alt="profile-dropdown">
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href=/admin/profile"><i
+                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
                                     class="fas fa-user-circle"></i> Profilo</a>
                             <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
                                     class="fas fa-sign-out-alt"></i> Esci</a>
@@ -67,8 +67,6 @@
             <% Post.forEach((Post, index) =>{%>
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water"
-                        alt="Card image cap">
 
                     <%if (Post.Date){%>
                     <i class="fas fa-clock"></i>
