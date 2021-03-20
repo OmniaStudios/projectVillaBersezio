@@ -20,18 +20,41 @@ const fileFilter = (req, file, cb) => {
   }
 }
 
+/* const storage = multerS3({
+  s3: s3,
+  bucket: keys.S3.S3_BUCKET,
+  acl: 'public-read',
+  metadata: function (req, file, cb) {
+    cb(null, { fieldName: file.fieldname });
+  },
+  key: function (req, file, cb) {
+    let name = file.originalname.split('.').slice(0, -1).join('.');
+    let type = file.originalname.split('.').pop();
+    //console.log(name + '.' + type);
+    cb(null, name + "-" + Date.now() + '.' + type);
+  }
+}); */
+
+/* var upload = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+  limits: {
+    fileSize: 1024 * 1024 * 15
+  }
+}).single('myImg'); */
+
 var upload = multer({
   storage: multerS3({
     s3: s3,
     bucket: keys.S3.S3_BUCKET,
     acl: 'public-read',
     metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname });
+      cb(null, { fieldName: file.fieldname});
     },
     key: function (req, file, cb) {
       let name = file.originalname.split('.').slice(0, -1).join('.');
       let type = file.originalname.split('.').pop();
-      //console.log(name + '.' + type);
+      console.log(name + '.' + type);
       cb(null, name + "-" + Date.now() + '.' + type);
     }
   }),
@@ -39,9 +62,9 @@ var upload = multer({
   limits: {
     fileSize: 1024 * 1024 * 15
   }
-}).single('image');
+}).single('myImg')
 
-exports.get_imagesDB = (req, res) =>{
+exports.get_imagesDB = (req, res) => {
   Image.find((err, dataImage) => {
     if (err) {
       /* */
@@ -117,24 +140,30 @@ exports.remove = (req, res) => {
 }
 
 
+
+
+
 exports.newImage = (req, res) => {
-  if(req.files){
+  if(req.file){
     upload(req, res, function (err) {
       if (err) {
+        console.log(err)
         return res.end("Error uploading file.");
       }
-      let fileName;
+      let filename;
 
-      let actualFile = req.files;
-      if (!actualFile) actualFile = req.file;
-      fileName = "https://villabersezio.s3.eu-central-1.amazonaws.com/" + actualFile.key;
+      // let actualFile = req.files;
+      /* if (!actualFile) actualFile = req.file; */
+      fileName = "https://villabersezio.s3.eu-central-1.amazonaws.com/" + req.file;
 
       const newImage = {
-        link: fileName
+        link: filename
       };
+      console.log(`Link> ${newImage.link}`);
 
       Image.create(newImage, (err, data) => {
         if (err) {
+          console.log(err)
           res.status(400).json({
             status: "fail",
             message: "Image could not be created",
@@ -144,7 +173,7 @@ exports.newImage = (req, res) => {
         }
       });
     })
-  }else{
+  /* }else{
     res.status(200).redirect('/admin/imagesDB');
-  };
+  }; */
 }; 

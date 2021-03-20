@@ -11,7 +11,7 @@ $(document).ready(function () {
     $("html").scrollTop(0);
     $("html, body").animate(
       {
-        scrollTop: $(".title-homepage").offset().top,
+        //scrollTop: $(".title-homepage").offset().top,
       },
       1000
     );
@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $("html, body").animate(
       {
-        scrollTop: $("navbar").offset().top,
+        //scrollTop: $("navbar").offset().top,
       },
       1000
     );
@@ -44,7 +44,7 @@ $(document).ready(function () {
     $("html").scrollTop(0);
     $("html, body").animate(
       {
-        scrollTop: $(".about-us").offset().top,
+        //scrollTop: $(".about-us").offset().top,
       },
       1000
     );
@@ -58,7 +58,7 @@ $(document).ready(function () {
     $("html").scrollTop(0);
     $("html, body").animate(
       {
-        scrollTop: $(".new-post").offset().top,
+        //scrollTop: $(".new-post").offset().top,
       },
       1000
     );
@@ -72,7 +72,7 @@ $(document).ready(function () {
     $("html").scrollTop(0);
     $("html, body").animate(
       {
-        scrollTop: $(".gallery").offset().top,
+        //scrollTop: $(".gallery").offset().top,
       },
       1000
     );
@@ -87,7 +87,7 @@ $(document).ready(function () {
 
     $("html, body").animate(
       {
-        scrollTop: $(".position").offset().top,
+        //scrollTop: $(".position").offset().top,
       },
       1000
     );
@@ -102,7 +102,7 @@ $(document).ready(function () {
 
     $("html, body").animate(
       {
-        scrollTop: $(".contact").offset().top,
+        //scrollTop: $(".contact").offset().top,
       },
       1000
     );
@@ -150,6 +150,9 @@ $(document).ready(function () {
 $(".carousel").carousel({
   interval: null,
 });
+
+
+
 
 //=========
 //Tooltips

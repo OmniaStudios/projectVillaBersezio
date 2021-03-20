@@ -1,10 +1,7 @@
 <%- include('./partials/headerDashboard')%> 
-
-
-
     <link rel="stylesheet" href="/assets/css/styleIMG.css">
 
-    <body onload="startTime()">
+    <body >
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
         <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
@@ -59,25 +56,28 @@
                     <h1 class="card-title"
                       style="font-family: 'Abril Fatface', cursive !important; opacity: 0.8; font-size: 150%;">Gestione
                       Immagini</h1>
-                    <form action="/admin/imagesDB" method="POST" enctype ="multipart/form-data" id="uploadForm">
+
+                    <form action="/admin/imagesDB" enctype="multipart/form-data" id="uploadForm" method="POST">
                       <div class="form-group">
                         <div class="custom-file">
-                          <input name='image' type="file" class="custom-file-input" id="customFile">
-                          <label class="custom-file-label" for="customFile" id="status" style="padding-right: 40px;" >Carica IMG...</label>
+                          <input name='myImg' type="file" class="custom-file-input" id="myImg" required>
+                          <label class="custom-file-label" for="myImg" id="status" style="padding-right: 40px;" >Carica IMG...</label>
                         </div>
                         <div>
-                    </form>
-                    <div hidden id="toUpload">
-                      <hr>
-                      <span style="padding: 0;"><a href="" class="fas fa-trash" id="fa-trash" onclick="deleteEle()" ></a>&nbsp;<input
-                          placeholder="img1.jpg" type="text" style="border: 1px solid white; background-color: white;"
-                          disabled></span>
-                      <hr>
-                    </div>
-                  </div>
-                  <input type="submit" class="btn-success submit_lidl"
-                    style="font-family: 'Montserrat'; font-weight: 900; border: 1px solid transparent; margin-top: 50px; padding: 5px; border-radius: 10px;" disabled id = "submitBtn">
-                </div>
+                          <!-- <input type="submit" value="ciao" > -->
+                          <input type="submit" class="btn-success submit_lidl"
+                            style="font-family: 'Montserrat'; font-weight: 900; border: 1px solid transparent; margin-top: 50px; padding: 5px; border-radius: 10px;" disabled hidden id = "submitBtn">
+                            
+                            <div hidden id="toUpload">
+                              <hr>
+                              <span style="padding: 0;"><a href="" class="fas fa-trash" id="fa-trash" onclick="deleteEle()" ></a>&nbsp;<input
+                                placeholder="img1.jpg" type="text" style="border: 1px solid white; background-color: white;"
+                                disabled></span>
+                                <hr>
+                              </div>
+                            </div>
+                          </div>
+                      </form>
 
                 <!-- <div class="card-body">
                   <div class="row">
@@ -95,7 +95,6 @@
 
         <div class="container-fluid" style="position: absolute; top: 50vh; left: 0; min-height: 100vh;">
           <div class="row" align="center">
-
             <%if(Images){Images.forEach(Image=> {%>
 
 
@@ -131,24 +130,54 @@
           </h6>
         </footer>
 
-        <script src="/assets/js/scriptDB.js"></script>
         <script>
-          let file;
+        
           (() => {
-            document.getElementById("customFile").onchange = () => {
 
-              document.getElementById
+            document.getElementById("myImg").onchange = () => {
 
-              file = document.getElementById('customFile').files;
+              let file = document.getElementById('myImg').files;
+              console.log(file);
 
               if(file == null) 
                 return alert('No file selected.');
+              /* if (value.type !== 'image/jpeg' && value.type !== 'image/png') {
+                alert('File non supportato!')
+                valido = false;
+              }
+
+              if (value.size > 1024 * 1024 * 5) {
+                alert('Il file non deve superare i 5 MB');
+                valido = false;
+              } */
               
               document.getElementById("toUpload").hidden = false;
+              document.getElementById("submitBtn").hidden = false;
               document.getElementById("submitBtn").disabled = false;
+
+              /* if (!valido) return */
 
 /*               if (file[1] !== null) getSignedRequest(file[0], 1);
               else alert('Puoi caricare al massimo un\'immagine'); */
+
+
+
+              /* if (valido) {
+
+              countImgs += files.length;                    
+              if (countImgs < 4) {
+                for (const [key, value] of Object.entries(files)) {
+                  fInput.push({id: files.length-1, name: value.name})
+                  document.getElementById(`input${fInput.length-1}`).value = value.name;
+                  document.getElementById(`col${fInput.length-1}`).hidden = false;
+                }
+              } else {
+                alert('Numero massimo di file consetiti raggiunto!');
+                countImgs -= files.length;
+              }
+            } */
+
+
 
             };
           })();
@@ -156,6 +185,7 @@
           const deleteEle = () =>{
             file = null;
             document.getElementById("submitBtn").disabled = true;
+            document.getElementById("submitBtn").hidden = true;
           }
 
         </script>
