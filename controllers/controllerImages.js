@@ -144,17 +144,14 @@ exports.remove = (req, res) => {
 
 
 exports.newImage = (req, res) => {
-  if(req.file){
+  // if(req.file){
     upload(req, res, function (err) {
       if (err) {
         console.log(err)
         return res.end("Error uploading file.");
       }
-      let filename;
-
-      // let actualFile = req.files;
-      /* if (!actualFile) actualFile = req.file; */
-      fileName = "https://villabersezio.s3.eu-central-1.amazonaws.com/" + req.file;
+      console.log('ciaoooooo >' + req.file.key + '<');
+      let filename = "https://villabersezio.s3.eu-central-1.amazonaws.com/" + req.file.key;
 
       const newImage = {
         link: filename
