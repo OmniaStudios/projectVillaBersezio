@@ -27,7 +27,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-home").on("click", function () {
     $("html").scrollTop(0);
-
     $("html, body").animate(
       {
         //scrollTop: $("navbar").offset().top,
@@ -84,7 +83,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-map").on("click", function () {
     $("html").scrollTop(0);
-
     $("html, body").animate(
       {
         //scrollTop: $(".position").offset().top,
@@ -99,7 +97,6 @@ $(document).ready(function () {
 $(document).ready(function () {
   $(".fa-mobile-alt").on("click", function () {
     $("html").scrollTop(0);
-
     $("html, body").animate(
       {
         //scrollTop: $(".contact").offset().top,
@@ -143,13 +140,14 @@ $(document).ready(function () {
   });
 });
 
+
 //====================
 //Carousel Full Screen
 //====================
 
-$(".carousel").carousel({
-  interval: null,
-});
+/* $('.carousel').carousel({
+    interval: null
+}) */
 
 
 
@@ -161,6 +159,49 @@ $(".carousel").carousel({
 $(document).ready(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+//
+
+$(document).on("show.bs.modal", "#exampleModally", function (event) {
+
+  var button = $(event.relatedTarget);
+
+  var titolo = button.data("titolo");
+  var contenuto = button.data("contenuto");
+  var data = button.data("data");
+  var caricato = button.data("caricato");
+  var autore = button.data("autore");
+  var autoreData = autore + ", " + caricato;
+
+  var modal = $(this);
+
+  modal.find(".modal-title").text(Detokenize(titolo));
+  modal.find(".text-modal").text(Detokenize(contenuto));
+  modal.find(".modal-caricato").text(Detokenize(caricato));
+  modal.find(".modal-ora").text(Detokenize(caricato));
+  modal.find(".text-subtitle").text(Detokenize(autoreData));
+});
+
+//
+
+$(document).on("show.bs.modal", "#exampleModallyNoData", function (event) {
+
+  var button = $(event.relatedTarget);
+
+  var titolo = button.data("titolo");
+  var contenuto = button.data("contenuto");
+  var caricato = button.data("caricato");
+  var autore = button.data("autore");
+  var autoreData = autore + ", " + caricato;
+
+  var modal = $(this);
+
+  modal.find(".modal-title").text(Detokenize(titolo));
+  modal.find(".text-modal").text(Detokenize(contenuto));
+  modal.find(".modal-ora").text(Detokenize(caricato));
+  modal.find(".text-subtitle").text(Detokenize(autoreData));
+});
+//
 
 $(document).on("show.bs.modal", "#exampleModal", function (event) {
   var button = $(event.relatedTarget); // Button that triggered the modal
@@ -183,6 +224,8 @@ $(document).on("show.bs.modal", "#exampleModal", function (event) {
   modal.find(".text-subtitle").text(Detokenize(autoreData));
 });
 
+//
+
 $(document).on("show.bs.modal", "#exampleModalNoData", function (event) {
   var button = $(event.relatedTarget); // Button that triggered the modal
   var titolo = button.data("titolo"); // Extract info from data-* attributes
@@ -199,12 +242,16 @@ $(document).on("show.bs.modal", "#exampleModalNoData", function (event) {
   modal.find(".text-subtitle").text(Detokenize(autoreData));
 });
 
+//
+
 $(document).on("show.bs.modal", "#exampleModalEliminazione", function (event) {
   var button = $(event.relatedTarget);
   var modal = $(this);
   window.currentID = button.data("id");
   document.triste.action += currentID;
 });
+
+//
 
 $(document).on("show.bs.modal", "#exampleModalLong", function (event) {
   var button = $(event.relatedTarget);  

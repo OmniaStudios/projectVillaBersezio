@@ -13,6 +13,7 @@
   return(newStr);
 } %>
 
+
 <body>
   <div id="pagepiling">
     <div class="section" id="home">
@@ -23,9 +24,9 @@
     </div>
     <div class="section" id="about">
       <div id='section2-title' class="container" align='center'>
-        <h2 class="title-about">ABOUT US</h2>
+        <h2 class="title-about">À propos de nous</h2>
         <br><br>
-        <p class="p-about" align='justify'>Lorem Ipsum but in english is simply dummy text of the printing and typesetting industry.
+        <p class="p-about" align='justify'>Lorem Ipsum but in baguette is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has
           been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
           and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
@@ -40,7 +41,7 @@
 
 
 
-      <h2 class="title-post">NEW POSTS</h2>
+      <h2 class="title-post">Nouveau poste</h2>
       <br><br>
       <div class="container">
         <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -57,33 +58,13 @@
                 <%if(contaPost  == 4){%>
                 <%contaPost = 1%>
               </div>
-                  <div class="carousel-item">
-                   <div class="row" align='center'> 
-                   <div class="col"> 
-                    <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                      <!-- <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city"
-                        alt="Card image cap"> -->
-                      <i class="fas fa-clock"></i>
-                      <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                      <%if(Post.Date != null){%>
-                    <i class="fas fa-calendar"></i>
-                     <h6 id="text-calendar"><%=Post.Date%></h6>
-                     <%}%>
-                      <div class="card-body">
-                        <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
-                      </div>
-                      <h6 class="text-subtitle"><%=Post.Author%></h6>
-                    </div>
-                   </div> 
-
-
-
-               <% }else{%>
-                
-                <div class = "col">
+            </div>
+            <div class="carousel-item">
+              <div class="row" align='center'>
+                <div class="col">
                   <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                    <!-- <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city"
-                      alt="Card image cap"> -->
+                    <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city"
+                      alt="Card image cap">
                     <i class="fas fa-clock"></i>
                     <h6 id="text-clock"><%=Post.Uploaded%></h6>
                     <%if(Post.Date != null){%>
@@ -97,7 +78,7 @@
                   
                       <!-- Button trigger modal -->
                       <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                        See more...
+                        Voir plus...
                       </button>
                     <%} else { %>
 
@@ -111,7 +92,7 @@
                     
                         <!-- Button trigger modal -->
                         <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModallyNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                          See more...
+                          Voir plus...
                         </button>
                     <%}%>
                      
@@ -144,7 +125,7 @@
 
                       <!-- Button trigger modal -->
                     <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                      See more...
+                      Voir plus...
                     </button> 
                   <%} else { %>
                     <i class="fas fa-calendar" style="visibility: hidden;"></i>
@@ -155,7 +136,7 @@
 
                       <!-- Button trigger modal -->
                     <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModallyNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                      See more...
+                      Voir plus...
                     </button>
                   <%}%>
                     
@@ -176,6 +157,7 @@
         </div>
       </div>
 
+
       <br>
       <div class="controls-top"><i class=""></i>
         <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
@@ -186,6 +168,10 @@
     </div>
   </div>
   </div>
+
+           
+
+            
     
 
     
@@ -194,7 +180,7 @@
 
 
     <div class="section" id="gallery">
-      <h1 class="title-gallery">PHOTO GALLERY</h1>
+      <h1 class="title-gallery">Photo</h1>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -203,13 +189,25 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="/assets/img/cm1.jpg"" alt="First slide">
+            <img class="d-block w-100" src=https://source.unsplash.com/1600x900/?mountain" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 id="text-on-photos">Photo of a mountain</h5>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, assumenda?</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="/assets/img/cm2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?food" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 id="text-on-photos">Photo of food</h5>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, nihil.</p>
+            </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="/assets/img/cm3.jpg" alt="Third slide">
+            <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?city" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 id="text-on-photos">Photo of a city</h5>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, asperiores?</p>
+            </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -221,7 +219,6 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <a href="/photos" class="btn" style="padding: 5px; border-radius: 10px; margin: 20px !important;">More<i class="fas fa-angle-right"></i></a>
     </div>
 
     <div class="section" id="position">
@@ -230,10 +227,11 @@
         frameborder="0" style="border:0;" allowfullscreen="ture" aria-hidden="false" tabindex="0"></iframe>
     </div>
     <div class="section" id="contact">
-      <h2 class="title-contact" align="center">REACH US</h2>
+      <h2 class="title-contact" align="center">
+        Contactez-nous</h2>
       <div class="container-fluid">
         <div class="container-fluid" align="center">
-          <a href="#position" class="fas fa-map-marker-alt"></a>
+          <i class="fas fa-map-marker-alt"></i>
           <p>Via Rocca 3, Passatore (CN), Italia</p>
           <a href="tel:+390171697961" class="fa fa-phone"></a>
           <p>(+39) 345 286 23 54</p>
@@ -241,17 +239,15 @@
           <p>villabersezio@gmail.com</p>
         </div>
       </div>
-
-      <footer class="page-footer black fixed-bottom">
+      <footer>
         <div class="text-center center-block fixed-bottom">
           <br />
           <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-          <a href="https://twitter.com/parco_villa"><i class="fab fa-twitter"></i></a>
+          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
           <a href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
           <a href=""><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
   
           <p id="text-footer">© All rights reserved to OmniaStudios.</p>
-          
         </div>
         
       </footer>
@@ -260,19 +256,21 @@
   <nav>
     <ul id="myMenu">
       <li data-menuanchor="home" class="active"><a data-toggle="tooltip" data-placement="left" data-html="true"
-          title="<b>Home</b>" class="fas fa-home" href="#home"></a></li><br>
-      <li data-menuanchor="about"><a data-toggle="tooltip" data-placement="left" title="About Us" class="far fa-user"
+          title="Accueil" class="fas fa-home" href="#home"></a></li><br>
+      <li data-menuanchor="about"><a data-toggle="tooltip" data-placement="left" title="À propos de nous" class="far fa-user"
           href="#about"></a></li><br>
-      <li data-menuanchor="post"><a data-toggle="tooltip" data-placement="left" title="New Posts"
+      <li data-menuanchor="post"><a data-toggle="tooltip" data-placement="left" title="Nouveau poste"
           class="fas fa-newspaper" href="#post"></a></li><br>
-      <li data-menuanchor="gallery"><a data-toggle="tooltip" data-placement="left" title="Photo Gallery"
+      <li data-menuanchor="gallery"><a data-toggle="tooltip" data-placement="left" title="Photos"
           class="fas fa-images" href="#gallery"></a></li><br>
-      <li data-menuanchor="position"><a data-toggle="tooltip" data-placement="left" title="Find Us"
+      <li data-menuanchor="position"><a data-toggle="tooltip" data-placement="left" title="
+       Trouve nous"
           class="far fa-map" href="#position"></a></li><br>
       <li data-menuanchor="contact"><a data-toggle="tooltip" data-placement="left" title="Contacts"
           class="fas fa-mobile-alt" href="#contact"></a></li><br>
     </ul>
   </nav>
+
 
   <div class="modal fade" id="exampleModally" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
@@ -325,18 +323,19 @@
   </div>
 
 
+
     <!-- Languages Switch -->
     <div class="dropdown" style="z-index: 100; float: right;">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        <img src="https://www.countryflags.io/us/flat/32.png">
+        <img src="https://www.countryflags.io/fr/flat/32.png">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div class="zoom">
           <a class="dropdown-item" href="/"><img src="https://www.countryflags.io/it/flat/32.png"></a>
         </div>
         <div class="zoom">
-          <a class="dropdown-item" href="/fr/home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
+          <a class="dropdown-item" href="/eng/home"><img src="https://www.countryflags.io/us/flat/32.png"></a>
         </div>
       </div>
     </div>

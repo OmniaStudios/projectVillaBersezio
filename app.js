@@ -1,5 +1,5 @@
 
-/* Importazione Pacchetti necessari - Se non presenti lanciare 'npm i --save' per caricare come da package.json*/
+/*  Importazione Pacchetti necessari - Se non presenti lanciare 'npm i --save' per caricare come da package.json*/
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -12,6 +12,8 @@ const app = express();
 
 const routerBasic = require('./routes/routerBasic');
 const routerEnglish = require('./routes/routerEnglish');
+const routerFrench = require('./routes/routerFrench');
+const routerError = require('./routes/routerError')
 const routerAdmin = require('./routes/routerAdmin');
 const passport = require('passport');
 
@@ -61,6 +63,10 @@ app.set('view engine', 'ejs');
 
 app.use('/', routerBasic);
 app.use('/eng', routerEnglish);
+app.use('/fr', routerFrench);
+app.use('/err', routerError);
+
+
 app.use('/admin', routerAdmin);
 
 

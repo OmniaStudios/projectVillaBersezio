@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-const express = require("express");
 const Admin = require("../models/Admin");
 const bcrypt = require("bcryptjs");
 const passport = require('passport');

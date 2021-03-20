@@ -1,4 +1,3 @@
-const mongoose  = require('mongoose');
 const express = require('express');
 const Post = require('../models/Post');
 const { get_AdminRegister } = require('./controllerAdmin');
@@ -29,18 +28,28 @@ exports.getPostCarousel = (req, res) => {
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-
-     if(req.originalUrl == '/eng'){
-      res.render('indexEnglish',
+      /* console.log(dataPost);  
+      console.log(req.originalUrl) */
+     if(req.originalUrl == '/'){
+      res.render('index',
       {
         Post: dataPost
       } );
     }else{
-      res.render('index',
-      {Post: dataPost}
-      );
+      if(req.originalUrl == '/fr/home'){
+      res.render('indexFrench',
+      {
+        Post: dataPost
+      } );
     }
+  else{
+    res.render('indexEnglish',
+      {
+        Post: dataPost
+      } );
+  }
     }
+  }
   });
 };
 
