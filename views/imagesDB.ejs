@@ -1,85 +1,83 @@
-<%- include('./partials/headerDashboard')%> 
-    <link rel="stylesheet" href="/assets/css/styleIMG.css">
+<%- include('./partials/headerDashboard')%>
+  <link rel="stylesheet" href="/assets/css/styleIMG.css">
 
-    <body >
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
-        <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link first" href="dashboard"><i class="fas fa-home"></i> Home <span
-                  class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item second">
-              <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
-            </li>
-            <li class="nav-item third">
-              <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
-            </li>
-            <li class="nav-item fourth">
-              <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
-            </li>
-            <li class="nav-item fifth">
-              <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
-            </li>
-            <li class="nav-item profile">
-              <div class="dropdown" style="padding-top: -10px !important;">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/profilePic.png"
-                    alt="profile-dropdown">
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
-                      class="fas fa-user-circle"></i> Profilo</a>
-                  <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
-                      class="fas fa-sign-out-alt"></i> Esci</a>
-                </div>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
+      <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link first" href="dashboard"><i class="fas fa-home"></i> Home <span
+                class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item second">
+            <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+          </li>
+          <li class="nav-item third">
+            <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
+          </li>
+          <li class="nav-item fourth">
+            <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
+          </li>
+          <li class="nav-item fifth">
+            <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
+          </li>
+          <li class="nav-item profile">
+            <div class="dropdown" style="padding-top: -10px !important;">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/profilePic.png"
+                  alt="profile-dropdown">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
+                    class="fas fa-user-circle"></i> Profilo</a>
+                <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
+                    class="fas fa-sign-out-alt"></i> Esci</a>
               </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="container-fluid" style="height: 40vh;">
-        <div class="row" align="center">
-          <div class="col">
-            <div class="card card_img" style="margin-top: 5vh;">
-              <div class="row">
-                <div class="col">
-                  <div class="card-body">
-                    <h1 class="card-title"
-                      style="font-family: 'Abril Fatface', cursive !important; opacity: 0.8; font-size: 150%;">Gestione
-                      Immagini</h1>
-
-                    <form action="/admin/imagesDB" enctype="multipart/form-data" id="uploadForm" method="POST">
-                      <div class="form-group">
-                        <div class="custom-file">
-                          <input name='myImg' type="file" class="custom-file-input" id="myImg" required>
-                          <label class="custom-file-label" for="myImg" id="status" style="padding-right: 40px;" >Carica IMG...</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid" style="height: 40vh;">
+      <div class="row" align="center">
+        <div class="col">
+          <div class="card card_img" style="margin-top: 5vh;">
+            <div class="row">
+              <div class="col">
+                <div class="card-body">
+                  <h1 class="card-title"
+                    style="font-family: 'Abril Fatface', cursive !important; opacity: 0.8; font-size: 150%;">Gestione
+                    Immagini</h1>
+                  <form action="/admin/imagesDB" enctype="multipart/form-data" id="uploadForm" method="POST">
+                    <div class="form-group">
+                      <div class="custom-file">
+                        <input name='myImg' type="file" class="custom-file-input" id="myImg" required>
+                        <label class="custom-file-label" for="myImg" id="status" style="padding-right: 40px;">Carica
+                          IMG...</label>
+                      </div>
+                      <div>
+                        <input type="submit" class="btn-success submit_lidl"
+                          style="font-family: 'Montserrat'; font-weight: 900; border: 1px solid transparent; margin-top: 50px; padding: 5px; border-radius: 10px;"
+                          disabled hidden id="submitBtn">
+                        <div hidden id="toUpload">
+                          <hr>
+                          <span style="padding: 0;"><a href="" class="fas fa-trash" id="fa-trash"
+                              onclick="deleteEle()"></a>&nbsp;<input placeholder="img1.jpg" type="text"
+                              style="border: 1px solid white; background-color: white;" disabled></span>
+                          <hr>
                         </div>
-                        <div>
-                          <!-- <input type="submit" value="ciao" > -->
-                          <input type="submit" class="btn-success submit_lidl"
-                            style="font-family: 'Montserrat'; font-weight: 900; border: 1px solid transparent; margin-top: 50px; padding: 5px; border-radius: 10px;" disabled hidden id = "submitBtn">
-                            
-                            <div hidden id="toUpload">
-                              <hr>
-                              <span style="padding: 0;"><a href="" class="fas fa-trash" id="fa-trash" onclick="deleteEle()" ></a>&nbsp;<input
-                                placeholder="img1.jpg" type="text" style="border: 1px solid white; background-color: white;"
-                                disabled></span>
-                                <hr>
-                              </div>
-                            </div>
-                          </div>
-                      </form>
+                      </div>
+                    </div>
+                  </form>
 
-                <!-- <div class="card-body">
+                  <!-- <div class="card-body">
                   <div class="row">
                     <div class="col">
                       <h7 style="font-family: 'Montserrat';">Memoria occupata per le IMG: <span
@@ -87,107 +85,69 @@
                     </div>
                   </div>
                 </div> -->
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-
-        <div class="container-fluid" style="position: absolute; top: 50vh; left: 0; min-height: 100vh;">
-          <div class="row" align="center">
-            <%if(Images){Images.forEach(Image=> {%>
-
-
-              <div class="col">
-                <div class="card" id="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <form action="/admin/imagesDB/del/<%=Image._id%>" method="POST">
-                      <input style="" type="hidden" name="_method" value="DELETE">
-                      <button type="submit"
-                        style="border: 1px solid transparent !important; position: absolute; top: 20px; right: 15px; width: 30px; height: 30px; box-shadow: -7px -7px 20px 0 rgba(0, 0, 0, 0.2), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);  background-color: rgb(253, 66, 66); padding: 5px !important; border-radius: 100px;"><a
-                          style="color: white; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); text-decoration: none;"
-                          class="fas fa-times"></a></button>
-                    </form>
-                    <img style="width: 100%; border-radius: 34px; height: 200px;" class="card-img-top"
-                      src=<%=Image.link%>
-                    alt="Card image cap">
+          <div class="container-fluid" style="position: absolute; top: 50vh; left: 0; min-height: 100vh;">
+            <div class="row" align="center">
+              <%if(Images){Images.forEach(Image=> {%>
+                <div class="col">
+                  <div class="card" id="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <form action="/admin/imagesDB/del/<%=Image._id%>" method="POST">
+                        <input style="" type="hidden" name="_method" value="DELETE">
+                        <button type="submit"
+                          style="border: 1px solid transparent !important; position: absolute; top: 20px; right: 15px; width: 30px; height: 30px; box-shadow: -7px -7px 20px 0 rgba(0, 0, 0, 0.2), 7px 7px 20px 0 rgba(0, 0, 0, 0.2);  background-color: rgb(253, 66, 66); padding: 5px !important; border-radius: 100px;"><a
+                            style="color: white; position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); text-decoration: none;"
+                            class="fas fa-times"></a></button>
+                      </form>
+                      <img style="width: 100%; border-radius: 34px; height: 200px;" class="card-img-top"
+                        src=<%=Image.link%>
+                      alt="Card image cap">
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <%});}%>
-
-
+                <%});}%>
+            </div>
           </div>
-        </div>
+          <footer class="fixed-bottom" style="padding-top: 30px;">
+            <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+              <b>© All
+                rights Reserved to the OmniaStudios</b>
+            </h6>
+          </footer>
 
 
+          <script>
+            (() => {
+              document.getElementById("myImg").onchange = () => {
+                let valido = true;
+                let file = document.getElementById('myImg').files[0];
 
-        <footer class="fixed-bottom" style="padding-top: 30px;">
-          <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
-            <b>© All
-              rights Reserved to the OmniaStudios</b>
-          </h6>
-        </footer>
-
-        <script>
-        
-          (() => {
-
-            document.getElementById("myImg").onchange = () => {
-
-              let file = document.getElementById('myImg').files;
-              // console.log(file);
-
-              if(file == null) 
-                return alert('No file selected.');
-              /* if (value.type !== 'image/jpeg' && value.type !== 'image/png') {
-                alert('File non supportato!')
-                valido = false;
-              }
-
-              if (value.size > 1024 * 1024 * 5) {
-                alert('Il file non deve superare i 5 MB');
-                valido = false;
-              } */
-              
-              document.getElementById("toUpload").hidden = false;
-              document.getElementById("submitBtn").hidden = false;
-              document.getElementById("submitBtn").disabled = false;
-
-              /* if (!valido) return */
-
-/*               if (file[1] !== null) getSignedRequest(file[0], 1);
-              else alert('Puoi caricare al massimo un\'immagine'); */
-
-
-
-              /* if (valido) {
-
-              countImgs += files.length;                    
-              if (countImgs < 4) {
-                for (const [key, value] of Object.entries(files)) {
-                  fInput.push({id: files.length-1, name: value.name})
-                  document.getElementById(`input${fInput.length-1}`).value = value.name;
-                  document.getElementById(`col${fInput.length-1}`).hidden = false;
+                if (file == null) return alert('No file selected.');
+                if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+                  alert('File non supportato!')
+                  valido = false;
                 }
-              } else {
-                alert('Numero massimo di file consetiti raggiunto!');
-                countImgs -= files.length;
-              }
-            } */
+                if (file.size > 1024 * 1024 * 15) {
+                  alert('Il file non deve superare i 5 MB');
+                  valido = false;
+                }
+                if (!valido) return
 
+                document.getElementById("toUpload").hidden = false;
+                document.getElementById("submitBtn").hidden = false;
+                document.getElementById("submitBtn").disabled = false;
+              };
+            })();
 
+            const deleteEle = () => {
+              file = null;
+              document.getElementById("submitBtn").disabled = true;
+              document.getElementById("submitBtn").hidden = true;
+            }
 
-            };
-          })();
+          </script>
 
-          const deleteEle = () =>{
-            file = null;
-            document.getElementById("submitBtn").disabled = true;
-            document.getElementById("submitBtn").hidden = true;
-          }
-
-        </script>
-
-        <%- include('./partials/footerDashboard')%>
+          <%- include('./partials/footerDashboard')%>

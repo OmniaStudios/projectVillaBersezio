@@ -20,36 +20,36 @@ const fileFilter = (req, file, cb) => {
   }
 }
 
+const storage = multerS3({
+  s3: s3,
+  bucket: keys.S3.S3_BUCKET,
+  acl: 'public-read',
+  metadata: function (req, file, cb) {
+    cb(null, { fieldName: file.fieldname});
+  },
+  key: function (req, file, cb) {
+    let name = file.originalname.split('.').slice(0, -1).join('.');
+    let type = file.originalname.split('.').pop();
+    console.log(name + '.' + type);
+    cb(null, name + "-" + Date.now() + '.' + type);
+  }
+});
+
 var upload = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: keys.S3.S3_BUCKET,
-    acl: 'public-read',
-    metadata: function (req, file, cb) {
-      cb(null, { fieldName: file.fieldname});
-    },
-    key: function (req, file, cb) {
-      let name = file.originalname.split('.').slice(0, -1).join('.');
-      let type = file.originalname.split('.').pop();
-      console.log(name + '.' + type);
-      cb(null, name + "-" + Date.now() + '.' + type);
-    }
-  }),
+  storage: storage,
   fileFilter: fileFilter,
   limits: {
     fileSize: 1024 * 1024 * 15
   }
 }).single('myImg')
 
+
 exports.get_imagesDB = (req, res) => {
   Image.find((err, dataImage) => {
     if (err) {
-      /* */
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-     // console.log(dataPost);
-        /*Funzione generica*/
         res.render('imagesDB',{
           Images: dataImage
         }
@@ -61,12 +61,9 @@ exports.get_imagesDB = (req, res) => {
 exports.get_photos = (req, res) =>{
   Image.find((err, dataImage) => {
     if (err) {
-      /* */
       res.status(404).render('404');
     } else {
       /* Impostazione dello stato HTTP success e rendering della pagina degli posts */
-     // console.log(dataPost);
-        /*Funzione generica*/
         res.render('photos',{
           Images: dataImage
         }
@@ -80,7 +77,6 @@ exports.remove = (req, res) => {
   let id = req.params.id;
 
   Image.findOne({ _id: id }, function (err, docs) {
-    //console.log(docs);
     if (err) {
       console.log(err);
     } else {
@@ -89,9 +85,7 @@ exports.remove = (req, res) => {
 
         var params = { Bucket: keys.S3.S3_BUCKET, Key: nome };
         s3.deleteObject(params, function (err, data) {
-          //console.log(params.Key);
-          if (err) console.log(err, err.stack);
-          // error
+          if (err) console.log(err, err.stack); // error
           else console.log("Successfully deleted!"); // deleted
         });
       }

@@ -1,175 +1,152 @@
 <%- include('./partials/headerDashboard')%>
-<%function ellipsify (str) {
-    if (str.length > 140) {
+    <%function ellipsify (str) { if (str.length> 140) {
         return (str.substring(0, 138) + "...");
-    }
-    else {
+        }
+        else {
         return str;
-    }
-  }%>
-<link rel="stylesheet" href="/assets/css/eliminaPost.css">
+        }
+        }%>
+        <link rel="stylesheet" href="/assets/css/eliminaPost.css">
 
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
-        <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link first" href="dashboard"><i class="fas fa-home"></i> Home <span
-                            class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item second">
-                    <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
-                </li>
-                <li class="nav-item third">
-                    <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica Post</a>
-                </li>
-                <li class="nav-item fourth">
-                    <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina Post</a>
-                </li>
-                <li class="nav-item fifth">
-                    <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico Post</a>
-                </li>
-                <li class="nav-item profile">
-                    <div class="dropdown" style="padding-top: -10px !important;">
-                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/profilePic.png"
-                                alt="profile-dropdown">
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item dropdown-profile" style="font-size: 15px;" href="/admin/profile"><i
-                                    class="fas fa-user-circle"></i> Profilo</a>
-                            <a class="dropdown-item dropdown-exit" style="font-size: 15px;" href="/admin/logout"><i
-                                    class="fas fa-sign-out-alt"></i> Esci</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-
-
-    <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
-        <div class="row" align="center">
-
-
-            <%if(Post.length){%>
-            <% Post.forEach((Post, index) =>{%>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-
-                    <%if (Post.Date){%>
-                    <i class="fas fa-clock"></i>
-                    <h6 id="text-clock"><%=Post.Hour%></h6>
-
-
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar"><%=Post.Date%></h6>
-                    <%}%>
-
-          
-          <h5 class="card-title"><%=Post.Title%></h5>
-
-                    <div class="card-body">
-
-                        <p class="card-text"><%=ellipsify(Post.Content)%></p>
-                        <!-- Button trigger modal -->
-
-                        <button type="button" align="center" class="btn" id="btn-delete" data-toggle="modal"
-                            data-target="#exampleModalEliminazione" data-id="<%=Post._id%>">
-                            Elimina
-                        </button>
-
-
-
-                    </div>
-
-
-                </div>
-            </div>
-
-
-
-            <%})%>
-            <%}else{%>
-
-
-
-
-            <div class="container">
-                <div class="card card-ops">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <h1><i style="color: rgb(190, 1, 1); background-color: #fff; width: 50px; height: 50px; padding-top: 5px; border-radius: 50px; box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.24);
-                                " class="fas fa-exclamation-circle"></i>&nbsp;Nessun post da visualizzare.</h1>
-                            <p>Clicca qui sotto per creare il tuo primo post.</p><br>
-                            <a href="/admin/creaPost" class="btn btn-ops"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-            <%}%>
-
-
-</div>
-</div>
-<div class="modal fade" id="exampleModalEliminazione" tabindex="-1" role="dialog" aria-labelledby="exampleModalEliminazione">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 style="opacity: 0.8; font-family: 'Abril Fatface', cursive !important; font-size: 150%; text-shadow: 0px 0px 12px #777;"
-                    class="modal-title">Elimina Post</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+        <body>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
+                <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-            </div>  
-            <div class="modal-body">
-                <p>Cliccando sul tasto <b>Elimina</b> andrà ad eliminare irreversibilmente il post selezionato.</p>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link first" href="dashboard"><i class="fas fa-home"></i> Home <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item second">
+                            <a class="nav-link" href="/admin/creaPost"><i class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                        </li>
+                        <li class="nav-item third">
+                            <a class="nav-link" href="/admin/modificaPost"><i class="fas fa-pen"></i>&nbsp;Modifica
+                                Post</a>
+                        </li>
+                        <li class="nav-item fourth">
+                            <a class="nav-link" href="/admin/eliminaPost"><i class="fas fa-trash"></i>&nbsp;Elimina
+                                Post</a>
+                        </li>
+                        <li class="nav-item fifth">
+                            <a class="nav-link" href="/admin/tuttiPost"><i class="fas fa-book"></i>&nbsp;Storico
+                                Post</a>
+                        </li>
+                        <li class="nav-item profile">
+                            <div class="dropdown" style="padding-top: -10px !important;">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img id="rotation" style="width: 30px; height: 30px;"
+                                        src="/assets/img/profilePic.png" alt="profile-dropdown">
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item dropdown-profile" style="font-size: 15px;"
+                                        href="/admin/profile"><i class="fas fa-user-circle"></i> Profilo</a>
+                                    <a class="dropdown-item dropdown-exit" style="font-size: 15px;"
+                                        href="/admin/logout"><i class="fas fa-sign-out-alt"></i> Esci</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="container-fluid" style="padding: 20px 20px 20px 20px;">
+                <div class="row" align="center">
+                    <%if(Post.length){%>
+                        <% Post.forEach((Post, index)=>{%>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <%if (Post.Date){%>
+                                        <i class="fas fa-clock"></i>
+                                        <h6 id="text-clock">
+                                            <%=Post.Hour%>
+                                        </h6>
+                                        <i class="fas fa-calendar"></i>
+                                        <h6 id="text-calendar">
+                                            <%=Post.Date%>
+                                        </h6>
+                                        <%}%>
+                                            <h5 class="card-title">
+                                                <%=Post.Title%>
+                                            </h5>
+                                            <div class="card-body">
+                                                <p class="card-text">
+                                                    <%=ellipsify(Post.Content)%>
+                                                </p>
+                                                <!-- Button trigger modal -->
+                                                <button type="button" align="center" class="btn" id="btn-delete"
+                                                    data-toggle="modal" data-target="#exampleModalEliminazione"
+                                                    data-id="<%=Post._id%>">
+                                                    Elimina
+                                                </button>
+                                            </div>
+                                </div>
+                            </div>
+                            <%})%>
+                                <%}else{%>
+                                    <div class="container">
+                                        <div class="card card-ops">
+                                            <div class="card-body">
+                                                <div class="card-title">
+                                                    <h1><i style="color: rgb(190, 1, 1); background-color: #fff; width: 50px; height: 50px; padding-top: 5px; border-radius: 50px; box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.24);
+                                " class="fas fa-exclamation-circle"></i>&nbsp;Nessun post da visualizzare.</h1>
+                                                    <p>Clicca qui sotto per creare il tuo primo post.</p><br>
+                                                    <a href="/admin/creaPost" class="btn btn-ops"><i
+                                                            class="fas fa-plus"></i>&nbsp;Crea Post</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%}%>
+                </div>
             </div>
-            <div class="modal-footer">  
-
-                <form action="/admin/eliminaPost/" method ="POST" name='triste' id='triste'>
-                    <input type = "hidden" name = "_method" value = "DELETE">
-                     <button type="submit" align="center" class="btn" id="btn-delete" data-toggle="modal" data-target="#modal">Elimina</button>
-                        </form>
-
-                <a type="button" id="discard-btn" class="btn" data-dismiss="modal">Annulla</a>
+            <div class="modal fade" id="exampleModalEliminazione" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalEliminazione">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 style="opacity: 0.8; font-family: 'Abril Fatface', cursive !important; font-size: 150%; text-shadow: 0px 0px 12px #777;"
+                                class="modal-title">Elimina Post</h1>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Cliccando sul tasto <b>Elimina</b> andrà ad eliminare irreversibilmente il post
+                                selezionato.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <form action="/admin/eliminaPost/" method="POST" name='triste' id='triste'>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" align="center" class="btn" id="btn-delete" data-toggle="modal"
+                                    data-target="#modal">Elimina</button>
+                            </form>
+                            <a type="button" id="discard-btn" class="btn" data-dismiss="modal">Annulla</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
+            <style>
+                body {
+                    min-height: 120vh !important;
+                }
+            </style>
 
-    
+            <footer class="fixed-bottom" style="padding-top: 30px;">
+                <h6
+                    style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
+                    <b>© All
+                        rights Reserved to the OmniaStudios</b>
+                </h6>
+            </footer>
 
-<style>
-    body{
-        min-height: 120vh !important;
-    }
-</style>
-
-
-<footer class="fixed-bottom" style="padding-top: 30px;">
-    <h6 style="text-align: center; font-size: 80%; font-family: 'Montserrat'; font-weight: 200; color: #000;">
-        <b>© All
-            rights Reserved to the OmniaStudios</b></h6>
-</footer>
-
-
-
-
-<%- include('./partials/footerDashboard')%>
+            <%- include('./partials/footerDashboard')%>
