@@ -140,37 +140,27 @@ exports.remove = (req, res) => {
 }
 
 
-
-
-
 exports.newImage = (req, res) => {
-  // if(req.file){
-    upload(req, res, function (err) {
+  upload(req, res, function (err) {
+    if (err) {
+      console.log(err)
+      return res.end("Error uploading file.");
+    }
+
+    const newImage = {
+      link: "https://villabersezio.s3.eu-central-1.amazonaws.com/" + req.file.key
+    };
+
+    Image.create(newImage, (err, data) => {
       if (err) {
         console.log(err)
-        return res.end("Error uploading file.");
+        res.status(400).json({
+          status: "fail",
+          message: "Image could not be created",
+        });
+      } else {
+        res.status(200).redirect("/admin/imagesDB");
       }
-      console.log('ciaoooooo >' + req.file.key + '<');
-      let filename = "https://villabersezio.s3.eu-central-1.amazonaws.com/" + req.file.key;
-
-      const newImage = {
-        link: filename
-      };
-      console.log(`Link> ${newImage.link}`);
-
-      Image.create(newImage, (err, data) => {
-        if (err) {
-          console.log(err)
-          res.status(400).json({
-            status: "fail",
-            message: "Image could not be created",
-          });
-        } else {
-          res.status(200).redirect("/admin/imagesDB");
-        }
-      });
-    })
-  /* }else{
-    res.status(200).redirect('/admin/imagesDB');
-  }; */
+    });
+  })
 }; 
