@@ -1,7 +1,9 @@
 const Admin = require("../models/Admin");
 const bcrypt = require("bcryptjs");
 const passport = require('passport');
-const  Post = require('../models/Post');
+const Post = require('../models/Post');
+const Image = require('../models/Image');
+const controllerPost = require('../controllers/controllerPosts');
 
 exports.get_AdminLogin = (req, res) => {
   res.status(200).render("adminLogin");
@@ -192,6 +194,7 @@ exports.get_profile =(req, res) =>{
     }
   });
 }
+
 
 exports.cambiaPassword=(req, res) =>{
   var password = req.body.pChange[0];

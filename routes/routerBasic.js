@@ -1,6 +1,7 @@
 const express = require ('express');
 const controllerBasic = require('../controllers/controllerBasic');
 const controllerPosts = require('../controllers/controllerPosts');
+const controllerImages = require('../controllers/controllerImages');
 const controllerError = require('../controllers/controlleError')
 
 
@@ -11,6 +12,10 @@ router.route('/')
 
 router.route('/photos')
     .get(controllerBasic.get_photos);
+
+
+router.route('/photos')
+    .get(controllerImages.get_photos);
 
 
 

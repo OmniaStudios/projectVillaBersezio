@@ -138,11 +138,7 @@ nav {
 }
 
 #rotation {
-    transition: transform .3s;
-}
-
-#rotation:hover {
-    transform: rotate(360deg);
+    border-radius: 100%;
 }
 
 ::selection {

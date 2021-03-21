@@ -233,12 +233,9 @@ h1 {
 }
 
 #rotation {
-  transition: transform .3s;
+  border-radius: 100%;
 }
 
-#rotation:hover {
-  transform: rotate(360deg);
-}
 
 .card-ops {
   position: absolute;

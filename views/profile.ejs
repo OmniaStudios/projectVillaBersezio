@@ -1,7 +1,7 @@
 <%- include('./partials/headerDashboard')%>
 <link rel="stylesheet" href="/assets/css/profile.css">
 
-<body onload="startTime()">
+<body >
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/admin/dashboard">Villa Bersezio&nbsp;</a>
         <a class="navbar-brand" id="admin-cockpit" href="#"><b>| </b>&nbsp;&nbsp;Administration Cockpit</a>
@@ -32,7 +32,7 @@
                     <div class="dropdown" style="padding-top: -10px !important;">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/sgarbi.png"
+                            <img id="rotation" style="width: 30px; height: 30px;" src="/assets/img/profilePic.png"
                                 alt="profile-dropdown">
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -54,9 +54,7 @@
                     <div class="card-body">
                         <form style="padding: 30px 30px 30px 30px;">
                             <div class="form-group">
-                                <img id="rotation" src="/assets/img/sgarbi.png">
-                                <input style="padding-top: 20px;" type="file" class="form-control-file"
-                                    id="exampleFormControlFile1">
+                                <img id="rotation" style="height: 120px; width: 120px;" src="/assets/img/profilePic.png">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1"
@@ -70,9 +68,6 @@
                                 <input class="form-control" id="exampleInputEmail1" placeholder="Inserire il Cognome"
                                     value=<%=currentAdmin.lName%> disabled>
                             </div>
-                            
-
-                            <a class="btn btn-save" type="button" href="#" role="button">Salva</a>
                         </form>
                     </div>
                 </div>
@@ -93,7 +88,7 @@
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome
                                     Utente *</label>
                                 <input class="form-control" id="username" name="login"
-                                    placeholder="Inserire il Nome Utente" value="Il_Profeta">
+                                    placeholder="Inserire il Nome Utente" value="userName">
                             </div>
 
 
@@ -101,7 +96,7 @@
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Nome
                                     *</label>
                                 <input class="form-control" id="fName" placeholder="Inserire il Nome" name="login"
-                                    value="Vittorio">
+                                    value="Nome">
                             </div>
 
 
@@ -109,7 +104,7 @@
                                 <label for="exampleInputEmail1" style="font-family: 'Abril Fatface', cursive;">Cognome
                                     *</label>
                                 <input class="form-control" id="lName" placeholder="Inserire il Cognome" name ="login"
-                                    value="Sgarbi">
+                                    value="Cognome">
                             </div>
 
 
