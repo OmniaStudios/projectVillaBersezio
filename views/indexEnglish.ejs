@@ -1,17 +1,12 @@
 <%- include('./partials/header')%>
 <%function ellipsify (str) {
-  if (str.length > 20 ) {
-      return (str.substring(0, 20) + "...");
+  if (str.length > 140) {
+      return (str.substring(0, 138) + "...");
   }
   else {
       return str;
   }
 }%>
-
-<% function tokenize (str) {
-  newStr = str.replace(/ /g, "§");
-  return(newStr);
-} %>
 
 <body>
   <div id="pagepiling">
@@ -23,7 +18,7 @@
     </div>
     <div class="section" id="about">
       <div id='section2-title' class="container" align='center'>
-        <h2 class="title-about">ABOUT US</h2>
+        <h2 class="title-about">About Us</h2>
         <br><br>
         <p class="p-about" align='justify'>Lorem Ipsum but in english is simply dummy text of the printing and typesetting industry.
           Lorem Ipsum has
@@ -40,22 +35,23 @@
 
 
 
-      <h2 class="title-post">NEW POSTS</h2>
+      <h2 class="title-post">New Posts</h2>
       <br><br>
       <div class="container">
         <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
           <div class="carousel-inner" role="listbox">
             <!--Prima Slide-->
 
-
+           
 
             <div class="carousel-item active">
               <div class="row" align='center'>
-                <%var contaPost = 0;%>
-                <% Post.forEach((Post, index) => { %>
-                <% contaPost++; %>
+              <%var contaPost = 0;%>
+              <% Post.forEach((Post, index) => { %>
+              <% contaPost++; %> 
                 <%if(contaPost  == 4){%>
-                <%contaPost = 1%>
+                  <%contaPost = 1%>
+                </div>
               </div>
                   <div class="carousel-item">
                    <div class="row" align='center'> 
@@ -75,9 +71,6 @@
                       <h6 class="text-subtitle"><%=Post.Author%></h6>
                     </div>
                    </div> 
-
-
-
                <% }else{%>
                 
                 <div class = "col">
@@ -87,105 +80,33 @@
                     <i class="fas fa-clock"></i>
                     <h6 id="text-clock"><%=Post.Uploaded%></h6>
                     <%if(Post.Date != null){%>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar"><%=Post.Date%></h6>
-                    <span><%=Post.Title%></span>
+                      <i class="fas fa-calendar"></i>
+                       <h6 id="text-calendar"><%=Post.Date%></h6>
+                       <%}%>
                     <div class="card-body">
-                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
-                  
-                  
-                  
-                      <!-- Button trigger modal -->
-                      <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                        See more...
-                      </button>
-                    <%} else { %>
-
-                      <i class="fas fa-calendar" style="visibility: hidden;"></i>
-                      <h6 id="text-calendar" style="visibility: hidden;">2020-12-12</h6>
-                      <span><%=Post.Title%></span>
-                      <div class="card-body">
-                        <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
-                    
-                    
-                    
-                        <!-- Button trigger modal -->
-                        <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModallyNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                          See more...
-                        </button>
-                    <%}%>
-                     
-
-
-
-
-                   
-
-
-
-
+                      <p class="card-text ellipsis"><%=ellipsify(Post.Content)%></p>
+                    </div>
+                    <h6 class="text-subtitle"><%=Post.Author%></h6>
                   </div>
-                  <h6 class="text-subtitle"><%=Post.Author%></h6>
                 </div>
-                <!-- Modal -->
-              </div>
-              <% }else{%>
-              <div class="col">
-                <div class="card" style="width: 18rem; background-color: black; border: 1px solid #444;">
-                  <img class="card-img-top zoom" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
-                  <i class="fas fa-clock"></i>
-                  <h6 id="text-clock"><%=Post.Uploaded%></h6>
-                  <%if(Post.Date != null){%>
-                    <i class="fas fa-calendar"></i>
-                    <h6 id="text-calendar"><%=Post.Date%></h6>
-                    <span><%=Post.Title%></span>     
-                    <div class="card-body">
-                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
-
-                      <!-- Button trigger modal -->
-                    <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModally" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-data=<%=Post.Date%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                      See more...
-                    </button> 
-                  <%} else { %>
-                    <i class="fas fa-calendar" style="visibility: hidden;"></i>
-                    <h6 id="text-calendar" style="visibility: hidden;">2020-12-12</h6>         
-                    <span><%=Post.Title%></span> 
-                    <div class="card-body">
-                      <p class="card-text ellipsis" style="color: #808080"><%=ellipsify(Post.Content)%></p>
-
-                      <!-- Button trigger modal -->
-                    <button type="button" id="btn-seeMore" class="btn pull-left" data-toggle="modal" data-target="#exampleModallyNoData" data-titolo=<%=tokenize(Post.Title)%> data-contenuto=<%=tokenize(Post.Content)%> data-caricato=<%=Post.Uploaded%> data-autore=<%=tokenize(Post.Author)%>>
-                      See more...
-                    </button>
-                  <%}%>
-                    
-
-
-
-
-
-
-                </div>
-                <h6 class="text-subtitle"><%=Post.Author%></h6>
-              </div>
-            </div>
-            <%}%>
+                <%}%>
                 <%})%>
 
+            </div>
+            </div>
+          </div>
+          
+
+          <br>
+          <div class="controls-top"><i class=""></i>
+            <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
+                class="fas fa-arrow-circle-left">&nbsp;&nbsp;&nbsp;</i></a>
+            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
+                class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
-
-      <br>
-      <div class="controls-top"><i class=""></i>
-        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i
-            class="fas fa-arrow-circle-left">&nbsp;&nbsp;&nbsp;</i></a>
-        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-            class="fas fa-arrow-circle-right"></i></a>
-      </div>
     </div>
-  </div>
-  </div>
     
 
     
@@ -194,7 +115,7 @@
 
 
     <div class="section" id="gallery">
-      <h1 class="title-gallery">PHOTO GALLERY</h1>
+      <h1 class="title-gallery">Photo Gallery</h1>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -223,17 +144,16 @@
       </div>
       <a href="/photos" class="btn" style="padding: 5px; border-radius: 10px; margin: 20px !important;">More<i class="fas fa-angle-right"></i></a>
     </div>
-
     <div class="section" id="position">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4031021518476!2d7.503200351332539!3d44.43384130951536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd6b54788667a9%3A0x7947cc5e5514b019!2sVilla%20Bersezio!5e1!3m2!1sit!2sit!4v1592496383359!5m2!1sit!2sit"
         frameborder="0" style="border:0;" allowfullscreen="ture" aria-hidden="false" tabindex="0"></iframe>
     </div>
     <div class="section" id="contact">
-      <h2 class="title-contact" align="center">REACH US</h2>
+      <h2 class="title-contact" align="center">Reach Us</h2>
       <div class="container-fluid">
         <div class="container-fluid" align="center">
-          <a href="#position" class="fas fa-map-marker-alt"></a>
+          <i class="fas fa-map-marker-alt"></i>
           <p>Via Rocca 3, Passatore (CN), Italia</p>
           <a href="tel:+390171697961" class="fa fa-phone"></a>
           <p>(+39) 345 286 23 54</p>
@@ -241,8 +161,7 @@
           <p>villabersezio@gmail.com</p>
         </div>
       </div>
-
-      <footer class="page-footer black fixed-bottom">
+      <footer>
         <div class="text-center center-block fixed-bottom">
           <br />
           <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
@@ -251,7 +170,6 @@
           <a href=""><i id="animation-Logo-OS" class="icon-OS_Logo"></i></a>
   
           <p id="text-footer">© All rights reserved to OmniaStudios.</p>
-          
         </div>
         
       </footer>
@@ -273,58 +191,6 @@
           class="fas fa-mobile-alt" href="#contact"></a></li><br>
     </ul>
   </nav>
-
-  <div class="modal fade" id="exampleModally" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" style="background-color: #262626;">
-        <div class="modal-header" style="border-bottom: 1px solid #262626;">
-          <h5 class="modal-title text-white" id="exampleModalLongTitle"><%=Post.Title%></h5>
-          <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
-          <i class="fas fa-clock" id="modal-clock"></i>
-          <h6 id="text-clock-modal" class='modal-ora'></h6>
-          <i class="fas fa-calendar" id="modal-calendar"></i>
-          <h6 id="text-calendar-modal" class='modal-caricato'></h6>
-          <br><br>
-          <h8 class="text-modal" align="justify" class='modal-contenuto'></h8>
-        </div>
-        <div class="modal-footer" style="border-top: 1px solid #262626;">
-          <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="exampleModallyNoData" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content" style="background-color: #262626;">
-        <div class="modal-header" style="border-bottom: 1px solid #262626;">
-          <h5 class="modal-title text-white" id="exampleModalLongTitle"><%=Post.Title%></h5>
-          <button id="btn-close-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img class="card-img-top" src="https://source.unsplash.com/1600x900/?city" alt="Card image cap">
-          <i class="fas fa-clock" id="modal-clock"></i>
-          <h6 id="text-clock-modal" class='modal-ora'></h6>
-          <br><br>
-          <h8 class="text-modal" align="justify" class='modal-contenuto'></h8>
-        </div>
-        <div class="modal-footer" style="border-top: 1px solid #262626;">
-          <h6 class="text-subtitle" style="color: white;"><X Æ A-Xii></h6>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
     <!-- Languages Switch -->
     <div class="dropdown" style="z-index: 100; float: right;">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
@@ -333,10 +199,10 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div class="zoom">
-          <a class="dropdown-item" href="/"><img src="https://www.countryflags.io/it/flat/32.png"></a>
+          <a class="dropdown-item" href="/#home"><img src="https://www.countryflags.io/it/flat/32.png"></a>
         </div>
         <div class="zoom">
-          <a class="dropdown-item" href="/fr/home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
+          <a class="dropdown-item" href="/fr#home"><img src="https://www.countryflags.io/fr/flat/32.png"></a>
         </div>
       </div>
     </div>
